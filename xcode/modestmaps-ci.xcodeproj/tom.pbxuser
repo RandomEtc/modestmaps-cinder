@@ -1,0 +1,748 @@
+// !$*UTF8*$!
+{
+	00BAE6590E7ED9C10018A608 /* modestmapsciApp.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {439, 1066}}";
+			sepNavSelRange = "{33, 0}";
+			sepNavVisRange = "{0, 320}";
+			sepNavWindowFrame = "{{15, 60}, {1197, 818}}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = E2822F9C122703230081867C /* modestmaps-ci */;
+		activeTarget = 8D1107260486CEB800E47090 /* modestmaps-ci */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* modestmaps-ci */,
+		);
+		breakpoints = (
+			E28232E1122716510081867C /* Map.h:70 */,
+			E2823317122717FD0081867C /* Map.cpp:390 */,
+			E2823319122718000081867C /* Map.cpp:392 */,
+		);
+		codeSenseManager = E2822FC41227032F0081867C /* Code sense */;
+		executables = (
+			E2822F9C122703230081867C /* modestmaps-ci */,
+		);
+		expressions = (
+			url,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXBookmarksDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBookmarksDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					200,
+					200,
+					151,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBookmarksDataSource_LocationID,
+					PBXBookmarksDataSource_NameID,
+					PBXBookmarksDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					229,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					738,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFindDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFindDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					200,
+					355,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFindDataSource_MessageID,
+					PBXFindDataSource_LocationID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXSymbolsDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXSymbolsDataSource_SymbolNameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					16,
+					200,
+					50,
+					281,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXSymbolsDataSource_SymbolTypeIconID,
+					PBXSymbolsDataSource_SymbolNameID,
+					PBXSymbolsDataSource_SymbolTypeID,
+					PBXSymbolsDataSource_ReferenceNameID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.XCSCMDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					317,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_SCM_ColumnID,
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					301,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 304617804;
+			PBXWorkspaceStateSaveDate = 304617804;
+		};
+		perUserProjectItems = {
+			E23948ED1228195300C72875 /* PBXTextBookmark */ = E23948ED1228195300C72875 /* PBXTextBookmark */;
+			E28231B312270AB20081867C = E28231B312270AB20081867C /* PBXTextBookmark */;
+			E28231B512270AB20081867C = E28231B512270AB20081867C /* PBXTextBookmark */;
+			E28231BB12270AB20081867C = E28231BB12270AB20081867C /* PBXTextBookmark */;
+			E28231BC12270AB20081867C = E28231BC12270AB20081867C /* PBXTextBookmark */;
+			E28231BE12270AB20081867C = E28231BE12270AB20081867C /* PBXTextBookmark */;
+			E28231BF12270AB20081867C = E28231BF12270AB20081867C /* PBXTextBookmark */;
+			E28231C012270AB20081867C = E28231C012270AB20081867C /* PBXTextBookmark */;
+			E28231C412270AB20081867C = E28231C412270AB20081867C /* PBXBookmark */;
+			E282322812270CC40081867C = E282322812270CC40081867C /* PBXTextBookmark */;
+			E282322912270CC40081867C = E282322912270CC40081867C /* PBXTextBookmark */;
+			E282322A12270CC40081867C = E282322A12270CC40081867C /* PBXTextBookmark */;
+			E282322B12270CC40081867C = E282322B12270CC40081867C /* PBXTextBookmark */;
+			E282322C12270CC40081867C = E282322C12270CC40081867C /* PBXTextBookmark */;
+			E282322D12270CC40081867C = E282322D12270CC40081867C /* PBXTextBookmark */;
+			E28232AD122714100081867C = E28232AD122714100081867C /* PBXTextBookmark */;
+			E28232AE122714100081867C = E28232AE122714100081867C /* PBXTextBookmark */;
+			E282331E122718070081867C = E282331E122718070081867C /* PBXTextBookmark */;
+			E2823340122719CF0081867C = E2823340122719CF0081867C /* PBXTextBookmark */;
+			E282335B12271AA50081867C = E282335B12271AA50081867C /* PBXTextBookmark */;
+			E282339D12271E5A0081867C = E282339D12271E5A0081867C /* PBXTextBookmark */;
+			E28233BD122720A00081867C = E28233BD122720A00081867C /* PBXTextBookmark */;
+			E28233D5122722F20081867C = E28233D5122722F20081867C /* PBXTextBookmark */;
+			E2823421122728850081867C = E2823421122728850081867C /* PBXTextBookmark */;
+			E2823422122728850081867C = E2823422122728850081867C /* PBXTextBookmark */;
+			E282342A122728F70081867C = E282342A122728F70081867C /* PBXTextBookmark */;
+			E282342B122728F70081867C = E282342B122728F70081867C /* PBXTextBookmark */;
+			E282342F1227491E0081867C = E282342F1227491E0081867C /* PBXTextBookmark */;
+		};
+		sourceControlManager = E2822FC31227032F0081867C /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	8D1107260486CEB800E47090 /* modestmaps-ci */ = {
+		activeExec = 0;
+		executables = (
+			E2822F9C122703230081867C /* modestmaps-ci */,
+		);
+	};
+	E23948ED1228195300C72875 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD9122704CF0081867C /* Map.h */;
+		name = "Map.h: 24";
+		rLen = 0;
+		rLoc = 423;
+		rType = 0;
+		vrLen = 507;
+		vrLoc = 1490;
+	};
+	E2822F9C122703230081867C /* modestmaps-ci */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "modestmaps-ci";
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	E2822FC31227032F0081867C /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	E2822FC41227032F0081867C /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	E2822FD1122704CF0081867C /* AbstractMapProvider.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {600, 650}}";
+			sepNavSelRange = "{371, 0}";
+			sepNavVisRange = "{0, 345}";
+		};
+	};
+	E2822FD2122704CF0081867C /* AbstractProjection.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {705, 585}}";
+			sepNavSelRange = "{73, 0}";
+			sepNavVisRange = "{617, 542}";
+		};
+	};
+	E2822FD3122704CF0081867C /* BingMapsProvider.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1006, 780}}";
+			sepNavSelRange = "{1556, 0}";
+			sepNavVisRange = "{821, 830}";
+			sepNavWindowFrame = "{{107, 87}, {1197, 852}}";
+		};
+	};
+	E2822FD4122704CF0081867C /* Coordinate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {859, 936}}";
+			sepNavSelRange = "{58, 0}";
+			sepNavVisRange = "{1374, 350}";
+		};
+	};
+	E2822FD5122704CF0081867C /* LinearProjection.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {519, 245}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 216}";
+		};
+	};
+	E2822FD6122704CF0081867C /* LinearProjection.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {607, 260}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 431}";
+		};
+	};
+	E2822FD7122704CF0081867C /* Location.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {916, 416}}";
+			sepNavSelRange = "{487, 0}";
+			sepNavVisRange = "{0, 499}";
+		};
+	};
+	E2822FD8122704CF0081867C /* Map.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {916, 5174}}";
+			sepNavSelRange = "{11336, 0}";
+			sepNavVisRange = "{10828, 908}";
+			sepNavWindowFrame = "{{165, 125}, {1197, 852}}";
+		};
+	};
+	E2822FD9122704CF0081867C /* Map.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {916, 2028}}";
+			sepNavSelRange = "{423, 0}";
+			sepNavVisRange = "{1490, 507}";
+			sepNavWindowFrame = "{{61, 129}, {1197, 852}}";
+		};
+	};
+	E2822FDA122704CF0081867C /* MercatorProjection.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1138, 724}}";
+			sepNavSelRange = "{301, 0}";
+			sepNavVisRange = "{0, 308}";
+			sepNavWindowFrame = "{{84, 108}, {1197, 852}}";
+		};
+	};
+	E2822FDC122704CF0081867C /* OpenStreetMapProvider.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1188, 598}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 515}";
+		};
+	};
+	E2822FDD122704CF0081867C /* Point2d.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {519, 429}}";
+			sepNavSelRange = "{55, 0}";
+			sepNavVisRange = "{0, 245}";
+		};
+	};
+	E2822FDE122704CF0081867C /* QueueSorter.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {621, 494}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{577, 241}";
+		};
+	};
+	E2822FE1122704CF0081867C /* Transformation.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {999, 219}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 375}";
+		};
+	};
+	E2822FE2122704CF0081867C /* Transformation.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1006, 312}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{88, 444}";
+		};
+	};
+	E28231B312270AB20081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E28231B412270AB20081867C /* AppBasic.h */;
+		name = "AppBasic.h: 42";
+		rLen = 30;
+		rLoc = 1647;
+		rType = 0;
+		vrLen = 445;
+		vrLoc = 1525;
+	};
+	E28231B412270AB20081867C /* AppBasic.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = AppBasic.h;
+		path = /Users/tom/Documents/Code/Cinder/Cinder/include/cinder/app/AppBasic.h;
+		sourceTree = "<absolute>";
+	};
+	E28231B512270AB20081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E28231B612270AB20081867C /* ios_base.h */;
+		name = "ios_base.h: 418";
+		rLen = 15;
+		rLoc = 13558;
+		rType = 0;
+		vrLen = 689;
+		vrLoc = 11514;
+	};
+	E28231B612270AB20081867C /* ios_base.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = ios_base.h;
+		path = "/Developer/SDKs/MacOSX10.6.sdk/usr/include/c++/4.2.1/bits/ios_base.h";
+		sourceTree = "<absolute>";
+	};
+	E28231B812270AB20081867C /* MouseEvent.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = MouseEvent.h;
+		path = /Users/tom/Documents/Code/Cinder/Cinder/include/cinder/app/MouseEvent.h;
+		sourceTree = "<absolute>";
+	};
+	E28231BA12270AB20081867C /* App.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = App.h;
+		path = /Users/tom/Documents/Code/Cinder/Cinder/include/cinder/app/App.h;
+		sourceTree = "<absolute>";
+	};
+	E28231BB12270AB20081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD1122704CF0081867C /* AbstractMapProvider.h */;
+		name = "AbstractMapProvider.h: 20";
+		rLen = 0;
+		rLoc = 371;
+		rType = 0;
+		vrLen = 345;
+		vrLoc = 0;
+	};
+	E28231BC12270AB20081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD2122704CF0081867C /* AbstractProjection.h */;
+		name = "AbstractProjection.h: 4";
+		rLen = 0;
+		rLoc = 73;
+		rType = 0;
+		vrLen = 542;
+		vrLoc = 617;
+	};
+	E28231BE12270AB20081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD4122704CF0081867C /* Coordinate.h */;
+		name = "Coordinate.h: 5";
+		rLen = 0;
+		rLoc = 58;
+		rType = 0;
+		vrLen = 350;
+		vrLoc = 1374;
+	};
+	E28231BF12270AB20081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD5122704CF0081867C /* LinearProjection.cpp */;
+		name = "LinearProjection.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 216;
+		vrLoc = 0;
+	};
+	E28231C012270AB20081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD6122704CF0081867C /* LinearProjection.h */;
+		name = "LinearProjection.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 431;
+		vrLoc = 0;
+	};
+	E28231C412270AB20081867C /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 00CCAF14116A9FEE008396D5 /* CinderApp.icns */;
+	};
+	E282321812270C0E0081867C /* CinderMath.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = CinderMath.h;
+		path = /Users/tom/Documents/Code/Cinder/Cinder/include/cinder/CinderMath.h;
+		sourceTree = "<absolute>";
+	};
+	E282322812270CC40081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E282321812270C0E0081867C /* CinderMath.h */;
+		name = "CinderMath.h: 101";
+		rLen = 69;
+		rLoc = 4442;
+		rType = 0;
+		vrLen = 335;
+		vrLoc = 6459;
+	};
+	E282322912270CC40081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FDC122704CF0081867C /* OpenStreetMapProvider.h */;
+		name = "OpenStreetMapProvider.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 515;
+		vrLoc = 0;
+	};
+	E282322A12270CC40081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FDD122704CF0081867C /* Point2d.h */;
+		name = "Point2d.h: 6";
+		rLen = 0;
+		rLoc = 55;
+		rType = 0;
+		vrLen = 245;
+		vrLoc = 0;
+	};
+	E282322B12270CC40081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FDE122704CF0081867C /* QueueSorter.h */;
+		name = "QueueSorter.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 241;
+		vrLoc = 577;
+	};
+	E282322C12270CC40081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FE1122704CF0081867C /* Transformation.cpp */;
+		name = "Transformation.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 375;
+		vrLoc = 0;
+	};
+	E282322D12270CC40081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FE2122704CF0081867C /* Transformation.h */;
+		name = "Transformation.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 444;
+		vrLoc = 88;
+	};
+	E282322F12270CC40081867C /* gl.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = gl.h;
+		path = /Users/tom/Documents/Code/Cinder/Cinder/include/cinder/gl/gl.h;
+		sourceTree = "<absolute>";
+	};
+	E28232641227102F0081867C /* Rect.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = Rect.h;
+		path = /Users/tom/Documents/Code/Cinder/Cinder/include/cinder/Rect.h;
+		sourceTree = "<absolute>";
+	};
+	E28232AD122714100081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E28232641227102F0081867C /* Rect.h */;
+		name = "Rect.h: 115";
+		rLen = 28;
+		rLoc = 4935;
+		rType = 0;
+		vrLen = 1007;
+		vrLoc = 4131;
+	};
+	E28232AE122714100081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E282322F12270CC40081867C /* gl.h */;
+		name = "gl.h: 88";
+		rLen = 21;
+		rLoc = 3876;
+		rType = 0;
+		vrLen = 2741;
+		vrLoc = 2997;
+	};
+	E28232E1122716510081867C /* Map.h:70 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = E2822FD9122704CF0081867C /* Map.h */;
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 70;
+		modificationTime = 304556278.063063;
+		originalNumberOfMultipleMatches = 0;
+		state = 2;
+	};
+	E2823317122717FD0081867C /* Map.cpp:390 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = E2822FD8122704CF0081867C /* Map.cpp */;
+		functionName = "Map::processQueue()";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 390;
+		modificationTime = 304556278.063326;
+		originalNumberOfMultipleMatches = 0;
+		state = 2;
+	};
+	E2823319122718000081867C /* Map.cpp:392 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = E2822FD8122704CF0081867C /* Map.cpp */;
+		functionName = "Map::processQueue()";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 392;
+		location = "modestmaps-ci";
+		modificationTime = 304556278.063371;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	E282331E122718070081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E282331F122718070081867C /* ImageIo.cpp */;
+		name = "ImageIo.cpp: 367";
+		rLen = 0;
+		rLoc = 13433;
+		rType = 0;
+		vrLen = 884;
+		vrLoc = 13041;
+	};
+	E282331F122718070081867C /* ImageIo.cpp */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = ImageIo.cpp;
+		path = /Users/tom/Documents/Code/Cinder/Cinder/src/cinder/ImageIo.cpp;
+		sourceTree = "<absolute>";
+	};
+	E2823340122719CF0081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2823341122719CF0081867C /* Url.h */;
+		name = "Url.h: 35";
+		rLen = 42;
+		rLoc = 1493;
+		rType = 0;
+		vrLen = 550;
+		vrLoc = 1084;
+	};
+	E2823341122719CF0081867C /* Url.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = Url.h;
+		path = /Users/tom/Documents/Code/Cinder/Cinder/include/cinder/Url.h;
+		sourceTree = "<absolute>";
+	};
+	E282335A12271AA50081867C /* DataSource.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = DataSource.h;
+		path = /Users/tom/Documents/Code/Cinder/Cinder/include/cinder/DataSource.h;
+		sourceTree = "<absolute>";
+	};
+	E282335B12271AA50081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD7122704CF0081867C /* Location.h */;
+		name = "Location.h: 23";
+		rLen = 0;
+		rLoc = 487;
+		rType = 0;
+		vrLen = 499;
+		vrLoc = 0;
+	};
+	E282339D12271E5A0081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E28231B812270AB20081867C /* MouseEvent.h */;
+		name = "MouseEvent.h: 69";
+		rLen = 17;
+		rLoc = 4047;
+		rType = 0;
+		vrLen = 1801;
+		vrLoc = 2417;
+	};
+	E28233BD122720A00081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E28231BA12270AB20081867C /* App.h */;
+		name = "App.h: 133";
+		rLen = 47;
+		rLoc = 5380;
+		rType = 0;
+		vrLen = 1252;
+		vrLoc = 5380;
+	};
+	E28233D5122722F20081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00BAE6590E7ED9C10018A608 /* modestmapsciApp.cpp */;
+		name = "modestmapsciApp.cpp: 77";
+		rLen = 0;
+		rLoc = 1533;
+		rType = 0;
+		vrLen = 504;
+		vrLoc = 1142;
+	};
+	E2823421122728850081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E282335A12271AA50081867C /* DataSource.h */;
+		name = "DataSource.h: 102";
+		rLen = 7;
+		rLoc = 2991;
+		rType = 0;
+		vrLen = 520;
+		vrLoc = 2973;
+	};
+	E2823422122728850081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD8122704CF0081867C /* Map.cpp */;
+		name = "Map.cpp: 388";
+		rLen = 0;
+		rLoc = 11336;
+		rType = 0;
+		vrLen = 908;
+		vrLoc = 10828;
+	};
+	E282342A122728F70081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD3122704CF0081867C /* BingMapsProvider.h */;
+		name = "BingMapsProvider.h: 52";
+		rLen = 0;
+		rLoc = 1556;
+		rType = 0;
+		vrLen = 830;
+		vrLoc = 821;
+	};
+	E282342B122728F70081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD9122704CF0081867C /* Map.h */;
+		name = "Map.h: 79";
+		rLen = 0;
+		rLoc = 1703;
+		rType = 0;
+		vrLen = 499;
+		vrLoc = 1437;
+	};
+	E282342F1227491E0081867C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD9122704CF0081867C /* Map.h */;
+		name = "Map.h: 24";
+		rLen = 0;
+		rLoc = 423;
+		rType = 0;
+		vrLen = 505;
+		vrLoc = 1490;
+	};
+}
