@@ -44,7 +44,8 @@ public:
 	
 	std::vector<std::string> getTileUrls(Coordinate rawCoordinate) {
 		std::vector<std::string> urls;
-		if (rawCoordinate.row >= 0 && rawCoordinate.row < pow(2, rawCoordinate.zoom)) {
+		if (rawCoordinate.zoom >= 1 && rawCoordinate.zoom <= 19 
+			&& rawCoordinate.row >= 0 && rawCoordinate.row < pow(2, rawCoordinate.zoom)) {
 			Coordinate coordinate = sourceCoordinate(rawCoordinate);
 			std::stringstream url;
 			std::string subdomain = subdomains[ci::Rand::randInt(0, subdomains.size())];

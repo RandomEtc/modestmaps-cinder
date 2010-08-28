@@ -1,7 +1,8 @@
 Quick port of Modest Maps (modestmaps.com) to the Cinder Framework (libcinder.org)
 
-No threading yet, so not useful :)
-
 Working on it: http://forum.libcinder.org/#topic/23286000000108063
 
-See also http://github.com/randometc/modestmaps-of for OpenFrameworks, which is closer to completion.
+Seeing occasional hard crashes so please be careful. Also seeing Cocoa errors when loading on a thread.
+
+See also http://github.com/randometc/modestmaps-of for OpenFrameworks for a comparison.
+

@@ -91,28 +91,28 @@ void Map::draw() {
 	//Collections.sort(visibleKeys, zoomComparator);
 	
 	// translate and scale, from the middle
-	gl::pushMatrices();
-	gl::translate(Vec2f(width/2.0, height/2.0));
-	gl::scale(Vec3f(sc,sc,1));
-	gl::translate(Vec2f(tx, ty));
+	glPushMatrix();
+	glTranslated(width/2.0, height/2.0, 0);
+	glScaled(sc,sc,1);
+	glTranslated(tx, ty, 0);
 	
 	int numDrawnImages = 0;
 	
 	if (visibleKeys.size() > 0) {
 		double prevZoom = baseZoom;
-		gl::pushMatrices();
+		glPushMatrix();
 		// correct the scale for this zoom level:
 		double correction = 1.0/pow(2.0, prevZoom);
-		gl::scale(Vec3f(correction,correction,1));
+		glScaled(correction,correction,1);
 		std::set<Coordinate>::iterator iter;
 		for (iter = visibleKeys.begin(); iter != visibleKeys.end(); iter++) {
 			Coordinate coord = *iter;
 			if (coord.zoom != prevZoom) {
-				gl::popMatrices();
-				gl::pushMatrices();
+				glPopMatrix();
+				glPushMatrix();
 				// correct the scale for this zoom level:
 				correction = 1.0/pow(2.0,coord.zoom);
-				gl::scale(Vec3f(correction, correction, 1));
+				glScaled(correction, correction, 1);
 				prevZoom = coord.zoom;
 			}
 
@@ -130,15 +130,16 @@ void Map::draw() {
 					recentImages.erase(result);
 				}
 				//ofSetColor(255, 255, 255, (int)min(ofGetElapsedTimeMillis() - tile->loadTime,255.0f));
-				gl::draw( tile, Rectf(coord.column*TILE_SIZE, coord.row*TILE_SIZE, (coord.column+1.0)*TILE_SIZE, (coord.row+1.0)*TILE_SIZE));
+				// TODO: Rectf might not be accurate enough at high zoomlevels - how to fix?
+				gl::draw( tile, Rectf(coord.column*TILE_SIZE, coord.row*TILE_SIZE, (coord.column+1.0)*TILE_SIZE, (coord.row+1.0)*TILE_SIZE) );
 				numDrawnImages++;
 				recentImages.push_back(tile);
 			}
 		}
-		gl::popMatrices();
+		glPopMatrix();
 	}    
 	
-	gl::popMatrices();
+	glPopMatrix();
 		
 	// stop fetching things we can't see:
 	// (visibleKeys also has the parents and children, if needed, but that shouldn't matter)
@@ -349,7 +350,7 @@ int Map::bestZoomForScale(float scale) {
 //////////////////////////////////////////////////////////////////////////
 
 void Map::grabTile(Coordinate coord) {
-	bool isPending = pending.count(coord) > 0;
+	bool isPending = tileLoader.isPending(coord);
 	bool isQueued = find(queue.begin(), queue.end(), coord) != queue.end();
 	bool isAlreadyLoaded = images.count(coord) > 0;
 	if (!isPending && !isQueued && !isAlreadyLoaded) {
@@ -357,43 +358,9 @@ void Map::grabTile(Coordinate coord) {
 	}
 }
 
-
-// TODO: there could be issues when this is called from within a thread
-// probably needs synchronizing on images / pending / queue
-void Map::tileDone(Coordinate coord, gl::Texture img) {
-	// check if we're still waiting for this (new provider clears pending)
-	// also check if we got something
-	if (pending.count(coord) > 0 && img != NULL) {
-		images[Coordinate(coord)] = img;
-		//img->loadTime = ofGetElapsedTimeMillis();
-		pending.erase(coord);  
-	}
-	else {
-		pending.erase(coord);
-		// try again?
-	}
-}
-
-void Map::processQueue() {
-	if (queue.size() > MAX_PENDING-pending.size()) {
-		sort(queue.begin(), queue.end(), QueueSorter(getCenterCoordinate().zoomTo(getZoom())));		
-	}
-	while (pending.size() < MAX_PENDING && queue.size() > 0) {
-		Coordinate coord = *(queue.begin());
-		Coordinate key = Coordinate(coord);
-		std::vector<std::string> urls = provider->getTileUrls(coord);
-		if (urls.size() > 0) {
-			//std::cout << "loading " << urls[0] << " for " << coord << std::endl;
-			// TODO: more than one image
-			Url url( urls[0] );
-			//Url url( "http://geo.stamen.com/~migurski/cnn-map/naturalearth/tilecache.cgi/1/nev/4/2/6.png" );
-			std::cout << url.str() << std::endl;
-			gl::Texture image = gl::Texture( loadImage( loadUrl( url ) ) );
-			//gl::Texture image = gl::Texture( loadImage( loadResource("grid.png") ) );
-			pending[key] = image;
-			tileDone(key, image);
-		}
-		queue.erase(queue.begin());
-	}  
+void Map::processQueue() {	
+	sort(queue.begin(), queue.end(), QueueSorter(getCenterCoordinate().zoomTo(getZoom())));		
+	tileLoader.processQueue(queue, provider);
+	tileLoader.transferTextures(images);
 }
 

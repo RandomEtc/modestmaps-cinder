@@ -10,6 +10,7 @@
 #include "Coordinate.h"
 #include "Point2d.h"
 #include "QueueSorter.h"
+#include "TileLoader.h"
 
 #include "cinder/app/AppBasic.h"
 #include "cinder/ImageIo.h"
@@ -19,9 +20,6 @@ using namespace ci;
 using namespace ci::app;
 
 #define TILE_SIZE 256.0
-
-// limit simultaneous calls to loadImage
-#define MAX_PENDING 8
 
 // limit tiles in memory
 // 256 would be 64 MB, you may want to lower this quite a bit for your app
@@ -46,13 +44,17 @@ public:
 	double width, height;
 	
 	// loading tiles
-	std::map<Coordinate, gl::Texture> pending;
+	TileLoader tileLoader;
+
 	// loaded tiles
 	std::map<Coordinate, gl::Texture> images;
+	
 	// coords waiting to load
 	std::vector<Coordinate> queue;
+	
 	// a list of the most recent MAX_IMAGES_TO_KEEP ofImages we've seen
 	std::vector<gl::Texture> recentImages;
+	
 	// keep track of what we can see already:
 	std::set<Coordinate> visibleKeys;
 	
@@ -141,8 +143,6 @@ public:
 	
 	
 	void grabTile(Coordinate coord);
-	
-	void tileDone(Coordinate coord, gl::Texture img);
 	
 	void processQueue();
 	

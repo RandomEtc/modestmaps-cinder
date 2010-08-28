@@ -19,6 +19,7 @@
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		E239497612282DD900C72875 /* TileLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E239497512282DD900C72875 /* TileLoader.cpp */; };
 		E2822FE3122704CF0081867C /* LinearProjection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2822FD5122704CF0081867C /* LinearProjection.cpp */; };
 		E2822FE4122704CF0081867C /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2822FD8122704CF0081867C /* Map.cpp */; };
 		E2822FE5122704CF0081867C /* MercatorProjection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2822FDA122704CF0081867C /* MercatorProjection.cpp */; };
@@ -45,6 +46,8 @@
 		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* modestmaps-ci.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "modestmaps-ci.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E239497412282DD900C72875 /* TileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileLoader.h; sourceTree = "<group>"; };
+		E239497512282DD900C72875 /* TileLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileLoader.cpp; sourceTree = "<group>"; };
 		E2822FD1122704CF0081867C /* AbstractMapProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractMapProvider.h; sourceTree = "<group>"; };
 		E2822FD2122704CF0081867C /* AbstractProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractProjection.h; sourceTree = "<group>"; };
 		E2822FD3122704CF0081867C /* BingMapsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BingMapsProvider.h; sourceTree = "<group>"; };
@@ -187,6 +190,8 @@
 				E2822FDE122704CF0081867C /* QueueSorter.h */,
 				E2822FE1122704CF0081867C /* Transformation.cpp */,
 				E2822FE2122704CF0081867C /* Transformation.h */,
+				E239497412282DD900C72875 /* TileLoader.h */,
+				E239497512282DD900C72875 /* TileLoader.cpp */,
 			);
 			name = modestmaps;
 			path = ../src/modestmaps;
@@ -252,6 +257,7 @@
 				E2822FE4122704CF0081867C /* Map.cpp in Sources */,
 				E2822FE5122704CF0081867C /* MercatorProjection.cpp in Sources */,
 				E2822FE7122704CF0081867C /* Transformation.cpp in Sources */,
+				E239497612282DD900C72875 /* TileLoader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

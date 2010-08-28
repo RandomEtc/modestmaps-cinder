@@ -60,8 +60,11 @@ void modestmapsciApp::mouseDrag( MouseEvent event )
 void modestmapsciApp::mouseWheel( MouseEvent event )
 {
 	float delta = event.getWheelIncrement();
+	cout << delta << endl;
 	Vec2f pos = event.getPos();
-	map.scaleBy(delta > 0 ? 1.05 : 1.0/1.05, pos.x, pos.y);
+	if (fabs(delta)) {
+		map.scaleBy(delta > 0 ? 1.05 : 1.0/1.05, pos.x, pos.y);
+	}
 }
 
 void modestmapsciApp::draw()
