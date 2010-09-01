@@ -121,14 +121,9 @@ void Map::draw() {
 			//ofRect(coord.column*TILE_SIZE,coord.row*TILE_SIZE,TILE_SIZE,TILE_SIZE);
 			
 			if (images.count(coord) > 0) {
-				//cout << "rendering: " << coord;				
 				gl::Texture tile = images[coord];
-				// TODO: must be a cleaner C++ way to do this?
 				// we want this image to be at the end of recentImages, if it's already there we'll remove it and then add it again
-				std::vector<gl::Texture>::iterator result = std::find(recentImages.begin(), recentImages.end(), tile);
-				if (result != recentImages.end()) {
-					recentImages.erase(result);
-				}
+				recentImages.erase(remove(recentImages.begin(), recentImages.end(), tile), recentImages.end());
 				//ofSetColor(255, 255, 255, (int)min(ofGetElapsedTimeMillis() - tile->loadTime,255.0f));
 				// TODO: Rectf might not be accurate enough at high zoomlevels - how to fix?
 				gl::draw( tile, Rectf(coord.column*TILE_SIZE, coord.row*TILE_SIZE, (coord.column+1.0)*TILE_SIZE, (coord.row+1.0)*TILE_SIZE) );

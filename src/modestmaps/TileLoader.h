@@ -23,7 +23,7 @@ using namespace ci;
 class TileLoader
 {
 public:
-	void requestTile( const Url &url, const Coordinate key );
+	void requestTile( const Url &url, const Coordinate &key );
 	
 	void loadSurfaceUrl( const Url &url, const Coordinate &coord );
 	

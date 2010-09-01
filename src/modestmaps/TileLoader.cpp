@@ -8,23 +8,39 @@
  */
 
 #include "TileLoader.h"
+#include "cinder/ip/Fill.h"
 
-void TileLoader::requestTile( const Url &url, const Coordinate key )
+void TileLoader::requestTile( const Url &url, const Coordinate &key )
 {
 	pendingCompleteMutex.lock();
 	pending.insert(key);
-	pendingCompleteMutex.unlock();
-	std::thread loaderThread( &TileLoader::loadSurfaceUrl, this, url, key );	
+	pendingCompleteMutex.unlock();	
+	std::cout << "initing thread for " << url.str() << " and " << key << std::endl;	
+	//loadSurfaceUrl(url, key);
+	std::thread loaderThread( &TileLoader::loadSurfaceUrl, this, url, key );
 }
+
 
 void TileLoader::loadSurfaceUrl(const Url &url, const Coordinate &coord )
 {
-	Surface image( loadImage( loadUrl( url ) ) );
+	std::cout << "threaded loading " << url.str() << " for " << coord << std::endl;
+	
+	Surface image;
+	try {
+		image = Surface( loadImage( loadUrl( url ) ) );
+	}
+	catch( ... ) {
+		std::cout << "Failed to load: " << url.str() << std::endl;
+		// create a dummy tile
+		image = Surface( 256, 256, false );
+		ip::fill( &image, Color( 1, 0, 0 ) );
+	}
+	
 	pendingCompleteMutex.lock();
 	completed[coord] = image;
 	pending.erase(coord);  
 	pendingCompleteMutex.unlock();
-} 
+}
 
 void TileLoader::processQueue(std::vector<Coordinate> &queue, AbstractMapProvider *provider)
 {
@@ -32,8 +48,8 @@ void TileLoader::processQueue(std::vector<Coordinate> &queue, AbstractMapProvide
 		Coordinate coord = *(queue.begin());
 		Coordinate key = Coordinate(coord);
 		std::vector<std::string> urls = provider->getTileUrls(coord);
-		if (urls.size() > 0) {
-			//std::cout << "loading " << urls[0] << " for " << coord << std::endl;
+		if (!urls.empty()) {
+			std::cout << "loading " << urls[0] << " for " << coord << std::endl;
 			// TODO: more than one image
 			Url url( urls[0] );
 			requestTile(url, key);
