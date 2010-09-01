@@ -24,14 +24,16 @@ void Map::draw() {
 	
 	// these are the top left and bottom right tile coordinates
 	// we'll be loading everything in between:
-	Coordinate startCoord = pointCoordinate(Vec2d(0,0)).zoomTo(baseZoom).container();
-	Coordinate endCoord = pointCoordinate(Vec2d(width,height)).zoomTo(baseZoom).container().right().down();
+	Coordinate tl = pointCoordinate(Vec2d::zero()).zoomTo(baseZoom);
+	Coordinate tr = pointCoordinate(Vec2d(width,0)).zoomTo(baseZoom);
+	Coordinate bl = pointCoordinate(Vec2d(0,height)).zoomTo(baseZoom);
+	Coordinate br = pointCoordinate(Vec2d(width,height)).zoomTo(baseZoom);
 	
 	// find start and end columns
-	int minCol = startCoord.column;
-	int maxCol = endCoord.column;
-	int minRow = startCoord.row;
-	int maxRow = endCoord.row;
+	int minCol = floor(std::min(std::min(tl.column,tr.column),std::min(bl.column,br.column)));
+	int maxCol = floor(std::max(std::max(tl.column,tr.column),std::max(bl.column,br.column)));
+	int minRow = floor(std::min(std::min(tl.row,tr.row),std::min(bl.row,br.row)));
+	int maxRow = floor(std::max(std::max(tl.row,tr.row),std::max(bl.row,br.row)));
 	
 	// pad a bit, for luck (well, because we might be zooming out between zoom levels)
 	minCol -= GRID_PADDING;
