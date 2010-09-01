@@ -197,48 +197,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>E2CB6958122E693F00413E2D</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>AbstractProjection.h</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>E2CB6959122E693F00413E2D</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>AbstractProjection.h</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>E2CB695A122E693F00413E2D</string>
-						<key>history</key>
-						<array>
-							<string>E2CB6940122E68DD00413E2D</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {1197, 721}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>15 116 1197 762 0 0 1440 878 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -313,7 +272,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
+									<integer>21</integer>
 									<integer>2</integer>
 									<integer>0</integer>
 								</array>
@@ -356,7 +315,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Map.h</string>
+								<string>TouchEvent.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -364,11 +323,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Map.h</string>
+										<string>TouchEvent.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E2CB6957122E693F00413E2D</string>
+										<string>E2CB69CA122E731200413E2D</string>
 										<key>history</key>
 										<array>
 											<string>E28231B512270AB20081867C</string>
@@ -397,12 +356,16 @@
 											<string>E2CB68DF122E604400413E2D</string>
 											<string>E2CB68F6122E611200413E2D</string>
 											<string>E2CB6915122E675400413E2D</string>
-											<string>E2CB6916122E675400413E2D</string>
-											<string>E2CB6932122E685200413E2D</string>
 											<string>E2CB6933122E685200413E2D</string>
 											<string>E2CB6934122E685200413E2D</string>
 											<string>E2CB6955122E693F00413E2D</string>
-											<string>E2CB6956122E693F00413E2D</string>
+											<string>E2CB696C122E6A6200413E2D</string>
+											<string>E2CB6989122E6F3E00413E2D</string>
+											<string>E2CB698B122E6F3E00413E2D</string>
+											<string>E2CB698E122E6F3E00413E2D</string>
+											<string>E2CB698F122E6F3E00413E2D</string>
+											<string>E2CB69C8122E731200413E2D</string>
+											<string>E2CB69C9122E731200413E2D</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -600,8 +563,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E2CB695B122E693F00413E2D</string>
-		<string>E2CB695C122E693F00413E2D</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>E2CB6922122E675400413E2D</string>
 		<string>E2CB6923122E675400413E2D</string>
@@ -609,7 +570,6 @@
 		<string>E2822FC11227032F0081867C</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/tom/Documents/Code/modestmaps-ci/xcode/modestmaps-ci.xcodeproj</string>
-		<string>E2CB6958122E693F00413E2D</string>
 	</array>
 	<key>WindowString</key>
 	<string>104 157 1185 640 0 0 1440 878 </string>
@@ -635,7 +595,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Transformation.cpp</string>
+								<string>AppBasic.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
