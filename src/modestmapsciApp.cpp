@@ -10,6 +10,9 @@ class modestmapsciApp : public AppBasic {
  public:
 
 	void setup();
+	void touchesBegan( TouchEvent event );
+	void touchesMoved( TouchEvent event );
+	void touchesEnded( TouchEvent event );
 	void keyUp( KeyEvent event );
 	void mouseDown( MouseEvent event );
 	void mouseDrag( MouseEvent event );
@@ -60,7 +63,7 @@ void modestmapsciApp::keyUp( KeyEvent event)
 
 void modestmapsciApp::mouseMove( MouseEvent event )
 {
-	cout << map.pointLocation(Point2d(event.getX(), event.getY())) << endl;
+	cout << map.pointLocation(Vec2d(event.getX(), event.getY())) << endl;
 }
 
 void modestmapsciApp::mouseDown( MouseEvent event )
@@ -78,7 +81,6 @@ void modestmapsciApp::mouseDrag( MouseEvent event )
 void modestmapsciApp::mouseWheel( MouseEvent event )
 {
 	float delta = event.getWheelIncrement();
-	cout << delta << endl;
 	Vec2f pos = event.getPos();
 	if (fabs(delta)) {
 		if (event.isShiftDown()) {
@@ -96,6 +98,19 @@ void modestmapsciApp::draw()
 	map.draw();
 }
 
+void modestmapsciApp::touchesBegan( TouchEvent event )
+{
+	cout << event << endl;
+}
+void modestmapsciApp::touchesMoved( TouchEvent event )
+{
+	cout << event << endl;
+}
+void modestmapsciApp::touchesEnded( TouchEvent event )
+{
+	cout << event << endl;
+}
+	
 void modestmapsciApp::resize( ResizeEvent event )
 {
 	map.width = event.getWidth();

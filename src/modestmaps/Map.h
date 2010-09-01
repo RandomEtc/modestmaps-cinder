@@ -8,13 +8,13 @@
 #include "AbstractMapProvider.h"
 #include "Location.h"
 #include "Coordinate.h"
-#include "Point2d.h"
 #include "QueueSorter.h"
 #include "TileLoader.h"
 
 #include "cinder/app/AppBasic.h"
 #include "cinder/ImageIo.h"
 #include "cinder/gl/Texture.h"
+#include "cinder/Vector.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -61,10 +61,6 @@ public:
 	// keep track of what we can see already:
 	std::set<Coordinate> visibleKeys;
 
-	// previous mouse position
-	double px;
-	double py;
-	
 	/////////////////////////// methods	
 	
 	Map() {}
@@ -112,13 +108,13 @@ public:
 		pending.clear();
 	}*/
 	
-	Point2d coordinatePoint(Coordinate coord);
+	Vec2d coordinatePoint(Coordinate coord);
     
-	Coordinate pointCoordinate(Point2d point);
+	Coordinate pointCoordinate(Vec2d point);
 	
-	Point2d locationPoint(Location location);
+	Vec2d locationPoint(Location location);
 	
-	Location pointLocation(Point2d point);
+	Location pointLocation(Vec2d point);
 	
 	// TODO: pan by proportion of screen size, not by coordinate grid
 	void panUp();
@@ -131,7 +127,7 @@ public:
 	void panTo(Location location);
 		
 	//////////////////////////////////////////////////////////////////////////
-	
+
 	void grabTile(Coordinate coord);
 	
 	void processQueue();

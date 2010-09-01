@@ -2,9 +2,9 @@
 {
 	00BAE6590E7ED9C10018A608 /* modestmapsciApp.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {916, 1391}}";
-			sepNavSelRange = "{690, 0}";
-			sepNavVisRange = "{661, 777}";
+			sepNavIntBoundsRect = "{{0, 0}, {916, 1586}}";
+			sepNavSelRange = "{1892, 0}";
+			sepNavVisRange = "{1191, 750}";
 			sepNavWindowFrame = "{{15, 60}, {1197, 818}}";
 		};
 	};
@@ -16,7 +16,7 @@
 			8D1107260486CEB800E47090 /* modestmaps-ci */,
 		);
 		breakpoints = (
-			E28232E1122716510081867C /* Map.h:70 */,
+			E28232E1122716510081867C /* Map.h:66 */,
 			E2823317122717FD0081867C /* Map.cpp:322 */,
 		);
 		codeSenseManager = E2822FC41227032F0081867C /* Code sense */;
@@ -213,6 +213,31 @@
 			E2CB68F7122E611200413E2D = E2CB68F7122E611200413E2D /* PBXTextBookmark */;
 			E2CB68FF122E61E200413E2D = E2CB68FF122E61E200413E2D /* PBXTextBookmark */;
 			E2CB6908122E661A00413E2D /* PBXTextBookmark */ = E2CB6908122E661A00413E2D /* PBXTextBookmark */;
+			E2CB6915122E675400413E2D /* PBXTextBookmark */ = E2CB6915122E675400413E2D /* PBXTextBookmark */;
+			E2CB6916122E675400413E2D /* PBXTextBookmark */ = E2CB6916122E675400413E2D /* PBXTextBookmark */;
+			E2CB6917122E675400413E2D /* PBXTextBookmark */ = E2CB6917122E675400413E2D /* PBXTextBookmark */;
+			E2CB6918122E675400413E2D /* PBXTextBookmark */ = E2CB6918122E675400413E2D /* PBXTextBookmark */;
+			E2CB6919122E675400413E2D /* PBXTextBookmark */ = E2CB6919122E675400413E2D /* PBXTextBookmark */;
+			E2CB6928122E680400413E2D /* XCBuildMessageTextBookmark */ = E2CB6928122E680400413E2D /* XCBuildMessageTextBookmark */;
+			E2CB6929122E680400413E2D /* PBXTextBookmark */ = E2CB6929122E680400413E2D /* PBXTextBookmark */;
+			E2CB692C122E683000413E2D /* PBXTextBookmark */ = E2CB692C122E683000413E2D /* PBXTextBookmark */;
+			E2CB6932122E685200413E2D /* PBXTextBookmark */ = E2CB6932122E685200413E2D /* PBXTextBookmark */;
+			E2CB6933122E685200413E2D /* PBXTextBookmark */ = E2CB6933122E685200413E2D /* PBXTextBookmark */;
+			E2CB6934122E685200413E2D /* PBXTextBookmark */ = E2CB6934122E685200413E2D /* PBXTextBookmark */;
+			E2CB6935122E685200413E2D /* XCBuildMessageTextBookmark */ = E2CB6935122E685200413E2D /* XCBuildMessageTextBookmark */;
+			E2CB6936122E685200413E2D /* PBXTextBookmark */ = E2CB6936122E685200413E2D /* PBXTextBookmark */;
+			E2CB6939122E687F00413E2D /* PBXTextBookmark */ = E2CB6939122E687F00413E2D /* PBXTextBookmark */;
+			E2CB6940122E68DD00413E2D /* XCBuildMessageTextBookmark */ = E2CB6940122E68DD00413E2D /* XCBuildMessageTextBookmark */;
+			E2CB694D122E693B00413E2D /* PBXTextBookmark */ = E2CB694D122E693B00413E2D /* PBXTextBookmark */;
+			E2CB694E122E693B00413E2D /* PBXTextBookmark */ = E2CB694E122E693B00413E2D /* PBXTextBookmark */;
+			E2CB694F122E693B00413E2D /* PBXTextBookmark */ = E2CB694F122E693B00413E2D /* PBXTextBookmark */;
+			E2CB6950122E693B00413E2D /* PBXTextBookmark */ = E2CB6950122E693B00413E2D /* PBXTextBookmark */;
+			E2CB6951122E693B00413E2D /* XCBuildMessageTextBookmark */ = E2CB6951122E693B00413E2D /* XCBuildMessageTextBookmark */;
+			E2CB6952122E693B00413E2D /* PBXTextBookmark */ = E2CB6952122E693B00413E2D /* PBXTextBookmark */;
+			E2CB6955122E693F00413E2D /* PBXTextBookmark */ = E2CB6955122E693F00413E2D /* PBXTextBookmark */;
+			E2CB6956122E693F00413E2D /* XCBuildMessageTextBookmark */ = E2CB6956122E693F00413E2D /* XCBuildMessageTextBookmark */;
+			E2CB6957122E693F00413E2D /* PBXTextBookmark */ = E2CB6957122E693F00413E2D /* PBXTextBookmark */;
+			E2CB695A122E693F00413E2D /* PBXTextBookmark */ = E2CB695A122E693F00413E2D /* PBXTextBookmark */;
 			E2DB82631229D9380022D2D5 = E2DB82631229D9380022D2D5 /* PBXTextBookmark */;
 		};
 		sourceControlManager = E2822FC31227032F0081867C /* Source Control */;
@@ -282,7 +307,7 @@
 		rLen = 0;
 		rLoc = 0;
 		rType = 0;
-		vrLen = 532;
+		vrLen = 522;
 		vrLoc = 0;
 	};
 	E2420498122DE137005D4038 /* stl_algobase.h */ = {
@@ -370,16 +395,16 @@
 	};
 	E2822FD1122704CF0081867C /* AbstractMapProvider.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {916, 611}}";
+			sepNavIntBoundsRect = "{{0, 0}, {916, 624}}";
 			sepNavSelRange = "{371, 0}";
-			sepNavVisRange = "{0, 797}";
+			sepNavVisRange = "{0, 750}";
 		};
 	};
 	E2822FD2122704CF0081867C /* AbstractProjection.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {705, 585}}";
-			sepNavSelRange = "{73, 0}";
-			sepNavVisRange = "{617, 542}";
+			sepNavIntBoundsRect = "{{0, 0}, {1138, 667}}";
+			sepNavSelRange = "{971, 0}";
+			sepNavVisRange = "{0, 1162}";
 		};
 	};
 	E2822FD3122704CF0081867C /* BingMapsProvider.h */ = {
@@ -428,32 +453,38 @@
 	};
 	E2822FD9122704CF0081867C /* Map.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {916, 1846}}";
-			sepNavSelRange = "{849, 0}";
-			sepNavVisRange = "{2276, 604}";
+			sepNavIntBoundsRect = "{{0, 0}, {916, 1807}}";
+			sepNavSelRange = "{150, 0}";
+			sepNavVisRange = "{1, 704}";
 			sepNavWindowFrame = "{{209, 60}, {1197, 818}}";
 		};
 	};
 	E2822FDA122704CF0081867C /* MercatorProjection.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1138, 724}}";
-			sepNavSelRange = "{301, 0}";
-			sepNavVisRange = "{0, 308}";
+			sepNavIntBoundsRect = "{{0, 0}, {653, 340}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 302}";
 			sepNavWindowFrame = "{{84, 108}, {1197, 852}}";
 		};
 	};
 	E2822FDC122704CF0081867C /* OpenStreetMapProvider.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1188, 598}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1006, 624}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 515}";
+			sepNavVisRange = "{0, 766}";
 		};
 	};
 	E2822FDD122704CF0081867C /* Point2d.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = Point2d.h;
+		path = "/Users/tom/Documents/Code/modestmaps-ci/src/modestmaps/Point2d.h";
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {519, 429}}";
+			sepNavIntBoundsRect = "{{0, 0}, {916, 429}}";
 			sepNavSelRange = "{55, 0}";
-			sepNavVisRange = "{0, 245}";
+			sepNavVisRange = "{0, 515}";
 		};
 	};
 	E2822FDE122704CF0081867C /* QueueSorter.h */ = {
@@ -465,16 +496,18 @@
 	};
 	E2822FE1122704CF0081867C /* Transformation.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {999, 219}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 375}";
+			sepNavIntBoundsRect = "{{0, 0}, {985, 340}}";
+			sepNavSelRange = "{131, 0}";
+			sepNavVisRange = "{0, 369}";
+			sepNavWindowFrame = "{{15, 60}, {1197, 818}}";
 		};
 	};
 	E2822FE2122704CF0081867C /* Transformation.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1006, 328}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 532}";
+			sepNavIntBoundsRect = "{{0, 0}, {1006, 340}}";
+			sepNavSelRange = "{73, 0}";
+			sepNavVisRange = "{0, 561}";
+			sepNavWindowFrame = "{{15, 60}, {1197, 818}}";
 		};
 	};
 	E28231B412270AB20081867C /* AppBasic.h */ = {
@@ -483,6 +516,11 @@
 		name = AppBasic.h;
 		path = /Users/tom/Documents/Code/Cinder/Cinder/include/cinder/app/AppBasic.h;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1258, 3016}}";
+			sepNavSelRange = "{3590, 288}";
+			sepNavVisRange = "{3350, 2044}";
+		};
 	};
 	E28231B512270AB20081867C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -514,6 +552,11 @@
 		name = App.h;
 		path = /Users/tom/Documents/Code/Cinder/Cinder/include/cinder/app/App.h;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {2084, 6487}}";
+			sepNavSelRange = "{5380, 47}";
+			sepNavVisRange = "{20790, 1101}";
+		};
 	};
 	E28231BC12270AB20081867C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -542,7 +585,7 @@
 		rLen = 0;
 		rLoc = 0;
 		rType = 0;
-		vrLen = 216;
+		vrLen = 204;
 		vrLoc = 0;
 	};
 	E28231C012270AB20081867C /* PBXTextBookmark */ = {
@@ -552,7 +595,7 @@
 		rLen = 0;
 		rLoc = 0;
 		rType = 0;
-		vrLen = 431;
+		vrLen = 423;
 		vrLoc = 0;
 	};
 	E28231C412270AB20081867C /* PBXBookmark */ = {
@@ -613,7 +656,7 @@
 		rLen = 0;
 		rLoc = 0;
 		rType = 0;
-		vrLen = 375;
+		vrLen = 361;
 		vrLoc = 0;
 	};
 	E282322F12270CC40081867C /* gl.h */ = {
@@ -640,7 +683,7 @@
 		vrLen = 1007;
 		vrLoc = 4131;
 	};
-	E28232E1122716510081867C /* Map.h:70 */ = {
+	E28232E1122716510081867C /* Map.h:66 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -651,7 +694,7 @@
 		fileReference = E2822FD9122704CF0081867C /* Map.h */;
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 70;
+		lineNumber = 66;
 		modificationTime = 305011182.85661;
 		originalNumberOfMultipleMatches = 0;
 		state = 2;
@@ -806,7 +849,7 @@
 		fRef = E2822FD9122704CF0081867C /* Map.h */;
 		name = "Map.h: 44";
 		rLen = 0;
-		rLoc = 849;
+		rLoc = 150;
 		rType = 0;
 		vrLen = 604;
 		vrLoc = 2276;
@@ -823,7 +866,7 @@
 		fRef = E2822FD8122704CF0081867C /* Map.cpp */;
 		name = "Map.cpp: 295";
 		rLen = 0;
-		rLoc = 8785;
+		rLoc = 8767;
 		rType = 0;
 		vrLen = 679;
 		vrLoc = 8293;
@@ -843,7 +886,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* modestmapsciApp.cpp */;
 		name = "modestmapsciApp.cpp: 52";
 		rLen = 12;
-		rLoc = 1101;
+		rLoc = 1221;
 		rType = 0;
 		vrLen = 716;
 		vrLoc = 504;
@@ -853,7 +896,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* modestmapsciApp.cpp */;
 		name = "modestmapsciApp.cpp: 33";
 		rLen = 0;
-		rLoc = 690;
+		rLoc = 810;
 		rType = 0;
 		vrLen = 777;
 		vrLoc = 661;
@@ -863,10 +906,255 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* modestmapsciApp.cpp */;
 		name = "modestmapsciApp.cpp: 33";
 		rLen = 0;
-		rLoc = 690;
+		rLoc = 810;
 		rType = 0;
 		vrLen = 777;
 		vrLoc = 661;
+	};
+	E2CB6915122E675400413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E28231BA12270AB20081867C /* App.h */;
+		name = "App.h: 133";
+		rLen = 47;
+		rLoc = 5380;
+		rType = 0;
+		vrLen = 1101;
+		vrLoc = 20790;
+	};
+	E2CB6916122E675400413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E28231B412270AB20081867C /* AppBasic.h */;
+		name = "AppBasic.h: 88";
+		rLen = 288;
+		rLoc = 3590;
+		rType = 0;
+		vrLen = 2044;
+		vrLoc = 3350;
+	};
+	E2CB6917122E675400413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD9122704CF0081867C /* Map.h */;
+		name = "Map.h: 130";
+		rLen = 0;
+		rLoc = 2751;
+		rType = 0;
+		vrLen = 585;
+		vrLoc = 2240;
+	};
+	E2CB6918122E675400413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00BAE6590E7ED9C10018A608 /* modestmapsciApp.cpp */;
+		name = "modestmapsciApp.cpp: 24";
+		rLen = 3;
+		rLoc = 566;
+		rType = 0;
+		vrLen = 726;
+		vrLoc = 255;
+	};
+	E2CB6919122E675400413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00BAE6590E7ED9C10018A608 /* modestmapsciApp.cpp */;
+		name = "modestmapsciApp.cpp: 110";
+		rLen = 0;
+		rLoc = 2393;
+		rType = 0;
+		vrLen = 588;
+		vrLoc = 1892;
+	};
+	E2CB6928122E680400413E2D /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Point2d.h: No such file or directory";
+		fRef = E2822FD2122704CF0081867C /* AbstractProjection.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 6;
+		rType = 1;
+	};
+	E2CB6929122E680400413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD2122704CF0081867C /* AbstractProjection.h */;
+		name = "AbstractProjection.h: 21";
+		rLen = 0;
+		rLoc = 470;
+		rType = 0;
+		vrLen = 902;
+		vrLoc = 228;
+	};
+	E2CB692C122E683000413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD2122704CF0081867C /* AbstractProjection.h */;
+		name = "AbstractProjection.h: 21";
+		rLen = 0;
+		rLoc = 470;
+		rType = 0;
+		vrLen = 902;
+		vrLoc = 228;
+	};
+	E2CB6932122E685200413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00BAE6590E7ED9C10018A608 /* modestmapsciApp.cpp */;
+		name = "modestmapsciApp.cpp: 84";
+		rLen = 0;
+		rLoc = 1890;
+		rType = 0;
+		vrLen = 750;
+		vrLoc = 1191;
+	};
+	E2CB6933122E685200413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD1122704CF0081867C /* AbstractMapProvider.h */;
+		name = "AbstractMapProvider.h: 20";
+		rLen = 0;
+		rLoc = 371;
+		rType = 0;
+		vrLen = 750;
+		vrLoc = 0;
+	};
+	E2CB6934122E685200413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FDC122704CF0081867C /* OpenStreetMapProvider.h */;
+		name = "OpenStreetMapProvider.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 766;
+		vrLoc = 0;
+	};
+	E2CB6935122E685200413E2D /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Point2d.h: No such file or directory";
+		fRef = E2822FD2122704CF0081867C /* AbstractProjection.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 6;
+		rType = 1;
+	};
+	E2CB6936122E685200413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD2122704CF0081867C /* AbstractProjection.h */;
+		name = "AbstractProjection.h: 5";
+		rLen = 0;
+		rLoc = 74;
+		rType = 0;
+		vrLen = 705;
+		vrLoc = 0;
+	};
+	E2CB6939122E687F00413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD2122704CF0081867C /* AbstractProjection.h */;
+		name = "AbstractProjection.h: 11";
+		rLen = 0;
+		rLoc = 196;
+		rType = 0;
+		vrLen = 665;
+		vrLoc = 0;
+	};
+	E2CB6940122E68DD00413E2D /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Reference to 'Vec2d' is ambiguous";
+		fRef = E2822FD2122704CF0081867C /* AbstractProjection.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 22;
+		rType = 1;
+	};
+	E2CB694D122E693B00413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD9122704CF0081867C /* Map.h */;
+		name = "Map.h: 19";
+		rLen = 0;
+		rLoc = 320;
+		rType = 0;
+		vrLen = 596;
+		vrLoc = 0;
+	};
+	E2CB694E122E693B00413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD2122704CF0081867C /* AbstractProjection.h */;
+		name = "AbstractProjection.h: 23";
+		rLen = 0;
+		rLoc = 458;
+		rType = 0;
+		vrLen = 693;
+		vrLoc = 176;
+	};
+	E2CB694F122E693B00413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FE2122704CF0081867C /* Transformation.h */;
+		name = "Transformation.h: 4";
+		rLen = 0;
+		rLoc = 73;
+		rType = 0;
+		vrLen = 561;
+		vrLoc = 0;
+	};
+	E2CB6950122E693B00413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FDA122704CF0081867C /* MercatorProjection.cpp */;
+		name = "MercatorProjection.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 302;
+		vrLoc = 0;
+	};
+	E2CB6951122E693B00413E2D /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Vec2d.h: No such file or directory";
+		fRef = E2822FE1122704CF0081867C /* Transformation.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 1;
+		rType = 1;
+	};
+	E2CB6952122E693B00413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FE1122704CF0081867C /* Transformation.cpp */;
+		name = "Transformation.cpp: 5";
+		rLen = 0;
+		rLoc = 131;
+		rType = 0;
+		vrLen = 369;
+		vrLoc = 0;
+	};
+	E2CB6955122E693F00413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD2122704CF0081867C /* AbstractProjection.h */;
+		name = "AbstractProjection.h: 6";
+		rLen = 0;
+		rLoc = 101;
+		rType = 0;
+		vrLen = 669;
+		vrLoc = 0;
+	};
+	E2CB6956122E693F00413E2D /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Vec2d.h: No such file or directory";
+		fRef = E2822FD9122704CF0081867C /* Map.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 10;
+		rType = 1;
+	};
+	E2CB6957122E693F00413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD9122704CF0081867C /* Map.h */;
+		name = "Map.h: 11";
+		rLen = 0;
+		rLoc = 150;
+		rType = 0;
+		vrLen = 704;
+		vrLoc = 1;
+	};
+	E2CB695A122E693F00413E2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD2122704CF0081867C /* AbstractProjection.h */;
+		name = "AbstractProjection.h: 39";
+		rLen = 0;
+		rLoc = 971;
+		rType = 0;
+		vrLen = 1162;
+		vrLoc = 0;
 	};
 	E2DB82631229D9380022D2D5 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

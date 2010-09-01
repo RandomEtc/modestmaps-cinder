@@ -1,10 +1,10 @@
 #include "MercatorProjection.h"
-#include "Point2d.h"
+#include "cinder/Vector.h"
 
-Point2d MercatorProjection::rawProject(Point2d point) {
-	return Point2d(point.x, log(tan(0.25 * M_PI + 0.5 * point.y)));
+Vec2d MercatorProjection::rawProject(Vec2d point) {
+	return Vec2d(point.x, log(tan(0.25 * M_PI + 0.5 * point.y)));
 }
 
-Point2d MercatorProjection::rawUnproject(Point2d point) {
-	return Point2d(point.x, 2.0 * atan(pow(M_E, point.y)) - 0.5 * M_PI);
+Vec2d MercatorProjection::rawUnproject(Vec2d point) {
+	return Vec2d(point.x, 2.0 * atan(pow(M_E, point.y)) - 0.5 * M_PI);
 }

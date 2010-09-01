@@ -59,7 +59,6 @@
 		E2822FDA122704CF0081867C /* MercatorProjection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MercatorProjection.cpp; sourceTree = "<group>"; };
 		E2822FDB122704CF0081867C /* MercatorProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MercatorProjection.h; sourceTree = "<group>"; };
 		E2822FDC122704CF0081867C /* OpenStreetMapProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenStreetMapProvider.h; sourceTree = "<group>"; };
-		E2822FDD122704CF0081867C /* Point2d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point2d.h; sourceTree = "<group>"; };
 		E2822FDE122704CF0081867C /* QueueSorter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueSorter.h; sourceTree = "<group>"; };
 		E2822FE1122704CF0081867C /* Transformation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Transformation.cpp; sourceTree = "<group>"; };
 		E2822FE2122704CF0081867C /* Transformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transformation.h; sourceTree = "<group>"; };
@@ -183,7 +182,6 @@
 				E2822FDA122704CF0081867C /* MercatorProjection.cpp */,
 				E2822FDB122704CF0081867C /* MercatorProjection.h */,
 				E2822FDC122704CF0081867C /* OpenStreetMapProvider.h */,
-				E2822FDD122704CF0081867C /* Point2d.h */,
 				E2822FDE122704CF0081867C /* QueueSorter.h */,
 				E2822FE1122704CF0081867C /* Transformation.cpp */,
 				E2822FE2122704CF0081867C /* Transformation.h */,

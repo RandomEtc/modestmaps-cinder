@@ -24,8 +24,8 @@ void Map::draw() {
 	
 	// these are the top left and bottom right tile coordinates
 	// we'll be loading everything in between:
-	Coordinate startCoord = pointCoordinate(Point2d(0,0)).zoomTo(baseZoom).container();
-	Coordinate endCoord = pointCoordinate(Point2d(width,height)).zoomTo(baseZoom).container().right().down();
+	Coordinate startCoord = pointCoordinate(Vec2d(0,0)).zoomTo(baseZoom).container();
+	Coordinate endCoord = pointCoordinate(Vec2d(width,height)).zoomTo(baseZoom).container().right().down();
 	
 	// find start and end columns
 	int minCol = startCoord.column;
@@ -100,7 +100,7 @@ void Map::draw() {
 		double scale = pow(2.0, centerCoordinate.zoom - coord.zoom);
 		double tileWidth = provider->tileWidth() * scale;
 		double tileHeight = provider->tileHeight() * scale;
-		Point2d center(width/2.0, height/2.0);
+		Vec2d center(width/2.0, height/2.0);
 		Coordinate theCoord = centerCoordinate.zoomTo(coord.zoom);
 		
 		double tx = center.x + (coord.column - theCoord.column) * tileWidth;
@@ -247,7 +247,7 @@ void Map::zoomOut() {
  pending.clear();
  }*/
 
-Point2d Map::coordinatePoint(Coordinate coord)
+Vec2d Map::coordinatePoint(Coordinate coord)
 {
 	/* Return an x, y point on the map image for a given coordinate. */
 	
@@ -256,14 +256,14 @@ Point2d Map::coordinatePoint(Coordinate coord)
 	}
 	
 	// distance from the center of the map
-	Point2d point = Point2d(width/2, height/2);
+	Vec2d point = Vec2d(width/2, height/2);
 	point.x += TILE_SIZE * (coord.column - centerCoordinate.column);
 	point.y += TILE_SIZE * (coord.row - centerCoordinate.row);
 	
 	return point;
 }
 
-Coordinate Map::pointCoordinate(Point2d point) {
+Coordinate Map::pointCoordinate(Vec2d point) {
 	/* Return a coordinate on the map image for a given x, y point. */		
 	// new point coordinate reflecting distance from map center, in tile widths
 	Coordinate coord(centerCoordinate);
@@ -272,11 +272,11 @@ Coordinate Map::pointCoordinate(Point2d point) {
 	return coord;
 }
 
-Point2d Map::locationPoint(Location location) {
+Vec2d Map::locationPoint(Location location) {
 	return coordinatePoint(provider->locationCoordinate(location));
 }
 
-Location Map::pointLocation(Point2d point) {
+Location Map::pointLocation(Vec2d point) {
 	return provider->coordinateLocation(pointCoordinate(point));
 }
 

@@ -1,7 +1,9 @@
 #ifndef TRANSFORMATION
 #define TRANSFORMATION
 
-class Point2d;
+#include "cinder/Vector.h"
+
+using namespace cinder;
 
 class Transformation {
 	
@@ -15,9 +17,9 @@ public:
 	
 	Transformation(const Transformation &t) : ax(t.ax), bx(t.bx), cx(t.cx), ay(t.ay), by(t.by), cy(t.cy) {}
 	
-	Point2d transform(Point2d point);
+	Vec2d transform(Vec2d point);
 	
-	Point2d untransform(Point2d point);
+	Vec2d untransform(Vec2d point);
 	
 };
 
