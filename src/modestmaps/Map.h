@@ -33,15 +33,18 @@ using namespace ci::app;
 class Map {
 	
 public:
-	
+
+	// how big?
+	double width, height;
+		
 	// pan and zoom
 	Coordinate centerCoordinate;
 	
+	// angle in radians
+	double rotation;
+	
 	// what kinda maps?
 	AbstractMapProvider* provider;
-	
-	// how big?
-	double width, height;
 	
 	// loading tiles
 	TileLoader tileLoader;
@@ -73,6 +76,7 @@ public:
 	void panBy(double x, double y);
 	void scaleBy(double s);
 	void scaleBy(double s, double x, double y);
+	void rotateBy(double r, double x, double y);
 	
 	int getZoom();	
 	Location getCenter();
@@ -125,17 +129,8 @@ public:
 	void panAndZoomIn(Location location);
 	
 	void panTo(Location location);
-	
-	///////////////////////////////////////////////////////////////////////
-	
-	float scaleForZoom(int zoom);
-	
-	float zoomForScale(float scale);
-	
-	int bestZoomForScale(float scale);
-	
+		
 	//////////////////////////////////////////////////////////////////////////
-	
 	
 	void grabTile(Coordinate coord);
 	

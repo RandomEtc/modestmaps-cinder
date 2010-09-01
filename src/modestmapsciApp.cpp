@@ -14,6 +14,7 @@ class modestmapsciApp : public AppBasic {
 	void mouseDown( MouseEvent event );
 	void mouseDrag( MouseEvent event );
 	void mouseWheel( MouseEvent event );
+	void mouseMove( MouseEvent event );
 	void draw();
 	void resize( ResizeEvent event);
 	
@@ -29,20 +30,37 @@ void modestmapsciApp::setup()
 
 void modestmapsciApp::keyUp( KeyEvent event) 
 {
-	char key = event.getChar();
-	if (key == '+' || key == '=') {
+	int key = event.getCode();
+	if (key == KeyEvent::KEY_LEFT) {
+		map.panLeft();
+	}
+	else if (key == KeyEvent::KEY_RIGHT) {
+		map.panRight();
+	}
+	else if (key == KeyEvent::KEY_UP) {
+		map.panUp();
+	}
+	else if (key == KeyEvent::KEY_DOWN) {
+		map.panDown();
+	}
+	else if (key == KeyEvent::KEY_KP_PLUS || key == KeyEvent::KEY_PLUS || key == KeyEvent::KEY_EQUALS) {
 		if (map.getZoom() < 19) {
 			map.zoomIn();
 		}
 	}
-	else if (key == '-' || key == '_') {
+	else if (key == KeyEvent::KEY_KP_MINUS || key == KeyEvent::KEY_MINUS || key == KeyEvent::KEY_UNDERSCORE) {
 		if (map.getZoom() > 0) {
 			map.zoomOut();
 		}
 	}	
-	else if (key == 'f' || key == 'F') {
+	else if (key == KeyEvent::KEY_f) {
 		setFullScreen(!isFullScreen());
 	}
+}
+
+void modestmapsciApp::mouseMove( MouseEvent event )
+{
+	cout << map.pointLocation(Point2d(event.getX(), event.getY())) << endl;
 }
 
 void modestmapsciApp::mouseDown( MouseEvent event )
@@ -63,7 +81,12 @@ void modestmapsciApp::mouseWheel( MouseEvent event )
 	cout << delta << endl;
 	Vec2f pos = event.getPos();
 	if (fabs(delta)) {
-		map.scaleBy(delta > 0 ? 1.05 : 1.0/1.05, pos.x, pos.y);
+		if (event.isShiftDown()) {
+			map.rotateBy(delta > 0 ? M_PI/72.0 : -M_PI/72.0, pos.x, pos.y);
+		}
+		else {
+			map.scaleBy(delta > 0 ? 1.05 : 1.0/1.05, pos.x, pos.y);
+		}
 	}
 }
 

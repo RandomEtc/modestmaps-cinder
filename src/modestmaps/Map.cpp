@@ -9,6 +9,8 @@ void Map::setup(AbstractMapProvider* _provider, double _width, double _height) {
 	// fit to screen
 	double z = log(std::min(width,height) / 256.0) / log(2);
 	centerCoordinate = centerCoordinate.zoomTo(z);
+	// start with north up:
+	rotation = 0.0;
 }
 	
 void Map::update() {
@@ -108,7 +110,10 @@ void Map::draw() {
 			gl::Texture tile = images[coord];
 			// we want this image to be at the end of recentImages, if it's already there we'll remove it and then add it again
 			recentImages.erase(remove(recentImages.begin(), recentImages.end(), tile), recentImages.end());
+			glPushMatrix();
+			glRotated(180.0*rotation/M_PI, 0, 0, 1);
 			gl::draw( tile, Rectf(tx, ty, tx+tileWidth, ty+tileHeight) );
+			glPopMatrix();
 			numDrawnImages++;
 			recentImages.push_back(tile);
 		}
@@ -161,18 +166,26 @@ void Map::draw() {
 }
 
 void Map::panBy(double dx, double dy) {
-	centerCoordinate.column -= dx / provider->tileWidth();
-	centerCoordinate.row -= dy / provider->tileHeight();
+	double dxr = dx*cos(rotation) + dy*sin(rotation);
+	double dyr = dy*cos(rotation) - dx*sin(rotation);
+	centerCoordinate.column -= dxr / provider->tileWidth();
+	centerCoordinate.row -= dyr / provider->tileHeight();
 }
 void Map::scaleBy(double s) {
 	scaleBy(s, width/2.0, height/2.0);
 }
 void Map::scaleBy(double s, double cx, double cy) {
-	double zoomOffset = log(s) / log(2);
-	Location location = pointLocation(Point2d(cx,cy));
-	centerCoordinate = centerCoordinate.zoomBy(zoomOffset);
-	Point2d newPoint = locationPoint(location);
-	panBy(cx - newPoint.x, cy - newPoint.y);	
+	double r = rotation;
+	rotateBy(-r,cx,cy);
+	panBy(-cx+width/2.0, -cy+height/2.0);
+	centerCoordinate = centerCoordinate.zoomBy(log(s) / log(2.0));
+	panBy(cx-width/2.0, cy-height/2.0);
+	rotateBy(r,cx,cy);
+}
+void Map::rotateBy(double r, double cx, double cy) {
+	panBy(-cx, -cy);
+	rotation += r;
+	panBy(cx, cy);
 }
 
 //////////////////
@@ -269,16 +282,16 @@ Location Map::pointLocation(Point2d point) {
 
 // TODO: pan by proportion of screen size, not by coordinate grid
 void Map::panUp() {
-	centerCoordinate = centerCoordinate.up();
+	panBy(0,height/8.0);
 }
 void Map::panDown() {
-	centerCoordinate = centerCoordinate.down();
+	panBy(0,-height/8.0);
 }
 void Map::panLeft() {
-	centerCoordinate = centerCoordinate.left();	
+	panBy(width/8.0,0);
 }
 void Map::panRight() {
-	centerCoordinate = centerCoordinate.right();
+	panBy(-width/8.0,0);
 }
 
 void Map::panAndZoomIn(Location location) {
