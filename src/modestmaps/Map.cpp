@@ -5,10 +5,10 @@ void Map::setup(AbstractMapProvider* _provider, double _width, double _height) {
 	provider = _provider;
 	width = _width;
 	height = _height;
-	tx = -TILE_SIZE/2.0; // half the world width, at zoom 0
-	ty = -TILE_SIZE/2.0; // half the world height, at zoom 0
+	centerCoordinate = Coordinate(0.5,0.5,0);  // half the world width,height at zoom 0
 	// fit to screen
-	sc = ceil(std::min(height/TILE_SIZE, width/TILE_SIZE));		
+	double z = log(std::min(width,height) / 256.0) / log(2);
+	centerCoordinate = centerCoordinate.zoomTo(z);
 }
 	
 void Map::update() {
@@ -18,7 +18,7 @@ void Map::update() {
 void Map::draw() {
 	
 	// if we're in between zoom levels, we need to choose the nearest:
-	int baseZoom = bestZoomForScale((float)sc);
+	int baseZoom = round(centerCoordinate.zoom);
 	
 	// these are the top left and bottom right tile coordinates
 	// we'll be loading everything in between:
@@ -90,52 +90,30 @@ void Map::draw() {
 	// can this be done with a different comparison function on the visibleKeys set?
 	//Collections.sort(visibleKeys, zoomComparator);
 	
-	// translate and scale, from the middle
-	glPushMatrix();
-	glTranslated(width/2.0, height/2.0, 0);
-	glScaled(sc,sc,1);
-	glTranslated(tx, ty, 0);
-	
-	int numDrawnImages = 0;
-	
-	if (visibleKeys.size() > 0) {
-		double prevZoom = baseZoom;
-		glPushMatrix();
-		// correct the scale for this zoom level:
-		double correction = 1.0/pow(2.0, prevZoom);
-		glScaled(correction,correction,1);
-		std::set<Coordinate>::iterator iter;
-		for (iter = visibleKeys.begin(); iter != visibleKeys.end(); iter++) {
-			Coordinate coord = *iter;
-			if (coord.zoom != prevZoom) {
-				glPopMatrix();
-				glPushMatrix();
-				// correct the scale for this zoom level:
-				correction = 1.0/pow(2.0,coord.zoom);
-				glScaled(correction, correction, 1);
-				prevZoom = coord.zoom;
-			}
-
-			//ofEnableAlphaBlending();
-			//ofSetColor(0,0,0,50);
-			//ofRect(coord.column*TILE_SIZE,coord.row*TILE_SIZE,TILE_SIZE,TILE_SIZE);
-			
-			if (images.count(coord) > 0) {
-				gl::Texture tile = images[coord];
-				// we want this image to be at the end of recentImages, if it's already there we'll remove it and then add it again
-				recentImages.erase(remove(recentImages.begin(), recentImages.end(), tile), recentImages.end());
-				//ofSetColor(255, 255, 255, (int)min(ofGetElapsedTimeMillis() - tile->loadTime,255.0f));
-				// TODO: Rectf might not be accurate enough at high zoomlevels - how to fix?
-				gl::draw( tile, Rectf(coord.column*TILE_SIZE, coord.row*TILE_SIZE, (coord.column+1.0)*TILE_SIZE, (coord.row+1.0)*TILE_SIZE) );
-				numDrawnImages++;
-				recentImages.push_back(tile);
-			}
-		}
-		glPopMatrix();
-	}    
-	
-	glPopMatrix();
+	int numDrawnImages = 0;	
+	std::set<Coordinate>::iterator citer;
+	for (citer = visibleKeys.begin(); citer != visibleKeys.end(); citer++) {
+		Coordinate coord = *citer;
 		
+		double scale = pow(2.0, centerCoordinate.zoom - coord.zoom);
+		double tileWidth = provider->tileWidth() * scale;
+		double tileHeight = provider->tileHeight() * scale;
+		Point2d center(width/2.0, height/2.0);
+		Coordinate theCoord = centerCoordinate.zoomTo(coord.zoom);
+		
+		double tx = center.x + (coord.column - theCoord.column) * tileWidth;
+		double ty = center.y + (coord.row - theCoord.row) * tileHeight;
+		
+		if (images.count(coord) > 0) {
+			gl::Texture tile = images[coord];
+			// we want this image to be at the end of recentImages, if it's already there we'll remove it and then add it again
+			recentImages.erase(remove(recentImages.begin(), recentImages.end(), tile), recentImages.end());
+			gl::draw( tile, Rectf(tx, ty, tx+tileWidth, ty+tileHeight) );
+			numDrawnImages++;
+			recentImages.push_back(tile);
+		}
+	}
+	
 	// stop fetching things we can't see:
 	// (visibleKeys also has the parents and children, if needed, but that shouldn't matter)
 	//queue.retainAll(visibleKeys);
@@ -182,47 +160,38 @@ void Map::draw() {
 	
 }
 
-void Map::panBy(double px, double py) {
-	tx += px/sc;
-	ty += py/sc;
+void Map::panBy(double dx, double dy) {
+	centerCoordinate.column -= dx / provider->tileWidth();
+	centerCoordinate.row -= dy / provider->tileHeight();
 }
 void Map::scaleBy(double s) {
 	scaleBy(s, width/2.0, height/2.0);
 }
 void Map::scaleBy(double s, double cx, double cy) {
-	double dx = cx - width/2.0;
-	double dy = cy - height/2.0;
-	tx -= dx/sc;
-	ty -= dy/sc;
-	sc *= s;
-	tx += dx/sc;
-	ty += dy/sc; 	
+	double zoomOffset = log(s) / log(2);
+	Location location = pointLocation(Point2d(cx,cy));
+	centerCoordinate = centerCoordinate.zoomBy(zoomOffset);
+	Point2d newPoint = locationPoint(location);
+	panBy(cx - newPoint.x, cy - newPoint.y);	
 }
 
 //////////////////
 
-
 /** @return zoom level of currently visible tile layer */
 int Map::getZoom() {
-	return bestZoomForScale((float)sc);
+	return round(centerCoordinate.zoom);
 }
 
 Location Map::getCenter() {
-	return provider->coordinateLocation(getCenterCoordinate());
+	return provider->coordinateLocation(centerCoordinate);
 }
 
 Coordinate Map::getCenterCoordinate() {
-	float row = (float)(ty*sc/-TILE_SIZE);
-	float column = (float)(tx*sc/-TILE_SIZE);
-	float zoom = zoomForScale((float)sc);
-	return Coordinate(row, column, zoom); 
+	return Coordinate(centerCoordinate); // TODO: return const? 
 }
 
 void Map::setCenter(Coordinate center) {
-	//println("setting center to " + center);
-	sc = pow(2.0, center.zoom);
-	tx = -TILE_SIZE*center.column/sc;
-	ty = -TILE_SIZE*center.row/sc;
+	centerCoordinate = center;
 }
 
 void Map::setCenter(Location location) {
@@ -233,21 +202,20 @@ void Map::setCenterZoom(Location location, int zoom) {
 	setCenter(provider->locationCoordinate(location).zoomTo(zoom));
 }
 
-/** sets scale according to given zoom level, should leave you with pixel perfect tiles */
-void Map::setZoom(int zoom) {
-	sc = pow(2.0, zoom); 
+void Map::setZoom(double zoom) {
+	centerCoordinate = centerCoordinate.zoomTo(zoom);
 }
 
-void Map::zoom(int dir) {
-	sc = pow(2.0, getZoom()+dir); 
+void Map::zoomBy(double dir) {
+	centerCoordinate = centerCoordinate.zoomBy(dir);	
 }
 
 void Map::zoomIn() {
-	sc = pow(2.0, getZoom()+1); 
+	centerCoordinate = centerCoordinate.zoomBy(1);
 }  
 
 void Map::zoomOut() {
-	sc = pow(2.0f, getZoom()-1); 
+	centerCoordinate = centerCoordinate.zoomBy(-1);
 }
 
 // TODO: extent functions
@@ -270,16 +238,14 @@ Point2d Map::coordinatePoint(Coordinate coord)
 {
 	/* Return an x, y point on the map image for a given coordinate. */
 	
-	Coordinate center = getCenterCoordinate();
-	
-	if(coord.zoom != center.zoom) {
-		coord = coord.zoomTo(center.zoom);
+	if(coord.zoom != centerCoordinate.zoom) {
+		coord = coord.zoomTo(centerCoordinate.zoom);
 	}
 	
 	// distance from the center of the map
 	Point2d point = Point2d(width/2, height/2);
-	point.x += TILE_SIZE * (coord.column - center.column);
-	point.y += TILE_SIZE * (coord.row - center.row);
+	point.x += TILE_SIZE * (coord.column - centerCoordinate.column);
+	point.y += TILE_SIZE * (coord.row - centerCoordinate.row);
 	
 	return point;
 }
@@ -287,7 +253,7 @@ Point2d Map::coordinatePoint(Coordinate coord)
 Coordinate Map::pointCoordinate(Point2d point) {
 	/* Return a coordinate on the map image for a given x, y point. */		
 	// new point coordinate reflecting distance from map center, in tile widths
-	Coordinate coord = getCenterCoordinate();
+	Coordinate coord(centerCoordinate);
 	coord.column += (point.x - width/2) / TILE_SIZE;
 	coord.row += (point.y - height/2) / TILE_SIZE;
 	return coord;
@@ -303,16 +269,16 @@ Location Map::pointLocation(Point2d point) {
 
 // TODO: pan by proportion of screen size, not by coordinate grid
 void Map::panUp() {
-	setCenter(getCenterCoordinate().up());
+	centerCoordinate = centerCoordinate.up();
 }
 void Map::panDown() {
-	setCenter(getCenterCoordinate().down());
+	centerCoordinate = centerCoordinate.down();
 }
 void Map::panLeft() {
-	setCenter(getCenterCoordinate().left());
+	centerCoordinate = centerCoordinate.left();	
 }
 void Map::panRight() {
-	setCenter(getCenterCoordinate().right());
+	centerCoordinate = centerCoordinate.right();
 }
 
 void Map::panAndZoomIn(Location location) {
@@ -323,23 +289,6 @@ void Map::panAndZoomIn(Location location) {
 void Map::panTo(Location location) {
 	// TODO: animate?
 	setCenter(location);
-}
-
-///////////////////////////////////////////////////////////////////////
-
-float Map::scaleForZoom(int zoom) {
-	return pow(2.0, zoom);
-}
-
-float Map::zoomForScale(float scale) {
-	// TODO log(2) const?
-	return log(scale) / log(2);
-}
-
-int Map::bestZoomForScale(float scale) {
-	// TODO get min/max zoom level from provider?
-	// TODO log(2) const?
-	return (int)std::min(20, std::max(1, (int)round(log(scale) / log(2))));
 }
 
 //////////////////////////////////////////////////////////////////////////

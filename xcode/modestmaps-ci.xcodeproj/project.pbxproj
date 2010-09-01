@@ -24,7 +24,6 @@
 		E2822FE4122704CF0081867C /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2822FD8122704CF0081867C /* Map.cpp */; };
 		E2822FE5122704CF0081867C /* MercatorProjection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2822FDA122704CF0081867C /* MercatorProjection.cpp */; };
 		E2822FE7122704CF0081867C /* Transformation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2822FE1122704CF0081867C /* Transformation.cpp */; };
-		E282336112271B1A0081867C /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = E282336012271B1A0081867C /* grid.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,7 +63,6 @@
 		E2822FDE122704CF0081867C /* QueueSorter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueSorter.h; sourceTree = "<group>"; };
 		E2822FE1122704CF0081867C /* Transformation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Transformation.cpp; sourceTree = "<group>"; };
 		E2822FE2122704CF0081867C /* Transformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transformation.h; sourceTree = "<group>"; };
-		E282336012271B1A0081867C /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grid.png; path = ../resources/grid.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +153,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E282336012271B1A0081867C /* grid.png */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				00CCAF14116A9FEE008396D5 /* CinderApp.icns */,
 			);
@@ -241,7 +238,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				00CCAF15116A9FEE008396D5 /* CinderApp.icns in Resources */,
-				E282336112271B1A0081867C /* grid.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

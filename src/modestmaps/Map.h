@@ -35,7 +35,7 @@ class Map {
 public:
 	
 	// pan and zoom
-	double tx, ty, sc;
+	Coordinate centerCoordinate;
 	
 	// what kinda maps?
 	AbstractMapProvider* provider;
@@ -57,13 +57,8 @@ public:
 	
 	// keep track of what we can see already:
 	std::set<Coordinate> visibleKeys;
-	
-	// for sorting coordinates by zoom
-	//ZoomComparator zoomComparator;
-	
-	// for loading tiles from the inside first
-	//QueueSorter queueSorter;
 
+	// previous mouse position
 	double px;
 	double py;
 	
@@ -89,9 +84,9 @@ public:
 	
 	void setCenterZoom(Location location, int zoom);
 	
-	void setZoom(int zoom);
+	void setZoom(double zoom);
 	
-	void zoom(int dir);
+	void zoomBy(double distance);
 	
 	void zoomIn();
 	
