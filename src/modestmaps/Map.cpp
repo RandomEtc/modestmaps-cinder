@@ -256,19 +256,24 @@ Vec2d Map::coordinatePoint(Coordinate coord)
 	}
 	
 	// distance from the center of the map
-	Vec2d point = Vec2d(width/2, height/2);
+	Vec2d point(width/2.0, height/2.0);
 	point.x += TILE_SIZE * (coord.column - centerCoordinate.column);
 	point.y += TILE_SIZE * (coord.row - centerCoordinate.row);
+
+	Vec2d rotated(point);
+	rotated.rotate(rotation);
 	
-	return point;
+	return rotated;
 }
 
 Coordinate Map::pointCoordinate(Vec2d point) {
 	/* Return a coordinate on the map image for a given x, y point. */		
 	// new point coordinate reflecting distance from map center, in tile widths
+	Vec2d rotated(point);
+	rotated.rotate(-rotation);
 	Coordinate coord(centerCoordinate);
-	coord.column += (point.x - width/2) / TILE_SIZE;
-	coord.row += (point.y - height/2) / TILE_SIZE;
+	coord.column += (rotated.x - width/2) / TILE_SIZE;
+	coord.row += (rotated.y - height/2) / TILE_SIZE;
 	return coord;
 }
 
