@@ -1,8 +1,10 @@
 Quick port of Modest Maps (modestmaps.com) to the Cinder Framework (libcinder.org)
 
-Working on it: http://forum.libcinder.org/#topic/23286000000108063
+Progress and early bugs discussed here: http://forum.libcinder.org/#topic/23286000000108063
 
-Seeing occasional hard crashes so please be careful. Also seeing Cocoa errors when loading on a thread.
+Now supports multitouch and rotations... ipad port next.
+
+It's pretty stable at this point on the github Cinder master (as of 2010-08-31) with Boost 1.44. Still seeing some Cocoa warnings when loading on a thread.
 
 See also http://github.com/randometc/modestmaps-of for OpenFrameworks for a comparison.
 
