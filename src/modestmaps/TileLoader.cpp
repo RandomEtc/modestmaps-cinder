@@ -7,6 +7,7 @@
  *
  */
 
+#include <objc/objc-auto.h>
 #include "TileLoader.h"
 #include "cinder/ip/Fill.h"
 
@@ -15,7 +16,7 @@ void TileLoader::requestTile( const Url &url, const Coordinate &key )
 	pendingCompleteMutex.lock();
 	pending.insert(key);
 	pendingCompleteMutex.unlock();	
-	std::cout << "initing thread for " << url.str() << " and " << key << std::endl;	
+	//std::cout << "initing thread for " << url.str() << " and " << key << std::endl;	
 	//loadSurfaceUrl(url, key);
 	std::thread loaderThread( &TileLoader::loadSurfaceUrl, this, url, key );
 }
@@ -23,14 +24,24 @@ void TileLoader::requestTile( const Url &url, const Coordinate &key )
 
 void TileLoader::loadSurfaceUrl(const Url &url, const Coordinate &coord )
 {
-	std::cout << "threaded loading " << url.str() << " for " << coord << std::endl;
+	// borrowed from https://llvm.org/svn/llvm-project/lldb/trunk/source/Host/macosx/Host.mm
+#if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_5
+	// On Leopard and earlier there is no way objc_registerThreadWithCollector
+	// function, so we do it manually.
+	auto_zone_register_thread(auto_zone());
+#else
+	// On SnowLoepard and later we just call the thread registration function.
+	objc_registerThreadWithCollector();
+#endif	
+	
+	//std::cout << "threaded loading " << url.str() << " for " << coord << std::endl;
 	
 	Surface image;
 	try {
 		image = Surface( loadImage( loadUrl( url ) ) );
 	}
 	catch( ... ) {
-		std::cout << "Failed to load: " << url.str() << std::endl;
+		//std::cout << "Failed to load: " << url.str() << std::endl;
 		// create a dummy tile
 		image = Surface( 256, 256, false );
 		ip::fill( &image, Color( 1, 0, 0 ) );
@@ -49,7 +60,7 @@ void TileLoader::processQueue(std::vector<Coordinate> &queue, AbstractMapProvide
 		Coordinate key = Coordinate(coord);
 		std::vector<std::string> urls = provider->getTileUrls(coord);
 		if (!urls.empty()) {
-			std::cout << "loading " << urls[0] << " for " << coord << std::endl;
+			//std::cout << "loading " << urls[0] << " for " << coord << std::endl;
 			// TODO: more than one image
 			Url url( urls[0] );
 			requestTile(url, key);

@@ -15,9 +15,9 @@ class modestmapsciApp : public AppBasic {
 	void touchesMoved( TouchEvent event );
 	void touchesEnded( TouchEvent event );
 	void keyUp( KeyEvent event );
-//	void mouseDown( MouseEvent event );
-//	void mouseDrag( MouseEvent event );
-//	void mouseWheel( MouseEvent event );
+	void mouseDown( MouseEvent event );
+	void mouseDrag( MouseEvent event );
+	void mouseWheel( MouseEvent event );
 	void mouseMove( MouseEvent event );
 	void draw();
 	void resize( ResizeEvent event);
@@ -73,7 +73,7 @@ void modestmapsciApp::mouseMove( MouseEvent event )
 	//cout << map.pointLocation(Vec2d(event.getX(), event.getY())) << endl;
 }
 
-/*void modestmapsciApp::mouseDown( MouseEvent event )
+void modestmapsciApp::mouseDown( MouseEvent event )
 {
 	pMouse = event.getPos();
 }
@@ -97,7 +97,7 @@ void modestmapsciApp::mouseWheel( MouseEvent event )
 			map.scaleBy(delta > 0 ? 1.05 : 1.0/1.05, pos.x, pos.y);
 		}
 	}
-}*/
+}
 
 void modestmapsciApp::draw()
 {

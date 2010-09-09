@@ -2,9 +2,9 @@
 {
 	00BAE6590E7ED9C10018A608 /* modestmapsciApp.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {50972, 2327}}";
-			sepNavSelRange = "{10297, 0}";
-			sepNavVisRange = "{2648, 8070}";
+			sepNavIntBoundsRect = "{{0, 0}, {50972, 2093}}";
+			sepNavSelRange = "{409, 0}";
+			sepNavVisRange = "{830, 792}";
 			sepNavWindowFrame = "{{15, 60}, {1197, 818}}";
 		};
 	};
@@ -175,15 +175,20 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 305053356;
-			PBXWorkspaceStateSaveDate = 305053356;
+			PBXPerProjectTemplateStateSaveDate = 305360824;
+			PBXWorkspaceStateSaveDate = 305360824;
 		};
 		perUserProjectItems = {
-			E20948261228670C009F251A /* PBXTextBookmark */ = E20948261228670C009F251A /* PBXTextBookmark */;
+			E22BD16912336DE2003DFE78 /* PBXTextBookmark */ = E22BD16912336DE2003DFE78 /* PBXTextBookmark */;
+			E22BD16A12336DE2003DFE78 /* PBXTextBookmark */ = E22BD16A12336DE2003DFE78 /* PBXTextBookmark */;
+			E22BD17512336FBB003DFE78 /* PBXBookmark */ = E22BD17512336FBB003DFE78 /* PBXBookmark */;
+			E22BD17612336FC2003DFE78 /* PBXTextBookmark */ = E22BD17612336FC2003DFE78 /* PBXTextBookmark */;
+			E22BD19412337294003DFE78 /* PBXTextBookmark */ = E22BD19412337294003DFE78 /* PBXTextBookmark */;
+			E22BD19512337294003DFE78 /* PBXTextBookmark */ = E22BD19512337294003DFE78 /* PBXTextBookmark */;
 			E23949981228311800C72875 /* PBXTextBookmark */ = E23949981228311800C72875 /* PBXTextBookmark */;
+			E23B629F122F402C00E230B5 /* PBXTextBookmark */ = E23B629F122F402C00E230B5 /* PBXTextBookmark */;
 			E24204D9122DE549005D4038 /* PBXTextBookmark */ = E24204D9122DE549005D4038 /* PBXTextBookmark */;
 			E2420500122DE808005D4038 /* PBXTextBookmark */ = E2420500122DE808005D4038 /* PBXTextBookmark */;
-			E2420501122DE808005D4038 /* PBXTextBookmark */ = E2420501122DE808005D4038 /* PBXTextBookmark */;
 			E28231B512270AB20081867C /* PBXTextBookmark */ = E28231B512270AB20081867C /* PBXTextBookmark */;
 			E28231BE12270AB20081867C /* PBXTextBookmark */ = E28231BE12270AB20081867C /* PBXTextBookmark */;
 			E28231BF12270AB20081867C /* PBXTextBookmark */ = E28231BF12270AB20081867C /* PBXTextBookmark */;
@@ -197,7 +202,6 @@
 			E2823340122719CF0081867C /* PBXTextBookmark */ = E2823340122719CF0081867C /* PBXTextBookmark */;
 			E282335B12271AA50081867C /* PBXTextBookmark */ = E282335B12271AA50081867C /* PBXTextBookmark */;
 			E2823421122728850081867C /* PBXTextBookmark */ = E2823421122728850081867C /* PBXTextBookmark */;
-			E2CA5715122E30F400189C6E /* PBXTextBookmark */ = E2CA5715122E30F400189C6E /* PBXTextBookmark */;
 			E2CA5716122E30F400189C6E /* PBXTextBookmark */ = E2CA5716122E30F400189C6E /* PBXTextBookmark */;
 			E2CB67FD122E573F00413E2D /* PBXTextBookmark */ = E2CB67FD122E573F00413E2D /* PBXTextBookmark */;
 			E2CB68F6122E611200413E2D /* PBXTextBookmark */ = E2CB68F6122E611200413E2D /* PBXTextBookmark */;
@@ -216,8 +220,6 @@
 			E2CB6ABD122EBB5A00413E2D /* PBXTextBookmark */ = E2CB6ABD122EBB5A00413E2D /* PBXTextBookmark */;
 			E2CB6ABE122EBB5A00413E2D /* PBXTextBookmark */ = E2CB6ABE122EBB5A00413E2D /* PBXTextBookmark */;
 			E2CB6B2B122EFF7900413E2D /* PBXTextBookmark */ = E2CB6B2B122EFF7900413E2D /* PBXTextBookmark */;
-			E2CB6B89122F082100413E2D /* PBXTextBookmark */ = E2CB6B89122F082100413E2D /* PBXTextBookmark */;
-			E2CB6B93122F08F100413E2D /* PBXTextBookmark */ = E2CB6B93122F08F100413E2D /* PBXTextBookmark */;
 			E2DB82631229D9380022D2D5 /* PBXTextBookmark */ = E2DB82631229D9380022D2D5 /* PBXTextBookmark */;
 		};
 		sourceControlManager = E2822FC31227032F0081867C /* Source Control */;
@@ -230,22 +232,66 @@
 			E2822F9C122703230081867C /* modestmaps-ci */,
 		);
 	};
-	E20948261228670C009F251A /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E2822FD3122704CF0081867C /* BingMapsProvider.h */;
-		name = "BingMapsProvider.h: 47";
-		rLen = 0;
-		rLoc = 1157;
-		rType = 0;
-		vrLen = 622;
-		vrLoc = 0;
-	};
 	E209482E1228677C009F251A /* gl.h */ = {
 		isa = PBXFileReference;
 		lastKnownFileType = sourcecode.c.h;
 		name = gl.h;
 		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gl.h;
 		sourceTree = "<absolute>";
+	};
+	E22BD16912336DE2003DFE78 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00BAE6590E7ED9C10018A608 /* modestmapsciApp.cpp */;
+		name = "modestmapsciApp.cpp: 18";
+		rLen = 0;
+		rLoc = 409;
+		rType = 0;
+		vrLen = 792;
+		vrLoc = 830;
+	};
+	E22BD16A12336DE2003DFE78 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E239497512282DD900C72875 /* TileLoader.cpp */;
+		name = "TileLoader.cpp: 13";
+		rLen = 10;
+		rLoc = 230;
+		rType = 0;
+		vrLen = 757;
+		vrLoc = 0;
+	};
+	E22BD17512336FBB003DFE78 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = E239497512282DD900C72875 /* TileLoader.cpp */;
+	};
+	E22BD17612336FC2003DFE78 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E239497412282DD900C72875 /* TileLoader.h */;
+		name = "TileLoader.h: 12";
+		rLen = 6;
+		rLoc = 198;
+		rType = 0;
+		vrLen = 666;
+		vrLoc = 137;
+	};
+	E22BD19412337294003DFE78 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E239497512282DD900C72875 /* TileLoader.cpp */;
+		name = "TileLoader.cpp: 14";
+		rLen = 10;
+		rLoc = 230;
+		rType = 0;
+		vrLen = 873;
+		vrLoc = 0;
+	};
+	E22BD19512337294003DFE78 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E239497512282DD900C72875 /* TileLoader.cpp */;
+		name = "TileLoader.cpp: 19";
+		rLen = 0;
+		rLoc = 385;
+		rType = 0;
+		vrLen = 1543;
+		vrLoc = 0;
 	};
 	E239490C122827E200C72875 /* thread.hpp */ = {
 		isa = PBXFileReference;
@@ -256,17 +302,17 @@
 	};
 	E239497412282DD900C72875 /* TileLoader.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {653, 572}}";
-			sepNavSelRange = "{490, 0}";
-			sepNavVisRange = "{265, 663}";
+			sepNavIntBoundsRect = "{{0, 0}, {916, 585}}";
+			sepNavSelRange = "{198, 6}";
+			sepNavVisRange = "{137, 666}";
 			sepNavWindowFrame = "{{15, 60}, {1197, 818}}";
 		};
 	};
 	E239497512282DD900C72875 /* TileLoader.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {916, 962}}";
-			sepNavSelRange = "{466, 0}";
-			sepNavVisRange = "{81, 621}";
+			sepNavIntBoundsRect = "{{0, 0}, {916, 1144}}";
+			sepNavSelRange = "{230, 10}";
+			sepNavVisRange = "{0, 873}";
 			sepNavWindowFrame = "{{15, 60}, {1197, 818}}";
 		};
 	};
@@ -279,6 +325,16 @@
 		rType = 0;
 		vrLen = 522;
 		vrLoc = 0;
+	};
+	E23B629F122F402C00E230B5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2822FD3122704CF0081867C /* BingMapsProvider.h */;
+		name = "BingMapsProvider.h: 43";
+		rLen = 0;
+		rLoc = 1001;
+		rType = 0;
+		vrLen = 985;
+		vrLoc = 725;
 	};
 	E2420498122DE137005D4038 /* stl_algobase.h */ = {
 		isa = PBXFileReference;
@@ -306,16 +362,6 @@
 		rType = 0;
 		vrLen = 650;
 		vrLoc = 3222;
-	};
-	E2420501122DE808005D4038 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E239497412282DD900C72875 /* TileLoader.h */;
-		name = "TileLoader.h: 38";
-		rLen = 0;
-		rLoc = 813;
-		rType = 0;
-		vrLen = 499;
-		vrLoc = 429;
 	};
 	E2822F9C122703230081867C /* modestmaps-ci */ = {
 		isa = PBXExecutable;
@@ -382,7 +428,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1006, 793}}";
 			sepNavSelRange = "{1001, 0}";
-			sepNavVisRange = "{745, 965}";
+			sepNavVisRange = "{725, 985}";
 			sepNavWindowFrame = "{{107, 87}, {1197, 852}}";
 		};
 	};
@@ -590,12 +636,6 @@
 		name = gl.h;
 		path = /Users/tom/Documents/Code/Cinder/Cinder/include/cinder/gl/gl.h;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1769, 3874}}";
-			sepNavSelRange = "{11777, 0}";
-			sepNavVisRange = "{15244, 2630}";
-			sepNavWindowFrame = "{{15, 60}, {1197, 818}}";
-		};
 	};
 	E28232641227102F0081867C /* Rect.h */ = {
 		isa = PBXFileReference;
@@ -707,16 +747,6 @@
 		rType = 0;
 		vrLen = 520;
 		vrLoc = 2973;
-	};
-	E2CA5715122E30F400189C6E /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E239497512282DD900C72875 /* TileLoader.cpp */;
-		name = "TileLoader.cpp: 20";
-		rLen = 0;
-		rLoc = 466;
-		rType = 0;
-		vrLen = 564;
-		vrLoc = 136;
 	};
 	E2CA5716122E30F400189C6E /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -946,26 +976,6 @@
 		rType = 0;
 		vrLen = 1067;
 		vrLoc = 1116;
-	};
-	E2CB6B89122F082100413E2D /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 00BAE6590E7ED9C10018A608 /* modestmapsciApp.cpp */;
-		name = "modestmapsciApp.cpp: 136";
-		rLen = 0;
-		rLoc = 10297;
-		rType = 0;
-		vrLen = 687;
-		vrLoc = 10037;
-	};
-	E2CB6B93122F08F100413E2D /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E2822FD3122704CF0081867C /* BingMapsProvider.h */;
-		name = "BingMapsProvider.h: 43";
-		rLen = 0;
-		rLoc = 1001;
-		rType = 0;
-		vrLen = 965;
-		vrLoc = 745;
 	};
 	E2DB82631229D9380022D2D5 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
