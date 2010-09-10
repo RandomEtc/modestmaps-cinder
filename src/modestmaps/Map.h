@@ -78,11 +78,11 @@ public:
 	Location getCenter();
 	Coordinate getCenterCoordinate();
 	
-	void setCenter(Coordinate center);
+	void setCenter(const Coordinate &center);
 	
-	void setCenter(Location location);
+	void setCenter(const Location &location);
 	
-	void setCenterZoom(Location location, int zoom);
+	void setCenterZoom(const Location &location, int zoom);
 	
 	void setZoom(double zoom);
 	
@@ -108,13 +108,13 @@ public:
 		pending.clear();
 	}*/
 	
-	Vec2d coordinatePoint(Coordinate coord);
+	Vec2d coordinatePoint(const Coordinate &coord);
     
-	Coordinate pointCoordinate(Vec2d point);
+	Coordinate pointCoordinate(const Vec2d &point);
 	
-	Vec2d locationPoint(Location location);
+	Vec2d locationPoint(const Location &location);
 	
-	Location pointLocation(Vec2d point);
+	Location pointLocation(const Vec2d &point);
 	
 	// TODO: pan by proportion of screen size, not by coordinate grid
 	void panUp();
@@ -122,13 +122,13 @@ public:
 	void panLeft();
 	void panRight();
 	
-	void panAndZoomIn(Location location);
+	void panAndZoomIn(const Location &location);
 	
-	void panTo(Location location);
+	void panTo(const Location &location);
 		
 	//////////////////////////////////////////////////////////////////////////
 
-	void grabTile(Coordinate coord);
+	void grabTile(const Coordinate &coord);
 	
 	void processQueue();
 	

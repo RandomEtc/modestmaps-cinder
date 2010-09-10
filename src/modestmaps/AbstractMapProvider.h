@@ -17,20 +17,22 @@ public:
 	
 	AbstractMapProvider(AbstractProjection *_projection): projection(_projection) {}
 	
-	virtual std::vector<std::string> getTileUrls(Coordinate coordinate)=0;
+	// TODO: I think virtual destructor stuff is needed here?
+	
+	virtual std::vector<std::string> getTileUrls(const Coordinate &coord)=0;
 	virtual int tileWidth()=0;
 	virtual int tileHeight()=0;
 	
-	Coordinate locationCoordinate(Location location) {
+	Coordinate locationCoordinate(const Location &location) {
 		return projection->locationCoordinate(location);
 	}
 	
-	Location coordinateLocation(Coordinate coordinate) {
+	Location coordinateLocation(const Coordinate &coordinate) {
 		return projection->coordinateLocation(coordinate);
 	}
 	
-	Coordinate sourceCoordinate(Coordinate coordinate) {
-		double gridSize = pow(2.0, coordinate.zoom);
+	Coordinate sourceCoordinate(const Coordinate &coordinate) {
+		const double gridSize = pow(2.0, coordinate.zoom);
 		
 		double wrappedColumn = coordinate.column;
 		if(wrappedColumn >= gridSize) {

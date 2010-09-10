@@ -13,12 +13,15 @@ class BingMapsProvider : public AbstractMapProvider {
 	
 public:
 	
+	// TODO: we need to get these from the Bing API
+	// ...so don't bother marking them const because they aren't :)
 	std::vector<std::string> subdomains;
 	
 	BingMapsProvider(): 
 		// this is the projection and transform you'll want for any Google-style map tile source:
 		AbstractMapProvider(new MercatorProjection(26, Transformation(1.068070779e7, 0.0, 3.355443185e7, 0.0, -1.068070890e7, 3.355443057e7)))
 	{
+		// TODO: a better way to init a constant length vector or array of strings?
 		subdomains.push_back("t0");
 		subdomains.push_back("t1");
 		subdomains.push_back("t2");
@@ -33,7 +36,7 @@ public:
 		return 256;
 	}
 	
-	std::string getQuadKey(int column, int row, int zoom) {
+	std::string getQuadKey(const int column, const int row, const int zoom) {
 		std::stringstream key;
 		for (int i = 1; i <= zoom; i++) {
 			int digit = (((row >> zoom - i) & 1) << 1) | ((column >> zoom - i) & 1);
@@ -42,7 +45,7 @@ public:
 		return key.str();
 	}
 	
-	std::vector<std::string> getTileUrls(Coordinate rawCoordinate) {
+	std::vector<std::string> getTileUrls(const Coordinate &rawCoordinate) {
 		std::vector<std::string> urls;
 		if (rawCoordinate.zoom >= 1 && rawCoordinate.zoom <= 19 
 			&& rawCoordinate.row >= 0 && rawCoordinate.row < pow(2, rawCoordinate.zoom)) {

@@ -17,7 +17,7 @@ public:
 	
 	Coordinate(const Coordinate &coord) : row(coord.row), column(coord.column), zoom(coord.zoom) {}
 	
-	friend std::ostream &operator<<(std::ostream &stream, Coordinate c) {
+	friend std::ostream &operator<<(std::ostream &stream, const Coordinate &c) {
 		// TODO: number format
 		stream << "(" << c.row << ", " << c.column << " @" << c.zoom << ")";
 		return stream;
@@ -34,35 +34,32 @@ public:
         return zoom < c.zoom || (zoom == c.zoom && row < c.row) || (zoom == c.zoom && row == c.row && column < c.column);
     }
 	
-	Coordinate container() {
+	Coordinate container() const {
 		return Coordinate(floor(row), floor(column), zoom);
 	}
 	
-	Coordinate zoomTo(double destination) {
-		return Coordinate(row * pow(2, destination - zoom),
-						  column * pow(2, destination - zoom),
-						  destination);
+	Coordinate zoomTo(const double &destination) const {
+		return zoomBy(destination - zoom);
 	}
 	
-	Coordinate zoomBy(double distance) {
-		return Coordinate(row * pow(2, distance),
-						  column * pow(2, distance),
-						  zoom + distance);
+	Coordinate zoomBy(const double &distance) const {
+		const double adjust = pow(2, distance);
+		return Coordinate(row * adjust, column * adjust, zoom + distance);
 	}
 	
-	Coordinate up(double distance=1) {
+	Coordinate up(const double &distance=1) const {
 		return Coordinate(row - distance, column, zoom);
 	}
 	
-	Coordinate right(double distance=1) {
+	Coordinate right(const double &distance=1) const {
 		return Coordinate(row, column + distance, zoom);
 	}
 	
-	Coordinate down(double distance=1) {
+	Coordinate down(const double &distance=1) const {
 		return Coordinate(row + distance, column, zoom);
 	}
 	
-	Coordinate left(double distance=1) {
+	Coordinate left(const double &distance=1) const {
 		return Coordinate(row, column - distance, zoom);
 	}
 	

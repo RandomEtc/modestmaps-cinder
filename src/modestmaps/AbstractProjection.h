@@ -20,26 +20,28 @@ public:
 	AbstractProjection(double _zoom): zoom(_zoom), transformation(Transformation()) { }
 	AbstractProjection(double _zoom, Transformation _t): zoom(_zoom), transformation(_t) { }
 
-	virtual Vec2d rawProject(Vec2d point)=0;
-	virtual Vec2d rawUnproject(Vec2d point)=0;
+	virtual Vec2d rawProject(const Vec2d &point)=0;
+	virtual Vec2d rawUnproject(const Vec2d &point)=0;
 
-	Vec2d project(Vec2d point) {
+	Vec2d project(const Vec2d &point) {
 		return transformation.transform(rawProject(point));
 	}
 
-	Vec2d unproject(Vec2d point) {
+	Vec2d unproject(const Vec2d &point) {
 		return rawUnproject(transformation.untransform(point));
 	}
 
-	Coordinate locationCoordinate(Location location) {
+	Coordinate locationCoordinate(const Location &location) {
 		Vec2d point = project(Vec2d((M_PI/180.0) * location.lon, (M_PI/180.0) * location.lat));
 		return Coordinate(point.y, point.x, zoom);
 	}
 
-	Location coordinateLocation(Coordinate coordinate) {
-		coordinate = coordinate.zoomTo(zoom);
-		Vec2d point = unproject(Vec2d(coordinate.column, coordinate.row));
-		return Location((180.0/M_PI) * point.y, (180.0/M_PI) * point.x);
+	Location coordinateLocation(const Coordinate &coordinate) {
+		// TODO: is this built into Cinder anyplace?
+		static const double rad2deg = 180.0/M_PI;
+		Coordinate zoomed = coordinate.zoomTo(zoom);
+		Vec2d point = unproject(Vec2d(zoomed.column, zoomed.row));
+		return Location(rad2deg * point.y, rad2deg * point.x);
 	}
 
 };

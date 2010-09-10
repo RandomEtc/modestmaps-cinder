@@ -14,7 +14,7 @@ public:
 	
 	Location(const Location &location) : lat(location.lat), lon(location.lon) {}
 	
-	friend std::ostream &operator<<(std::ostream &stream, Location l) {
+	friend std::ostream &operator<<(std::ostream &stream, const Location &l) {
 		// TODO: number format
 		stream << "(" << l.lat << ", " << l.lon << ")";
 		return stream;

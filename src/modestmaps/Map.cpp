@@ -167,16 +167,16 @@ void Map::draw() {
 	
 }
 
-void Map::panBy(double dx, double dy) {
+void Map::panBy(const double dx, const double dy) {
 	double dxr = dx*cos(rotation) + dy*sin(rotation);
 	double dyr = dy*cos(rotation) - dx*sin(rotation);
 	centerCoordinate.column -= dxr / provider->tileWidth();
 	centerCoordinate.row -= dyr / provider->tileHeight();
 }
-void Map::scaleBy(double s) {
+void Map::scaleBy(const double s) {
 	scaleBy(s, width/2.0, height/2.0);
 }
-void Map::scaleBy(double s, double cx, double cy) {
+void Map::scaleBy(const double s, const double cx, const double cy) {
 	double r = rotation;
 	rotateBy(-r,cx,cy);
 	panBy(-cx+width/2.0, -cy+height/2.0);
@@ -184,7 +184,7 @@ void Map::scaleBy(double s, double cx, double cy) {
 	panBy(cx-width/2.0, cy-height/2.0);
 	rotateBy(r,cx,cy);
 }
-void Map::rotateBy(double r, double cx, double cy) {
+void Map::rotateBy(const double r, const double cx, const double cy) {
 	panBy(-cx, -cy);
 	rotation += r;
 	panBy(cx, cy);
@@ -194,6 +194,8 @@ void Map::rotateBy(double r, double cx, double cy) {
 
 /** @return zoom level of currently visible tile layer */
 int Map::getZoom() {
+	// TODO/FIXME: I think this is inconsistent with other Modest Maps implementations?
+	// getZoom should return exact zoom, not rounded?
 	return round(centerCoordinate.zoom);
 }
 
@@ -205,15 +207,15 @@ Coordinate Map::getCenterCoordinate() {
 	return Coordinate(centerCoordinate); // TODO: return const? 
 }
 
-void Map::setCenter(Coordinate center) {
+void Map::setCenter(const Coordinate &center) {
 	centerCoordinate = center;
 }
 
-void Map::setCenter(Location location) {
+void Map::setCenter(const Location &location) {
 	setCenter(provider->locationCoordinate(location).zoomTo(getZoom()));
 }
 
-void Map::setCenterZoom(Location location, int zoom) {
+void Map::setCenterZoom(const Location &location, int zoom) {
 	setCenter(provider->locationCoordinate(location).zoomTo(zoom));
 }
 
@@ -249,9 +251,11 @@ void Map::zoomOut() {
  pending.clear();
  }*/
 
-Vec2d Map::coordinatePoint(Coordinate coord)
+Vec2d Map::coordinatePoint(const Coordinate &target)
 {
 	/* Return an x, y point on the map image for a given coordinate. */
+	
+	Coordinate coord = target;
 	
 	if(coord.zoom != centerCoordinate.zoom) {
 		coord = coord.zoomTo(centerCoordinate.zoom);
@@ -268,7 +272,7 @@ Vec2d Map::coordinatePoint(Coordinate coord)
 	return rotated;
 }
 
-Coordinate Map::pointCoordinate(Vec2d point) {
+Coordinate Map::pointCoordinate(const Vec2d &point) {
 	/* Return a coordinate on the map image for a given x, y point. */		
 	// new point coordinate reflecting distance from map center, in tile widths
 	Vec2d rotated(point);
@@ -279,11 +283,11 @@ Coordinate Map::pointCoordinate(Vec2d point) {
 	return coord;
 }
 
-Vec2d Map::locationPoint(Location location) {
+Vec2d Map::locationPoint(const Location &location) {
 	return coordinatePoint(provider->locationCoordinate(location));
 }
 
-Location Map::pointLocation(Vec2d point) {
+Location Map::pointLocation(const Vec2d &point) {
 	return provider->coordinateLocation(pointCoordinate(point));
 }
 
@@ -301,19 +305,19 @@ void Map::panRight() {
 	panBy(-width/8.0,0);
 }
 
-void Map::panAndZoomIn(Location location) {
+void Map::panAndZoomIn(const Location &location) {
 	// TODO: animate?
 	setCenterZoom(location, getZoom() + 1);
 }
 
-void Map::panTo(Location location) {
+void Map::panTo(const Location &location) {
 	// TODO: animate?
 	setCenter(location);
 }
 
 //////////////////////////////////////////////////////////////////////////
 
-void Map::grabTile(Coordinate coord) {
+void Map::grabTile(const Coordinate &coord) {
 	bool isPending = tileLoader.isPending(coord);
 	bool isQueued = find(queue.begin(), queue.end(), coord) != queue.end();
 	bool isAlreadyLoaded = images.count(coord) > 0;

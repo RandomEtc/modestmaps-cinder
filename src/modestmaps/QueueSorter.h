@@ -6,9 +6,9 @@ public:
 	
 	const Coordinate center;
 	
-	QueueSorter(Coordinate c): center(c) {}
+	QueueSorter(const Coordinate &c): center(c) {}
 	
-	inline static double dist(double x1, double y1, double x2, double y2) {
+	inline static double dist(const double &x1, const double &y1, const double &x2, const double &y2) {
 		double dx = x2-x1;
 		double dy = y2-y1;
 		return sqrt(dx*dx+dy*dy);
