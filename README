@@ -6,7 +6,5 @@ Progress and early bugs discussed here: http://forum.libcinder.org/#topic/232860
 
 Now supports multitouch and rotations... ipad port next!
 
-It's not cross platform because of a couple of Cocoa-specific things that are in place to suppress warnings when loading on a thread. I should fix that.
-
 See also http://github.com/randometc/modestmaps-of for OpenFrameworks for a comparison. It's slightly less complete than this version, however.
 

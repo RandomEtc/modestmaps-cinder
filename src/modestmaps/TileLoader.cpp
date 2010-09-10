@@ -7,9 +7,12 @@
  *
  */
 
-#include <objc/objc-auto.h>
 #include "TileLoader.h"
 #include "cinder/ip/Fill.h"
+
+#if defined( CINDER_COCOA )
+#include <objc/objc-auto.h>
+#endif
 
 void TileLoader::requestTile( const Url &url, const Coordinate &key )
 {
@@ -24,14 +27,16 @@ void TileLoader::requestTile( const Url &url, const Coordinate &key )
 
 void TileLoader::loadSurfaceUrl(const Url &url, const Coordinate &coord )
 {
+#if defined( CINDER_COCOA )
 	// borrowed from https://llvm.org/svn/llvm-project/lldb/trunk/source/Host/macosx/Host.mm
-#if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_5
+  #if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_5
 	// On Leopard and earlier there is no way objc_registerThreadWithCollector
 	// function, so we do it manually.
 	auto_zone_register_thread(auto_zone());
-#else
+  #else
 	// On SnowLoepard and later we just call the thread registration function.
 	objc_registerThreadWithCollector();
+  #endif	
 #endif	
 	
 	//std::cout << "threaded loading " << url.str() << " for " << coord << std::endl;
