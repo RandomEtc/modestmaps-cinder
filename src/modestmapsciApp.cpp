@@ -1,6 +1,7 @@
 #include "cinder/app/AppBasic.h"
 #include "Map.h"
-#include "BingMapsProvider.h"
+//#include "BingMapsProvider.h"
+#include "OpenStreetMapProvider.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -35,7 +36,7 @@ void modestmapsciApp::prepareSettings(Settings *settings) {
 void modestmapsciApp::setup()
 {
 	setFrameRate(60.0);
-	map.setup(new BingMapsProvider(), this->getWindowWidth()/*2.0*/, this->getWindowHeight()/*2.0*/);
+	map.setup(new OpenStreetMapProvider(), this->getWindowWidth()/*2.0*/, this->getWindowHeight()/*2.0*/);
 }
 
 void modestmapsciApp::keyUp( KeyEvent event) 

@@ -1,6 +1,11 @@
 #ifndef OPENSTREETMAPPROVIDER
 #define OPENSTREETMAPPROVIDER
 
+#include <vector>
+#include <string>
+#include <sstream>
+
+#include "cinder/Rand.h"
 #include "AbstractMapProvider.h"
 #include "MercatorProjection.h"
 
@@ -8,7 +13,7 @@ class OpenStreetMapProvider : public AbstractMapProvider {
 	
 public:
 	
-	vector<string> subdomains;
+	std::vector<std::string> subdomains;
 	
 	OpenStreetMapProvider(): 
 		// this is the projection and transform you'll want for any Google-style map tile source:
@@ -28,14 +33,14 @@ public:
 		return 256;
 	}
 	
-	vector<string> getTileUrls(Coordinate rawCoordinate) {
-		vector<string> urls;
+	std::vector<std::string> getTileUrls(Coordinate rawCoordinate) {
+		std::vector<std::string> urls;
 		if (rawCoordinate.row >= 0 && rawCoordinate.row < pow(2, rawCoordinate.zoom)) {
 			Coordinate coordinate = sourceCoordinate(rawCoordinate);
-			stringstream url;
-			string subdomain = subdomains[(int)ofRandom(0, subdomains.size())];
+			std::stringstream url;
+			std::string subdomain = subdomains[ci::Rand::randInt(0, subdomains.size())];
 			url << "http://" << subdomain << "tile.openstreetmap.org/" << (int)coordinate.zoom << "/" << (int)coordinate.column << "/" << (int)coordinate.row << ".png";
-			cout << rawCoordinate << " --> " << url.str() << endl;
+			std::cout << rawCoordinate << " --> " << url.str() << std::endl;
 			urls.push_back(url.str());
 		}
 		return urls;
