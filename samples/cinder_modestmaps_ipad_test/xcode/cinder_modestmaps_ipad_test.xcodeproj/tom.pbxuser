@@ -1,0 +1,209 @@
+// !$*UTF8*$!
+{
+	00CFDFDF11384CC60091E310 /* cinder_modestmaps_ipad_testApp.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {768, 2210}}";
+			sepNavSelRange = "{174, 0}";
+			sepNavVisRange = "{0, 377}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* cinder_modestmaps_ipad_test */ = {
+		activeExec = 0;
+		executables = (
+			E297D67E12FA4B60008FD780 /* cinder_modestmaps_ipad_test */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = E297D67E12FA4B60008FD780 /* cinder_modestmaps_ipad_test */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* cinder_modestmaps_ipad_test */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* cinder_modestmaps_ipad_test */,
+		);
+		codeSenseManager = E297D69712FA4B7F008FD780 /* Code sense */;
+		executables = (
+			E297D67E12FA4B60008FD780 /* cinder_modestmaps_ipad_test */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					341,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 318410663;
+			PBXWorkspaceStateSaveDate = 318410663;
+		};
+		perUserProjectItems = {
+			E23F86C412FA8FAC000EE2D9 /* PBXTextBookmark */ = E23F86C412FA8FAC000EE2D9 /* PBXTextBookmark */;
+			E23F86C712FA8FAC000EE2D9 /* PBXTextBookmark */ = E23F86C712FA8FAC000EE2D9 /* PBXTextBookmark */;
+			E297DB6112FA8A41008FD780 = E297DB6112FA8A41008FD780 /* PBXTextBookmark */;
+			E297DB6512FA8A41008FD780 = E297DB6512FA8A41008FD780 /* PBXTextBookmark */;
+			E2CDF3AD12FA8D9800EF4B68 = E2CDF3AD12FA8D9800EF4B68 /* PBXTextBookmark */;
+			E2CDF3AF12FA8D9800EF4B68 = E2CDF3AF12FA8D9800EF4B68 /* PBXTextBookmark */;
+		};
+		sourceControlManager = E297D69612FA4B7F008FD780 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	E23F86C412FA8FAC000EE2D9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E297DB6212FA8A41008FD780 /* cinder_modestmaps_ipad_testApp.cpp */;
+		name = "cinder_modestmaps_ipad_testApp.cpp: 144";
+		rLen = 0;
+		rLoc = 11377;
+		rType = 0;
+		vrLen = 7646;
+		vrLoc = 1519;
+	};
+	E23F86C712FA8FAC000EE2D9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E297DB6212FA8A41008FD780 /* cinder_modestmaps_ipad_testApp.cpp */;
+		name = "cinder_modestmaps_ipad_testApp.cpp: 134";
+		rLen = 0;
+		rLoc = 11179;
+		rType = 0;
+		vrLen = 1535;
+		vrLoc = 9806;
+	};
+	E297D67E12FA4B60008FD780 /* cinder_modestmaps_ipad_test */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = cinder_modestmaps_ipad_test;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	E297D69612FA4B7F008FD780 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	E297D69712FA4B7F008FD780 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	E297D96612FA4C24008FD780 /* Map.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {901, 4199}}";
+			sepNavSelRange = "{477, 0}";
+			sepNavVisRange = "{457, 577}";
+		};
+	};
+	E297DB6112FA8A41008FD780 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E297DB6212FA8A41008FD780 /* cinder_modestmaps_ipad_testApp.cpp */;
+		name = "cinder_modestmaps_ipad_testApp.cpp: 144";
+		rLen = 0;
+		rLoc = 11377;
+		rType = 0;
+		vrLen = 7717;
+		vrLoc = 1519;
+	};
+	E297DB6212FA8A41008FD780 /* cinder_modestmaps_ipad_testApp.cpp */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = cinder_modestmaps_ipad_testApp.cpp;
+		path = "/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_ipad_test/xcode/../src/cinder_modestmaps_ipad_testApp.cpp";
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {50972, 1989}}";
+			sepNavSelRange = "{11179, 0}";
+			sepNavVisRange = "{9806, 1535}";
+		};
+	};
+	E297DB6512FA8A41008FD780 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E297DB6612FA8A41008FD780 /* cinder_modestmaps_ipad_testApp.cpp */;
+		name = "cinder_modestmaps_ipad_testApp.cpp: 115";
+		rLen = 0;
+		rLoc = 10461;
+		rType = 0;
+		vrLen = 1532;
+		vrLoc = 10074;
+	};
+	E297DB6612FA8A41008FD780 /* cinder_modestmaps_ipad_testApp.cpp */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = cinder_modestmaps_ipad_testApp.cpp;
+		path = "/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_ipad_test/xcode/../src/cinder_modestmaps_ipad_testApp.cpp";
+		sourceTree = "<absolute>";
+	};
+	E2CDF3AD12FA8D9800EF4B68 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2CDF3AE12FA8D9800EF4B68 /* cinder_modestmaps_ipad_testApp.cpp */;
+		name = "cinder_modestmaps_ipad_testApp.cpp: 144";
+		rLen = 0;
+		rLoc = 11377;
+		rType = 0;
+		vrLen = 7717;
+		vrLoc = 1519;
+	};
+	E2CDF3AE12FA8D9800EF4B68 /* cinder_modestmaps_ipad_testApp.cpp */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = cinder_modestmaps_ipad_testApp.cpp;
+		path = "/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_ipad_test/xcode/../src/cinder_modestmaps_ipad_testApp.cpp";
+		sourceTree = "<absolute>";
+	};
+	E2CDF3AF12FA8D9800EF4B68 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2CDF3B012FA8D9800EF4B68 /* cinder_modestmaps_ipad_testApp.cpp */;
+		name = "cinder_modestmaps_ipad_testApp.cpp: 134";
+		rLen = 0;
+		rLoc = 11179;
+		rType = 0;
+		vrLen = 1536;
+		vrLoc = 9806;
+	};
+	E2CDF3B012FA8D9800EF4B68 /* cinder_modestmaps_ipad_testApp.cpp */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = cinder_modestmaps_ipad_testApp.cpp;
+		path = "/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_ipad_test/xcode/../src/cinder_modestmaps_ipad_testApp.cpp";
+		sourceTree = "<absolute>";
+	};
+}

@@ -274,10 +274,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>19</integer>
-									<integer>17</integer>
-									<integer>2</integer>
-									<integer>1</integer>
+									<integer>22</integer>
+									<integer>21</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -319,7 +317,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TileLoader.cpp</string>
+								<string>cinder_modestmaps_testApp.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,14 +325,13 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>TileLoader.cpp</string>
+										<string>cinder_modestmaps_testApp.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E297D66212FA3506008FD780</string>
+										<string>E297D67012FA4B2B008FD780</string>
 										<key>history</key>
 										<array>
-											<string>E297D65212FA3506008FD780</string>
 											<string>E297D65312FA3506008FD780</string>
 											<string>E297D65412FA3506008FD780</string>
 											<string>E297D65512FA3506008FD780</string>
@@ -349,7 +346,8 @@
 											<string>E297D65E12FA3506008FD780</string>
 											<string>E297D65F12FA3506008FD780</string>
 											<string>E297D66012FA3506008FD780</string>
-											<string>E297D66112FA3506008FD780</string>
+											<string>E297D66E12FA4B2B008FD780</string>
+											<string>E297D66F12FA4B2B008FD780</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

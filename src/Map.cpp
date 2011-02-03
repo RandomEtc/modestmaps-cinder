@@ -115,7 +115,7 @@ void Map::draw() {
 			// we want this image to be at the end of recentImages, if it's already there we'll remove it and then add it again
 			recentImages.erase(remove(recentImages.begin(), recentImages.end(), tile), recentImages.end());
 			glPushMatrix();
-			glRotated(180.0*rotation/M_PI, 0, 0, 1);
+			glRotatef(180.0*rotation/M_PI, 0, 0, 1);
 			gl::draw( tile, Rectf(tx, ty, tx+tileWidth, ty+tileHeight) );
 			glPopMatrix();
 			numDrawnImages++;
