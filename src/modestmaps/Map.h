@@ -32,7 +32,7 @@ using namespace ci::app;
 
 class Map {
 	
-public:
+private:
 
 	// how big?
 	double width, height;
@@ -61,7 +61,11 @@ public:
 	// keep track of what we can see already:
 	std::set<Coordinate> visibleKeys;
 
-	/////////////////////////// methods	
+	void grabTile(const Coordinate &coord);
+	
+	void processQueue();
+
+public:	
 	
 	Map() {}
 	
@@ -73,24 +77,17 @@ public:
 	void scaleBy(double s);
 	void scaleBy(double s, double x, double y);
 	void rotateBy(double r, double x, double y);
-	
-	int getZoom();	
+	void zoomBy(double distance);
+
+	void setZoom(double zoom);
+	int getZoom(); // TODO: maybe double getZoom, int getZoomLevel?
 	Location getCenter();
 	Coordinate getCenterCoordinate();
 	
 	void setCenter(const Coordinate &center);
-	
 	void setCenter(const Location &location);
-	
+	void panTo(const Location &location); // same as setCenter	
 	void setCenterZoom(const Location &location, int zoom);
-	
-	void setZoom(double zoom);
-	
-	void zoomBy(double distance);
-	
-	void zoomIn();
-	
-	void zoomOut();
 	
 	// TODO: extent functions
 	//	    public function setExtent(extent:MapExtent):void
@@ -109,29 +106,22 @@ public:
 	}*/
 	
 	Vec2d coordinatePoint(const Coordinate &coord);
-    
 	Coordinate pointCoordinate(const Vec2d &point);
-	
+
 	Vec2d locationPoint(const Location &location);
-	
 	Location pointLocation(const Vec2d &point);
-	
-	// TODO: pan by proportion of screen size, not by coordinate grid
+
+	void zoomIn();	
+	void zoomOut();
+		
 	void panUp();
 	void panDown();
 	void panLeft();
-	void panRight();
-	
+	void panRight();	
+
 	void panAndZoomIn(const Location &location);
 	
-	void panTo(const Location &location);
-		
-	//////////////////////////////////////////////////////////////////////////
-
-	void grabTile(const Coordinate &coord);
-	
-	void processQueue();
-	
+	void setSize(double _width, double _height);
 };
 
 #endif

@@ -291,7 +291,6 @@ Location Map::pointLocation(const Vec2d &point) {
 	return provider->coordinateLocation(pointCoordinate(point));
 }
 
-// TODO: pan by proportion of screen size, not by coordinate grid
 void Map::panUp() {
 	panBy(0,height/8.0);
 }
@@ -306,12 +305,10 @@ void Map::panRight() {
 }
 
 void Map::panAndZoomIn(const Location &location) {
-	// TODO: animate?
 	setCenterZoom(location, getZoom() + 1);
 }
 
 void Map::panTo(const Location &location) {
-	// TODO: animate?
 	setCenter(location);
 }
 
@@ -330,5 +327,10 @@ void Map::processQueue() {
 	sort(queue.begin(), queue.end(), QueueSorter(getCenterCoordinate().zoomTo(getZoom())));		
 	tileLoader.processQueue(queue, provider);
 	tileLoader.transferTextures(images);
+}
+
+void Map::setSize(double _width, double _height) {
+	width = _width;
+	height = _height;
 }
 

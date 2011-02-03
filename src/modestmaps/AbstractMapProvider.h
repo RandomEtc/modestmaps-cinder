@@ -17,11 +17,17 @@ public:
 	
 	AbstractMapProvider(AbstractProjection *_projection): projection(_projection) {}
 	
-	// TODO: I think virtual destructor stuff is needed here?
+	virtual ~AbstractMapProvider() {}
 	
 	virtual std::vector<std::string> getTileUrls(const Coordinate &coord)=0;
-	virtual int tileWidth()=0;
-	virtual int tileHeight()=0;
+
+	virtual int tileWidth() {
+		return 256;
+	}
+	
+	virtual int tileHeight() {
+		return 256;
+	}
 	
 	Coordinate locationCoordinate(const Location &location) {
 		return projection->locationCoordinate(location);

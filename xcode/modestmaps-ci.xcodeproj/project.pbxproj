@@ -56,6 +56,7 @@
 		E2822FDC122704CF0081867C /* OpenStreetMapProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenStreetMapProvider.h; sourceTree = "<group>"; };
 		E2822FDE122704CF0081867C /* QueueSorter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueSorter.h; sourceTree = "<group>"; };
 		E2822FE2122704CF0081867C /* Transformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transformation.h; sourceTree = "<group>"; };
+		E2BF674312F32B3000FDAECB /* TemplatedMapProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplatedMapProvider.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +168,7 @@
 				E2822FD1122704CF0081867C /* AbstractMapProvider.h */,
 				E2822FD2122704CF0081867C /* AbstractProjection.h */,
 				E2822FD3122704CF0081867C /* BingMapsProvider.h */,
+				E2BF674312F32B3000FDAECB /* TemplatedMapProvider.h */,
 				E2822FD4122704CF0081867C /* Coordinate.h */,
 				E2822FD6122704CF0081867C /* LinearProjection.h */,
 				E2822FD7122704CF0081867C /* Location.h */,
@@ -211,7 +213,14 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "modestmaps-ci" */;
 			compatibilityVersion = "Xcode 3.0";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* modestmaps-ci */;
 			projectDirPath = "";
 			projectRoot = "";

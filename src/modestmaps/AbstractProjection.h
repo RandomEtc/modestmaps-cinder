@@ -20,6 +20,8 @@ public:
 	AbstractProjection(double _zoom): zoom(_zoom), transformation(Transformation()) { }
 	AbstractProjection(double _zoom, Transformation _t): zoom(_zoom), transformation(_t) { }
 
+	virtual ~AbstractProjection() {}
+	
 	virtual Vec2d rawProject(const Vec2d &point)=0;
 	virtual Vec2d rawUnproject(const Vec2d &point)=0;
 
