@@ -14,6 +14,8 @@
 #include <objc/objc-auto.h>
 #endif
 
+namespace cinder { namespace modestmaps {
+
 void TileLoader::requestTile( const Url &url, const Coordinate &key )
 {
 	pendingCompleteMutex.lock();
@@ -85,3 +87,4 @@ void TileLoader::transferTextures(std::map<Coordinate, gl::Texture> &images)
 	pendingCompleteMutex.unlock();
 }
 
+} } // namespace

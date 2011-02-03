@@ -1,6 +1,7 @@
-#ifndef QUEUE_SORTER
-#define QUEUE_SORTER
+#pragma once
 
+namespace cinder { namespace modestmaps {
+	
 class QueueSorter {
 public:
 	
@@ -35,4 +36,4 @@ public:
 		
 };
 
-#endif;
+} } // namespace

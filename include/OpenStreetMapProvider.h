@@ -1,5 +1,4 @@
-#ifndef OPENSTREETMAPPROVIDER
-#define OPENSTREETMAPPROVIDER
+#pragma once
 
 #include <vector>
 #include <string>
@@ -9,6 +8,8 @@
 #include "AbstractMapProvider.h"
 #include "MercatorProjection.h"
 
+namespace cinder { namespace modestmaps {
+	
 class OpenStreetMapProvider : public AbstractMapProvider {
 	
 public:
@@ -49,4 +50,4 @@ public:
 	
 };
 
-#endif
+} } // namespace

@@ -1,5 +1,4 @@
-#ifndef ABSTRACT_PROJECTION
-#define ABSTRACT_PROJECTION
+#pragma once
 
 #include <cmath>
 #include "cinder/Vector.h"
@@ -8,7 +7,7 @@
 #include "Coordinate.h"
 #include "Location.h"
 
-using namespace ci;
+namespace cinder { namespace modestmaps {
 
 class AbstractProjection {
 
@@ -48,4 +47,4 @@ public:
 
 };
 
-#endif
+} } // namespace

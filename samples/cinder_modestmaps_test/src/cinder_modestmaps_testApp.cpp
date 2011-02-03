@@ -6,6 +6,7 @@
 
 using namespace ci;
 using namespace ci::app;
+using namespace ci::modestmaps;
 using namespace std;
 
 class cinder_modestmaps_testApp : public AppBasic {

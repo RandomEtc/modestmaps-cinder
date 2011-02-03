@@ -1,7 +1,7 @@
 Tcinder_modestmaps_test
 v7
 r0
-t318386462.577088
+t318387476.949463
 cCheck dependencies
 cProcessInfoPlistFile /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/cinder_modestmaps_test.app/Contents/Info.plist Info.plist
 cCpResource build/Debug/cinder_modestmaps_test.app/Contents/Resources/CinderApp.icns ../resources/CinderApp.icns
@@ -8863,9 +8863,9 @@ t1284162657
 s653
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../include/AbstractMapProvider.h
-c000000004D43933600000000000004B0
-t1296274230
-s1200
+c000000004D49FD3100000000000004C1
+t1296694577
+s1217
 i<cmath>
 i<vector>
 i<string>
@@ -8874,9 +8874,9 @@ i"Coordinate.h"
 i"Location.h"
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../include/AbstractProjection.h
-c000000004D4393590000000000000528
-t1296274265
-s1320
+c000000004D49FD37000000000000051D
+t1296694583
+s1309
 i<cmath>
 i"cinder/Vector.h"
 i"Transformation.h"
@@ -8884,21 +8884,21 @@ i"Coordinate.h"
 i"Location.h"
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../include/Coordinate.h
-c000000004C8AAC2C00000000000006C9
-t1284156460
-s1737
+c000000004D49FD4600000000000006E5
+t1296694598
+s1765
 i<ostream>
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../include/Location.h
-c000000004C8AA646000000000000023B
-t1284154950
-s571
+c000000004D49FD4E0000000000000259
+t1296694606
+s601
 i<ostream>
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../include/Map.h
-c000000004D43967A0000000000000AFF
-t1296275066
-s2815
+c000000004D49FD530000000000000AEB
+t1296694611
+s2795
 i<set>
 i<map>
 i"AbstractMapProvider.h"
@@ -8912,21 +8912,21 @@ i"cinder/gl/Texture.h"
 i"cinder/Vector.h"
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../include/MercatorProjection.h
-c000000004C8AA8BF0000000000000251
-t1284155583
-s593
+c000000004D49FD57000000000000025B
+t1296694615
+s603
 i"AbstractProjection.h"
 i"Transformation.h"
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../include/QueueSorter.h
-c000000004C8AA7CB0000000000000355
-t1284155339
-s853
+c000000004D49FD5F000000000000036D
+t1296694623
+s877
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../include/TemplatedMapProvider.h
-c000000004D4302970000000000000554
-t1296237207
-s1364
+c000000004D49FD640000000000000561
+t1296694628
+s1377
 i<vector>
 i<string>
 i<sstream>
@@ -8935,9 +8935,9 @@ i"AbstractMapProvider.h"
 i"MercatorProjection.h"
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../include/TileLoader.h
-c000000004C7DB05800000000000003A0
-t1283305560
-s928
+c000000004D49FD710000000000000347
+t1296694641
+s839
 i<set>
 i"cinder/Url.h"
 i"cinder/Thread.h"
@@ -8947,9 +8947,9 @@ i"cinder/ImageIo.h"
 i"cinder/gl/Texture.h"
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../include/Transformation.h
-c000000004C8AA72B000000000000031C
-t1284155179
-s796
+c000000004D49FD760000000000000318
+t1296694646
+s792
 i"cinder/Vector.h"
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../samples/cinder_modestmaps_test/resources/CinderApp.icns
@@ -9111,15 +9111,15 @@ t1296693467
 s1654880
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../src/Map.cpp
-c000000004D43965F00000000000027F4
-t1296275039
-s10228
+c000000004D49FD79000000000000282F
+t1296694649
+s10287
 i"Map.h"
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../src/TileLoader.cpp
-c000000004D48A2630000000000000997
-t1296605795
-s2455
+c000000004D49FD7F00000000000009D2
+t1296694655
+s2514
 i"TileLoader.h"
 i"cinder/ip/Fill.h"
 i<objc/objc-auto.h>
@@ -9130,15 +9130,15 @@ t1288914935
 s114357
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../src/cinder_modestmaps_testApp.cpp
-c000000004D49F8790000000000003284
-t1296693369
-s12932
+c000000004D49FD0500000000000032A4
+t1296694533
+s12964
 i"cinder/app/AppBasic.h"
 i"Map.h"
 i"TemplatedMapProvider.h"
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/cinder_modestmaps_test.app
-t1296693662
+t1296694676
 s102
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/cinder_modestmaps_test.app/Contents/Info.plist
@@ -9146,8 +9146,8 @@ t1296693380
 s874
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/cinder_modestmaps_test.app/Contents/MacOS/cinder_modestmaps_test
-t1296693661
-s7267944
+t1296694675
+s7289752
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/cinder_modestmaps_test.app/Contents/PkgInfo
 t1296693380
@@ -10378,12 +10378,12 @@ t2
 s0
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/Objects-normal/i386/Map.o
-t1296693637
-s796216
+t1296694662
+s837536
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/Objects-normal/i386/TileLoader.o
-t1296693634
-s742772
+t1296694665
+s782872
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/Objects-normal/i386/cinder_modestmaps_test.LinkFileList
 c000000004D49F93F0000000000000224
@@ -10399,8 +10399,8 @@ t2
 s0
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/Objects-normal/i386/cinder_modestmaps_testApp.o
-t1296693628
-s922764
+t1296694662
+s948680
 
 N/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/cinder_modestmaps_test_Prefix.pch
 c000000004D49F6810000000000000093
@@ -10419,11 +10419,11 @@ s863
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies318386365#318386367#0(0"0(0#1#0"8606466784#0"0#
+lSLF07#2@18"Check dependencies318387457#318387457#0(0"0(0#1#0"8626307872#0"0#
 
 CCompileC build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/Objects-normal/i386/Map.o /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../src/Map.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s318386367.305545
-e318386437.864470
+s318387457.710973
+e318387462.568544
 r1
 xCompileC
 xbuild/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/Objects-normal/i386/Map.o
@@ -10432,11 +10432,11 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@105"Compile /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../src/Map.cpp318386367#318386437#0(0"0(0#0#97"/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../src/Map.cpp8615166720#2277"    cd /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-generated-files.hmap -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-own-target-headers.hmap -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-all-target-headers.hmap -iquote /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-project-headers.hmap -F/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug -iquote../../../../Cinder/Cinder/include -iquote../include -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/include -I../../../../Cinder/Cinder/boost -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/DerivedSources/i386 -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/DerivedSources -include /var/folders/Lo/LoeECd6-HSqY-Yah9M+G0U+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/cinder_modestmaps_test_Prefix-crngbrkkstbygeefgrnpbouknmmk/cinder_modestmaps_test_Prefix.pch -c /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../src/Map.cpp -o /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/Objects-normal/i386/Map.o0#
+lSLF07#2@105"Compile /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../src/Map.cpp318387457#318387462#0(0"0(0#0#97"/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../src/Map.cpp8621672064#2277"    cd /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-generated-files.hmap -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-own-target-headers.hmap -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-all-target-headers.hmap -iquote /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-project-headers.hmap -F/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug -iquote../../../../Cinder/Cinder/include -iquote../include -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/include -I../../../../Cinder/Cinder/boost -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/DerivedSources/i386 -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/DerivedSources -include /var/folders/Lo/LoeECd6-HSqY-Yah9M+G0U+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/cinder_modestmaps_test_Prefix-crngbrkkstbygeefgrnpbouknmmk/cinder_modestmaps_test_Prefix.pch -c /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../src/Map.cpp -o /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/Objects-normal/i386/Map.o0#
 
 CCompileC build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/Objects-normal/i386/TileLoader.o /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../src/TileLoader.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s318386428.945399
-e318386434.032402
+s318387462.568758
+e318387465.187349
 r1
 xCompileC
 xbuild/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/Objects-normal/i386/TileLoader.o
@@ -10445,7 +10445,7 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@112"Compile /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../src/TileLoader.cpp318386428#318386434#0(0"0(0#0#104"/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../src/TileLoader.cpp8612433728#2291"    cd /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-generated-files.hmap -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-own-target-headers.hmap -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-all-target-headers.hmap -iquote /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-project-headers.hmap -F/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug -iquote../../../../Cinder/Cinder/include -iquote../include -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/include -I../../../../Cinder/Cinder/boost -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/DerivedSources/i386 -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/DerivedSources -include /var/folders/Lo/LoeECd6-HSqY-Yah9M+G0U+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/cinder_modestmaps_test_Prefix-crngbrkkstbygeefgrnpbouknmmk/cinder_modestmaps_test_Prefix.pch -c /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../src/TileLoader.cpp -o /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/Objects-normal/i386/TileLoader.o0#
+lSLF07#2@112"Compile /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../src/TileLoader.cpp318387462#318387465#0(0"0(0#0#104"/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../src/TileLoader.cpp8626810176#2291"    cd /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-generated-files.hmap -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-own-target-headers.hmap -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-all-target-headers.hmap -iquote /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-project-headers.hmap -F/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug -iquote../../../../Cinder/Cinder/include -iquote../include -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/include -I../../../../Cinder/Cinder/boost -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/DerivedSources/i386 -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/DerivedSources -include /var/folders/Lo/LoeECd6-HSqY-Yah9M+G0U+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/cinder_modestmaps_test_Prefix-crngbrkkstbygeefgrnpbouknmmk/cinder_modestmaps_test_Prefix.pch -c /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../src/TileLoader.cpp -o /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/Objects-normal/i386/TileLoader.o0#
 
 CCompileC build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/Objects-normal/i386/cinder_modestmaps_testApp-ADAA6587FDD09B79.o /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../../../samples/cinder_modestmaps_test/src/cinder_modestmaps_testApp.cpp normal i386 c++ com.apple.compilers.gcc.4_2
 r0
@@ -10454,8 +10454,8 @@ CCompileC build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/
 r0
 
 CCompileC build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/Objects-normal/i386/cinder_modestmaps_testApp.o /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../src/cinder_modestmaps_testApp.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s318386367.304240
-e318386428.944509
+s318387457.709949
+e318387463.023493
 r1
 xCompileC
 xbuild/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/Objects-normal/i386/cinder_modestmaps_testApp.o
@@ -10464,7 +10464,7 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@121"Compile /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../src/cinder_modestmaps_testApp.cpp318386367#318386428#0(0"0(0#0#113"/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../src/cinder_modestmaps_testApp.cpp8615905920#2315"    cd /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-generated-files.hmap -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-own-target-headers.hmap -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-all-target-headers.hmap -iquote /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-project-headers.hmap -F/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug -iquote../../../../Cinder/Cinder/include -iquote../include -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/include -I../../../../Cinder/Cinder/boost -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/DerivedSources/i386 -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/DerivedSources -include /var/folders/Lo/LoeECd6-HSqY-Yah9M+G0U+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/cinder_modestmaps_test_Prefix-crngbrkkstbygeefgrnpbouknmmk/cinder_modestmaps_test_Prefix.pch -c /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../src/cinder_modestmaps_testApp.cpp -o /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/Objects-normal/i386/cinder_modestmaps_testApp.o0#
+lSLF07#2@121"Compile /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../src/cinder_modestmaps_testApp.cpp318387457#318387463#0(0"0(0#0#113"/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../src/cinder_modestmaps_testApp.cpp8621711008#2315"    cd /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-generated-files.hmap -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-own-target-headers.hmap -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-all-target-headers.hmap -iquote /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-project-headers.hmap -F/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug -iquote../../../../Cinder/Cinder/include -iquote../include -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/include -I../../../../Cinder/Cinder/boost -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/DerivedSources/i386 -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/DerivedSources -include /var/folders/Lo/LoeECd6-HSqY-Yah9M+G0U+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/cinder_modestmaps_test_Prefix-crngbrkkstbygeefgrnpbouknmmk/cinder_modestmaps_test_Prefix.pch -c /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/../src/cinder_modestmaps_testApp.cpp -o /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/Objects-normal/i386/cinder_modestmaps_testApp.o0#
 
 CCopyPlistFile /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/cinder_modestmaps_test.app/Contents/Resources/Info.plist ../../../samples/cinder_modestmaps_test/xcode/Info.plist
 r0
@@ -11415,14 +11415,14 @@ CCpResource build/Debug/cinder_modestmaps_test.app/Contents/Resources/update.sam
 r0
 
 CLd /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/cinder_modestmaps_test.app/Contents/MacOS/cinder_modestmaps_test normal i386
-s318386437.864664
-e318386462.338913
+s318387465.187507
+e318387476.308033
 r1
 xLd
 x/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/cinder_modestmaps_test.app/Contents/MacOS/cinder_modestmaps_test
 xnormal
 xi386
-lSLF07#2@158"Link /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/cinder_modestmaps_test.app/Contents/MacOS/cinder_modestmaps_test318386437#318386462#0(0"0(0#0#0"8611352160#1030"    cd /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode    setenv MACOSX_DEPLOYMENT_TARGET 10.5    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug -F/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug -filelist /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/Objects-normal/i386/cinder_modestmaps_test.LinkFileList -mmacosx-version-min=10.5 ../../../../Cinder/Cinder/lib/libcinder_d.a -framework Cocoa -framework OpenGL -framework Carbon -framework CoreVideo -framework QTKit -framework QuickTime -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework CoreAudio -o /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/cinder_modestmaps_test.app/Contents/MacOS/cinder_modestmaps_test0#
+lSLF07#2@158"Link /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/cinder_modestmaps_test.app/Contents/MacOS/cinder_modestmaps_test318387465#318387476#0(0"0(0#0#0"8626475328#1030"    cd /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode    setenv MACOSX_DEPLOYMENT_TARGET 10.5    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug -F/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug -filelist /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/Objects-normal/i386/cinder_modestmaps_test.LinkFileList -mmacosx-version-min=10.5 ../../../../Cinder/Cinder/lib/libcinder_d.a -framework Cocoa -framework OpenGL -framework Carbon -framework CoreVideo -framework QTKit -framework QuickTime -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework CoreAudio -o /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/cinder_modestmaps_test.app/Contents/MacOS/cinder_modestmaps_test0#
 
 CProcessInfoPlistFile /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/cinder_modestmaps_test.app/Contents/Info.plist Info.plist
 s318386180.160422
@@ -11447,10 +11447,10 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@44"Precompile cinder_modestmaps_test_Prefix.pch318386181#318386182#0(0"0(0#0#110"/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/cinder_modestmaps_test_Prefix.pch8611294112#2119"    cd /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++-header -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-generated-files.hmap -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-own-target-headers.hmap -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-all-target-headers.hmap -iquote /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/cinder_modestmaps_test-project-headers.hmap -F/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug -iquote../../../../Cinder/Cinder/include -iquote../include -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/include -I../../../../Cinder/Cinder/boost -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/DerivedSources/i386 -I/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/cinder_modestmaps_test.build/Debug/cinder_modestmaps_test.build/DerivedSources -c /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/cinder_modestmaps_test_Prefix.pch -o /var/folders/Lo/LoeECd6-HSqY-Yah9M+G0U+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/cinder_modestmaps_test_Prefix-crngbrkkstbygeefgrnpbouknmmk/cinder_modestmaps_test_Prefix.pch.gch0#
 
 CTouch /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/cinder_modestmaps_test.app
-s318386462.339166
-e318386462.577035
+s318387476.308182
+e318387476.949322
 r1
 xTouch
 x/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/cinder_modestmaps_test.app
-lSLF07#2@121"Touch /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/cinder_modestmaps_test.app318386462#318386462#0(0"0(0#0#0"8610584800#222"    cd /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode    /usr/bin/touch -c /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/cinder_modestmaps_test.app0#
+lSLF07#2@121"Touch /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/cinder_modestmaps_test.app318387476#318387476#0(0"0(0#0#0"8626864224#222"    cd /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode    /usr/bin/touch -c /Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_test/xcode/build/Debug/cinder_modestmaps_test.app0#
 

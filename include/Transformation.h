@@ -1,9 +1,8 @@
-#ifndef TRANSFORMATION
-#define TRANSFORMATION
+#pragma once
 
 #include "cinder/Vector.h"
 
-using namespace cinder;
+namespace cinder { namespace modestmaps {
 
 class Transformation {
 	
@@ -27,4 +26,4 @@ public:
 	
 };
 
-#endif
+} } // namespace

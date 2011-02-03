@@ -1,7 +1,8 @@
-#ifndef LOCATION
-#define LOCATION
+#pragma once
 
 #include <ostream>
+
+namespace cinder { namespace modestmaps {
 
 class Location {
 	
@@ -27,5 +28,4 @@ public:
 	
 };
 
-#endif
-
+} } // namespace

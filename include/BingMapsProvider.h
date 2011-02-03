@@ -1,5 +1,4 @@
-#ifndef BING_MAPS_PROVIDER
-#define BING_MAPS_PROVIDER
+#pragma once
 
 #include <vector>
 #include <string>
@@ -9,6 +8,8 @@
 #include "AbstractMapProvider.h"
 #include "MercatorProjection.h"
 
+namespace cinder { namespace modestmaps {
+	
 class BingMapsProvider : public AbstractMapProvider {
 	
 public:
@@ -61,4 +62,4 @@ public:
 	
 };
 
-#endif
+} } // namespace

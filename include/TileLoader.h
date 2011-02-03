@@ -1,11 +1,4 @@
-/*
- *  TileLoader.h
- *  modestmaps-ci
- *
- *  Created by Tom Carden on 8/27/10.
- *  Copyright 2010 Stamen Design. All rights reserved.
- *
- */
+#pragma once
 
 #include <set>
 #include "cinder/Url.h"
@@ -15,7 +8,7 @@
 #include "cinder/ImageIo.h"
 #include "cinder/gl/Texture.h"
 
-using namespace ci;
+namespace cinder { namespace modestmaps {
 
 // limit simultaneous calls to loadImage
 #define MAX_PENDING 8
@@ -41,3 +34,5 @@ private:
 	std::map<Coordinate, Surface> completed;
 		
 };
+
+} } // namespace

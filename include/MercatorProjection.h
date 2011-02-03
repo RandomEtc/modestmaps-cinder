@@ -1,10 +1,10 @@
-
-#ifndef MERCATOR_PROJECTION
-#define MERCATOR_PROJECTION
+#pragma once
 
 #include "AbstractProjection.h"
 #include "Transformation.h"
 
+namespace cinder { namespace modestmaps {
+	
 class MercatorProjection : public AbstractProjection {
 	
 public:
@@ -22,4 +22,4 @@ public:
 	
 };
 
-#endif
+} } // namespace

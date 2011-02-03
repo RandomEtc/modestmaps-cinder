@@ -1,6 +1,4 @@
-
-#ifndef MODEST_MAP
-#define MODEST_MAP
+#pragma once
 
 #include <set>
 #include <map>
@@ -16,8 +14,7 @@
 #include "cinder/gl/Texture.h"
 #include "cinder/Vector.h"
 
-using namespace ci;
-using namespace ci::app;
+namespace cinder { namespace modestmaps {
 
 #define TILE_SIZE 256.0
 
@@ -124,4 +121,4 @@ public:
 	void setSize(double _width, double _height);
 };
 
-#endif
+} } // namespace

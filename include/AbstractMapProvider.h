@@ -1,5 +1,4 @@
-#ifndef ABSTRACT_PROVIDER
-#define ABSTRACT_PROVIDER
+#pragma once
 
 #include <cmath>
 #include <vector>
@@ -9,6 +8,8 @@
 #include "Coordinate.h"
 #include "Location.h"
 
+namespace cinder { namespace modestmaps {
+	
 class AbstractMapProvider {
 	
 public:
@@ -54,5 +55,5 @@ public:
 	}
 	
 };
-
-#endif
+	
+} } // namespace

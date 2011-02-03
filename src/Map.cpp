@@ -1,6 +1,8 @@
 
 #include "Map.h"
 
+namespace cinder { namespace modestmaps {
+
 void Map::setup(AbstractMapProvider* _provider, double _width, double _height) {
 	provider = _provider;
 	width = _width;
@@ -334,3 +336,4 @@ void Map::setSize(double _width, double _height) {
 	height = _height;
 }
 
+} } // namespace

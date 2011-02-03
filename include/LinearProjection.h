@@ -1,9 +1,10 @@
-#ifndef LINEAR_PROJECTION
-#define LINEAR_PROJECTION
+#pragma once
 
 #include "AbstractProjection.h"
 #include "Transformation.h"
 
+namespace cinder { namespace modestmaps {
+	
 class LinearProjection : public AbstractProjection {
 	
 public:
@@ -21,4 +22,4 @@ public:
 	
 };
 
-#endif
+} } // namespace

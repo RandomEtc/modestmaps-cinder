@@ -1,8 +1,9 @@
-#ifndef COORDINATE
-#define COORDINATE
+#pragma once
 
 #include <ostream>
 
+namespace cinder { namespace modestmaps {
+	
 class Coordinate {
 	
 public:
@@ -65,4 +66,4 @@ public:
 	
 };
 
-#endif
+} } // namespace
