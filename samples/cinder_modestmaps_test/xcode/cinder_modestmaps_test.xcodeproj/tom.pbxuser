@@ -4,6 +4,9 @@
 		activeBuildConfigurationName = Debug;
 		activeExecutable = E297D2C112FA2F0A008FD780 /* cinder_modestmaps_test */;
 		activeTarget = 8D1107260486CEB800E47090 /* cinder_modestmaps_test */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* cinder_modestmaps_test */,
+		);
 		codeSenseManager = E297D2E712FA2F0E008FD780 /* Code sense */;
 		executables = (
 			E297D2C112FA2F0A008FD780 /* cinder_modestmaps_test */,

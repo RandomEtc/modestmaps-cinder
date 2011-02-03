@@ -8,7 +8,7 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-class modestmapsciApp : public AppBasic {
+class cinder_modestmaps_testApp : public AppBasic {
  public:
 
 	void prepareSettings(Settings *settings);
@@ -30,12 +30,12 @@ class modestmapsciApp : public AppBasic {
 	std::map<uint32_t, Vec2f> prevTouches;
 };
 
-void modestmapsciApp::prepareSettings(Settings *settings) {
+void cinder_modestmaps_testApp::prepareSettings(Settings *settings) {
 	settings->enableMultiTouch(true);
 	settings->setTitle("Modest Maps Cinder - Test App");
 }
 
-void modestmapsciApp::setup()
+void cinder_modestmaps_testApp::setup()
 {
 	setFrameRate(60.0);
 	//map.setup(new OpenStreetMapProvider(), this->getWindowWidth()/*2.0*/, this->getWindowHeight()/*2.0*/);
@@ -43,7 +43,7 @@ void modestmapsciApp::setup()
 	map.setup(new TemplatedMapProvider("http://static.bloom.io/cartagram/tiles/all_tiles/{Z}/{X}/{Y}.jpg"), getWindowWidth()/*2.0*/, getWindowHeight()/*2.0*/);
 }
 
-void modestmapsciApp::keyUp( KeyEvent event) 
+void cinder_modestmaps_testApp::keyUp( KeyEvent event) 
 {
 	int key = event.getCode();
 	if (key == KeyEvent::KEY_LEFT) {
@@ -73,24 +73,24 @@ void modestmapsciApp::keyUp( KeyEvent event)
 	}
 }
 
-void modestmapsciApp::mouseMove( MouseEvent event )
+void cinder_modestmaps_testApp::mouseMove( MouseEvent event )
 {
 	//cout << map.pointLocation(Vec2d(event.getX(), event.getY())) << endl;
 }
 
-void modestmapsciApp::mouseDown( MouseEvent event )
+void cinder_modestmaps_testApp::mouseDown( MouseEvent event )
 {
 	pMouse = event.getPos();
 }
 
-void modestmapsciApp::mouseDrag( MouseEvent event )
+void cinder_modestmaps_testApp::mouseDrag( MouseEvent event )
 {
 	Vec2f diff = event.getPos() - pMouse;
 	map.panBy(diff.x, diff.y);
 	pMouse = event.getPos();	
 }
 
-void modestmapsciApp::mouseWheel( MouseEvent event )
+void cinder_modestmaps_testApp::mouseWheel( MouseEvent event )
 {
 	float delta = event.getWheelIncrement();
 	Vec2f pos = event.getPos();
@@ -104,7 +104,7 @@ void modestmapsciApp::mouseWheel( MouseEvent event )
 	}
 }
 
-void modestmapsciApp::draw()
+void cinder_modestmaps_testApp::draw()
 {
 	gl::clear( Color( 1.0f, 1.0f, 1.0f ) );
 	
@@ -156,14 +156,14 @@ void modestmapsciApp::draw()
 
 
 
-void modestmapsciApp::touchesBegan( TouchEvent event )
+void cinder_modestmaps_testApp::touchesBegan( TouchEvent event )
 {
 	for (int i = 0; i < event.getTouches().size(); i++) {
 		prevTouches[event.getTouches()[i].getId()] = event.getTouches()[i].getPos();
 	}
 }
 	
-void modestmapsciApp::touchesMoved( TouchEvent event )
+void cinder_modestmaps_testApp::touchesMoved( TouchEvent event )
 {
 	std::vector<TouchEvent::Touch> touches = getActiveTouches();
 	if (touches.size() == 1) {
@@ -195,16 +195,16 @@ void modestmapsciApp::touchesMoved( TouchEvent event )
 		prevTouches[touches[1].getId()] = p1;
 	}
 }
-void modestmapsciApp::touchesEnded( TouchEvent event )
+void cinder_modestmaps_testApp::touchesEnded( TouchEvent event )
 {
 
 }
 	
-void modestmapsciApp::resize( ResizeEvent event )
+void cinder_modestmaps_testApp::resize( ResizeEvent event )
 {
 	map.setSize( event.getWidth(), event.getHeight() );
 }
 
 
 // This line tells Cinder to actually create the application
-CINDER_APP_BASIC( modestmapsciApp, RendererGl )
+CINDER_APP_BASIC( cinder_modestmaps_testApp, RendererGl )

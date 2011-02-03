@@ -19,6 +19,8 @@
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		E297D62F12FA307F008FD780 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E297D4F312FA307F008FD780 /* Map.cpp */; };
+		E297D63012FA307F008FD780 /* TileLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E297D4F412FA307F008FD780 /* TileLoader.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,21 @@
 		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* cinder_modestmaps_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cinder_modestmaps_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E297D4AE12FA307F008FD780 /* AbstractMapProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractMapProvider.h; sourceTree = "<group>"; };
+		E297D4AF12FA307F008FD780 /* AbstractProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractProjection.h; sourceTree = "<group>"; };
+		E297D4B012FA307F008FD780 /* BingMapsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BingMapsProvider.h; sourceTree = "<group>"; };
+		E297D4B112FA307F008FD780 /* Coordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinate.h; sourceTree = "<group>"; };
+		E297D4B212FA307F008FD780 /* LinearProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearProjection.h; sourceTree = "<group>"; };
+		E297D4B312FA307F008FD780 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		E297D4B412FA307F008FD780 /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
+		E297D4B512FA307F008FD780 /* MercatorProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MercatorProjection.h; sourceTree = "<group>"; };
+		E297D4B612FA307F008FD780 /* OpenStreetMapProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenStreetMapProvider.h; sourceTree = "<group>"; };
+		E297D4B712FA307F008FD780 /* QueueSorter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueSorter.h; sourceTree = "<group>"; };
+		E297D4B812FA307F008FD780 /* TemplatedMapProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplatedMapProvider.h; sourceTree = "<group>"; };
+		E297D4B912FA307F008FD780 /* TileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileLoader.h; sourceTree = "<group>"; };
+		E297D4BA12FA307F008FD780 /* Transformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transformation.h; sourceTree = "<group>"; };
+		E297D4F312FA307F008FD780 /* Map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
+		E297D4F412FA307F008FD780 /* TileLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileLoader.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +126,7 @@
 		29B97314FDCFA39411CA2CEA /* cinder_modestmaps_test */ = {
 			isa = PBXGroup;
 			children = (
+				E297D2EB12FA305A008FD780 /* Blocks */,
 				29B97315FDCFA39411CA2CEA /* Headers */,
 				080E96DDFE201D6D7F000001 /* Source */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -142,6 +160,53 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E297D2EB12FA305A008FD780 /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				E297D2EC12FA3079008FD780 /* modestmaps-ci */,
+			);
+			name = Blocks;
+			sourceTree = "<group>";
+		};
+		E297D2EC12FA3079008FD780 /* modestmaps-ci */ = {
+			isa = PBXGroup;
+			children = (
+				E297D4AD12FA307F008FD780 /* include */,
+				E297D4F212FA307F008FD780 /* src */,
+			);
+			name = "modestmaps-ci";
+			path = ../../..;
+			sourceTree = SOURCE_ROOT;
+		};
+		E297D4AD12FA307F008FD780 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				E297D4AE12FA307F008FD780 /* AbstractMapProvider.h */,
+				E297D4AF12FA307F008FD780 /* AbstractProjection.h */,
+				E297D4B012FA307F008FD780 /* BingMapsProvider.h */,
+				E297D4B112FA307F008FD780 /* Coordinate.h */,
+				E297D4B212FA307F008FD780 /* LinearProjection.h */,
+				E297D4B312FA307F008FD780 /* Location.h */,
+				E297D4B412FA307F008FD780 /* Map.h */,
+				E297D4B512FA307F008FD780 /* MercatorProjection.h */,
+				E297D4B612FA307F008FD780 /* OpenStreetMapProvider.h */,
+				E297D4B712FA307F008FD780 /* QueueSorter.h */,
+				E297D4B812FA307F008FD780 /* TemplatedMapProvider.h */,
+				E297D4B912FA307F008FD780 /* TileLoader.h */,
+				E297D4BA12FA307F008FD780 /* Transformation.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		E297D4F212FA307F008FD780 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E297D4F312FA307F008FD780 /* Map.cpp */,
+				E297D4F412FA307F008FD780 /* TileLoader.cpp */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +271,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				00BAE65A0E7ED9C10018A608 /* cinder_modestmaps_testApp.cpp in Sources */,
+				E297D62F12FA307F008FD780 /* Map.cpp in Sources */,
+				E297D63012FA307F008FD780 /* TileLoader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
