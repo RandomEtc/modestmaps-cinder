@@ -3,15 +3,17 @@ Quick port of Modest Maps (modestmaps.com) to Cinder Framework (libcinder.org)
 It's pretty stable at this point on the github Cinder master (as of 2010-08-31) 
 with Boost 1.44. 
 
+Should work as a Cinder Block, you just need to set the CINDER_PATH in xcode.
+(Not yet tested in Visual Studio)
+
 Progress and early bugs discussed here: 
 http://forum.libcinder.org/#topic/23286000000108063
 
-Now supports multitouch and rotations... ipad port next!
+Now supports multitouch, rotations and works on ipad (not battle tested yet).
 
-Next task: implement destructors for classes that need them and clarify the use 
-of 'new' for providers and projections - perhaps std::auto_ptr is the 
-clarification needed?
+Next task: clarify the use of 'new' for providers and projections - perhaps 
+std::auto_ptr is the clarification needed?
 
 See also http://github.com/randometc/modestmaps-of for OpenFrameworks for a 
-comparison. It's slightly less complete than this version, however.
+comparison. It's quite a bit less complete than this version, however.
 
