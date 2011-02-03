@@ -41,6 +41,7 @@ private:
 	double rotation;
 	
 	// what kinda maps?
+	// TODO: shared pointer?
 	AbstractMapProvider* provider;
 	
 	// loading tiles
@@ -70,13 +71,19 @@ public:
 	void update();
 	void draw();
 		
-	void panBy(double x, double y);
-	void scaleBy(double s);
-	void scaleBy(double s, double x, double y);
-	void rotateBy(double r, double x, double y);
-	void zoomBy(double distance);
+	void panBy(const double &x, const double &y);
+	void panBy(const Vec2d &d);
+	void panBy(const Vec2f &d);
+	void scaleBy(const double &s);
+	void scaleBy(const double &s, const double &x, const double &y);
+	void scaleBy(const double &s, const Vec2d &c);
+	void scaleBy(const double &s, const Vec2f &c);
+	void rotateBy(const double &r, const double &x, const double &y);
+	void rotateBy(const double &r, const Vec2d &c);
+	void rotateBy(const double &r, const Vec2f &c);
+	void zoomBy(const double &distance);
 
-	void setZoom(double zoom);
+	void setZoom(const double &zoom);
 	int getZoom(); // TODO: maybe double getZoom, int getZoomLevel?
 	Location getCenter();
 	Coordinate getCenterCoordinate();
@@ -84,7 +91,7 @@ public:
 	void setCenter(const Coordinate &center);
 	void setCenter(const Location &location);
 	void panTo(const Location &location); // same as setCenter	
-	void setCenterZoom(const Location &location, int zoom);
+	void setCenterZoom(const Location &location, const double &zoom);
 	
 	// TODO: extent functions
 	//	    public function setExtent(extent:MapExtent):void

@@ -216,10 +216,90 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E23F86C712FA8FAC000EE2D9</string>
+						<string>E23F86F412FB342A000EE2D9</string>
 						<key>history</key>
 						<array>
-							<string>E2CDF3AF12FA8D9800EF4B68</string>
+							<string>E23F86F012FB3388000EE2D9</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {1197, 681}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>67 56 1197 722 0 0 1280 778 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>E23F86E112FB336A000EE2D9</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>Map.cpp</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>E23F86E212FB336A000EE2D9</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>Map.cpp</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>E23F86F612FB342A000EE2D9</string>
+						<key>history</key>
+						<array>
+							<string>E23F86EF12FB336F000EE2D9</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {1197, 681}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>67 56 1197 722 0 0 1280 778 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>E23F86DD12FB336A000EE2D9</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>Map.h</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>E23F86DE12FB336A000EE2D9</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>Map.h</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>E23F86F712FB342A000EE2D9</string>
+						<key>history</key>
+						<array>
+							<string>E23F86DF12FB336A000EE2D9</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -356,7 +436,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>cinder_modestmaps_ipad_testApp.cpp</string>
+								<string>Map.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -364,14 +444,15 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>cinder_modestmaps_ipad_testApp.cpp</string>
+										<string>Map.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E23F86C412FA8FAC000EE2D9</string>
+										<string>E23F86F312FB342A000EE2D9</string>
 										<key>history</key>
 										<array>
-											<string>E2CDF3AD12FA8D9800EF4B68</string>
+											<string>E23F86DA12FB336A000EE2D9</string>
+											<string>E23F86DB12FB336A000EE2D9</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -569,8 +650,14 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E297D69C12FA4C04008FD780</string>
+		<string>E23F86ED12FB336A000EE2D9</string>
+		<string>E23F86EE12FB336A000EE2D9</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/tom/Documents/Code/modestmaps-ci/samples/cinder_modestmaps_ipad_test/xcode/cinder_modestmaps_ipad_test.xcodeproj</string>
+		<string>E23F86DD12FB336A000EE2D9</string>
+		<string>E23F86E112FB336A000EE2D9</string>
+		<string>E297D69C12FA4C04008FD780</string>
 		<string>E297DB6312FA8A41008FD780</string>
 	</array>
 	<key>WindowString</key>
@@ -595,7 +682,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>cinder_modestmaps_ipad_testApp.cpp</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -612,6 +699,8 @@
 							<string>218pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -664,7 +753,7 @@
 			<key>WindowToolGUID</key>
 			<string>E297D69C12FA4C04008FD780</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -695,8 +784,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {316, 194}}</string>
-											<string>{{316, 0}, {378, 194}}</string>
+											<string>{{0, 0}, {316, 198}}</string>
+											<string>{{316, 0}, {378, 198}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -711,8 +800,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {694, 194}}</string>
-											<string>{{0, 194}, {694, 187}}</string>
+											<string>{{0, 0}, {694, 198}}</string>
+											<string>{{0, 198}, {694, 183}}</string>
 										</array>
 									</dict>
 								</dict>
@@ -745,7 +834,7 @@
 										<real>148</real>
 									</array>
 									<key>Frame</key>
-									<string>{{316, 0}, {378, 194}}</string>
+									<string>{{316, 0}, {378, 198}}</string>
 									<key>RubberWindowFrame</key>
 									<string>314 255 694 422 0 0 1280 778 </string>
 								</dict>
@@ -773,13 +862,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>E2CDF3B112FA8D9800EF4B68</string>
+				<string>E23F86E612FB336A000EE2D9</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>E2CDF3B212FA8D9800EF4B68</string>
-				<string>E2CDF3B312FA8D9800EF4B68</string>
-				<string>E2CDF3B412FA8D9800EF4B68</string>
-				<string>E2CDF3B512FA8D9800EF4B68</string>
-				<string>E2CDF3B612FA8D9800EF4B68</string>
+				<string>E23F86E712FB336A000EE2D9</string>
+				<string>E23F86E812FB336A000EE2D9</string>
+				<string>E23F86E912FB336A000EE2D9</string>
+				<string>E23F86EA12FB336A000EE2D9</string>
+				<string>E23F86EB12FB336A000EE2D9</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -941,7 +1030,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>E2CDF3B712FA8D9800EF4B68</string>
+				<string>E23F86EC12FB336A000EE2D9</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

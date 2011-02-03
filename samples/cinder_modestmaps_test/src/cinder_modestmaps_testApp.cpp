@@ -1,8 +1,8 @@
 #include "cinder/app/AppBasic.h"
 #include "Map.h"
-#include "TemplatedMapProvider.h"
+//#include "TemplatedMapProvider.h"
 //#include "BingMapsProvider.h"
-//#include "OpenStreetMapProvider.h"
+#include "OpenStreetMapProvider.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -39,9 +39,7 @@ void cinder_modestmaps_testApp::prepareSettings(Settings *settings) {
 void cinder_modestmaps_testApp::setup()
 {
 	setFrameRate(60.0);
-	//map.setup(new OpenStreetMapProvider(), this->getWindowWidth()/*2.0*/, this->getWindowHeight()/*2.0*/);
-	//map.setup(new TemplatedMapProvider("http://localhost/gray-world/{Z}/{Y}-{X}.png"), getWindowWidth()/*2.0*/, getWindowHeight()/*2.0*/);
-	map.setup(new TemplatedMapProvider("http://static.bloom.io/cartagram/tiles/all_tiles/{Z}/{X}/{Y}.jpg"), getWindowWidth()/*2.0*/, getWindowHeight()/*2.0*/);
+	map.setup(new OpenStreetMapProvider(), this->getWindowWidth()/*2.0*/, this->getWindowHeight()/*2.0*/);
 }
 
 void cinder_modestmaps_testApp::keyUp( KeyEvent event) 

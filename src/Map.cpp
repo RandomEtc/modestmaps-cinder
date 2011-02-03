@@ -169,16 +169,25 @@ void Map::draw() {
 	
 }
 
-void Map::panBy(const double dx, const double dy) {
+void Map::panBy(const Vec2f &delta) { panBy(delta.x, delta.y); }
+void Map::panBy(const Vec2d &delta) { panBy(delta.x, delta.y); }
+	
+void Map::panBy(const double &dx, const double &dy) {
 	double dxr = dx*cos(rotation) + dy*sin(rotation);
 	double dyr = dy*cos(rotation) - dx*sin(rotation);
 	centerCoordinate.column -= dxr / provider->tileWidth();
 	centerCoordinate.row -= dyr / provider->tileHeight();
 }
-void Map::scaleBy(const double s) {
+void Map::scaleBy(const double &s) {
 	scaleBy(s, width/2.0, height/2.0);
 }
-void Map::scaleBy(const double s, const double cx, const double cy) {
+void Map::scaleBy(const double &s, const Vec2d &c) {
+	scaleBy(s, c.x, c.y);
+}
+void Map::scaleBy(const double &s, const Vec2f &c) {
+	scaleBy(s, c.x, c.y);
+}
+void Map::scaleBy(const double &s, const double &cx, const double &cy) {
 	double r = rotation;
 	rotateBy(-r,cx,cy);
 	panBy(-cx+width/2.0, -cy+height/2.0);
@@ -186,7 +195,7 @@ void Map::scaleBy(const double s, const double cx, const double cy) {
 	panBy(cx-width/2.0, cy-height/2.0);
 	rotateBy(r,cx,cy);
 }
-void Map::rotateBy(const double r, const double cx, const double cy) {
+void Map::rotateBy(const double &r, const double &cx, const double &cy) {
 	panBy(-cx, -cy);
 	rotation += r;
 	panBy(cx, cy);
@@ -217,25 +226,20 @@ void Map::setCenter(const Location &location) {
 	setCenter(provider->locationCoordinate(location).zoomTo(getZoom()));
 }
 
-void Map::setCenterZoom(const Location &location, int zoom) {
+void Map::setCenterZoom(const Location &location, const double &zoom) {
 	setCenter(provider->locationCoordinate(location).zoomTo(zoom));
 }
 
-void Map::setZoom(double zoom) {
+void Map::setZoom(const double &zoom) {
 	centerCoordinate = centerCoordinate.zoomTo(zoom);
 }
 
-void Map::zoomBy(double dir) {
+void Map::zoomBy(const double &dir) {
 	centerCoordinate = centerCoordinate.zoomBy(dir);	
 }
 
-void Map::zoomIn() {
-	centerCoordinate = centerCoordinate.zoomBy(1);
-}  
-
-void Map::zoomOut() {
-	centerCoordinate = centerCoordinate.zoomBy(-1);
-}
+void Map::zoomIn()  { zoomBy(1);  }
+void Map::zoomOut() { zoomBy(-1); }
 
 // TODO: extent functions
 //	    public function setExtent(extent:MapExtent):void
@@ -293,18 +297,10 @@ Location Map::pointLocation(const Vec2d &point) {
 	return provider->coordinateLocation(pointCoordinate(point));
 }
 
-void Map::panUp() {
-	panBy(0,height/8.0);
-}
-void Map::panDown() {
-	panBy(0,-height/8.0);
-}
-void Map::panLeft() {
-	panBy(width/8.0,0);
-}
-void Map::panRight() {
-	panBy(-width/8.0,0);
-}
+void Map::panUp()    { panBy(0,height/8.0);  }
+void Map::panDown()  { panBy(0,-height/8.0); }
+void Map::panLeft()  { panBy(width/8.0,0);   }
+void Map::panRight() { panBy(-width/8.0,0);  }
 
 void Map::panAndZoomIn(const Location &location) {
 	setCenterZoom(location, getZoom() + 1);
