@@ -22,8 +22,8 @@ void Map::update() {
 void Map::draw() {
 	
 	// if we're in between zoom levels, we need to choose the nearest:
-	int baseZoom = round(centerCoordinate.zoom);
-	
+	int baseZoom = constrain((int)round(centerCoordinate.zoom), MIN_ZOOM, MAX_ZOOM);
+
 	// these are the top left and bottom right tile coordinates
 	// we'll be loading everything in between:
 	Coordinate tl = pointCoordinate(Vec2d::zero()).zoomTo(baseZoom);

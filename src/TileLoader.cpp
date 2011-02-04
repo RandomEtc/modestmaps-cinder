@@ -50,8 +50,8 @@ void TileLoader::loadSurfaceUrl(const Url &url, const Coordinate &coord )
 	catch( ... ) {
 		std::cout << "Failed to load: " << url.str() << std::endl;
 		// create a dummy tile
-		image = Surface( 256, 256, false );
-		ip::fill( &image, Color( 1, 0, 0 ) );
+		image = Surface( 256, 256, true );
+		//ip::fill( &image, Color( 1, 0, 0 ) );
 	}
 	
 	pendingCompleteMutex.lock();
