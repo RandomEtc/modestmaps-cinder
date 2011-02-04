@@ -48,7 +48,7 @@ private:
 	double rotation;
 	
 	// what kinda maps?
-	// TODO: shared pointer?
+	// TODO: auto/shared pointer?
 	AbstractMapProvider* provider;
 	
 	// loading tiles

@@ -38,7 +38,7 @@ public:
 	
 	std::vector<std::string> getTileUrls(const Coordinate &rawCoordinate) {
 		std::vector<std::string> urls;
-		if (rawCoordinate.zoom >= 1 && rawCoordinate.zoom <= 19 
+		if (rawCoordinate.zoom >= 0 && rawCoordinate.zoom <= 19 
 			&& rawCoordinate.row >= 0 && rawCoordinate.row < pow(2, rawCoordinate.zoom)) {
 			Coordinate coordinate = sourceCoordinate(rawCoordinate);
 			std::string url = urlTemplate;

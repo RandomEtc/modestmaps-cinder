@@ -14,6 +14,7 @@ class AbstractMapProvider {
 	
 public:
 	
+	// TODO: auto/shared pointer?
 	AbstractProjection *projection;
 	
 	AbstractMapProvider(AbstractProjection *_projection): projection(_projection) {}
