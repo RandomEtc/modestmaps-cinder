@@ -65,27 +65,34 @@ void Map::draw() {
 				bool gotParent = false;
 				for (int i = (int)coord.zoom; i > 0; i--) {
 					Coordinate zoomed = coord.zoomTo(i).container();
-					if (images.count(zoomed) > 0) {
-						visibleKeys.insert(zoomed);
-						gotParent = true;
-						break;
-					}
+//					if (images.count(zoomed) > 0) {
+//						visibleKeys.insert(zoomed);
+//						gotParent = true;
+//						break;
+//					}
+					// mark all parent tiles valid
+					visibleKeys.insert(zoomed);
+					gotParent = true;
+					if (images.count(zoomed) == 0) {
+						// force load of parent tiles we don't already have
+						grabTile(zoomed);
+					}					
 				}
 				
 				// or if we have any of the children
-				if (!gotParent) {
-					Coordinate zoomed = coord.zoomBy(1).container();
-					std::vector<Coordinate> kids;
-					kids.push_back(zoomed);
-					kids.push_back(zoomed.right());
-					kids.push_back(zoomed.down());
-					kids.push_back(zoomed.right().down());
-					for (int i = 0; i < kids.size(); i++) {
-						if (images.count(kids[i]) > 0) {
-							visibleKeys.insert(kids[i]);
-						}
-					}            
-				}
+//				if (!gotParent) {
+//					Coordinate zoomed = coord.zoomBy(1).container();
+//					std::vector<Coordinate> kids;
+//					kids.push_back(zoomed);
+//					kids.push_back(zoomed.right());
+//					kids.push_back(zoomed.down());
+//					kids.push_back(zoomed.right().down());
+//					for (int i = 0; i < kids.size(); i++) {
+//						if (images.count(kids[i]) > 0) {
+//							visibleKeys.insert(kids[i]);
+//						}
+//					}            
+//				}
 				
 			}
 			
@@ -95,11 +102,14 @@ void Map::draw() {
 	// TODO: sort by zoom so we draw small zoom levels (big tiles) first:
 	// can this be done with a different comparison function on the visibleKeys set?
 	//Collections.sort(visibleKeys, zoomComparator);
-	
+
+	std::cout << "Looping and drawing..." << std::endl;
+
 	int numDrawnImages = 0;	
 	std::set<Coordinate>::iterator citer;
 	for (citer = visibleKeys.begin(); citer != visibleKeys.end(); citer++) {
 		Coordinate coord = *citer;
+		std::cout << coord << std::endl;
 		
 		double scale = pow(2.0, centerCoordinate.zoom - coord.zoom);
 		double tileWidth = provider->tileWidth() * scale;
@@ -122,6 +132,7 @@ void Map::draw() {
 			recentImages.push_back(tile);
 		}
 	}
+	std::cout << std::endl;
 	
 	// stop fetching things we can't see:
 	// (visibleKeys also has the parents and children, if needed, but that shouldn't matter)
@@ -203,11 +214,8 @@ void Map::rotateBy(const double &r, const double &cx, const double &cy) {
 
 //////////////////
 
-/** @return zoom level of currently visible tile layer */
-int Map::getZoom() {
-	// TODO/FIXME: I think this is inconsistent with other Modest Maps implementations?
-	// getZoom should return exact zoom, not rounded?
-	return round(centerCoordinate.zoom);
+double Map::getZoom() {
+	return centerCoordinate.zoom;
 }
 
 Location Map::getCenter() {
@@ -332,4 +340,13 @@ void Map::setSize(double _width, double _height) {
 	height = _height;
 }
 
+void Map::setSize(Vec2d size) {
+	width = size.x;
+	height = size.y;
+}
+	
+Vec2d Map::getSize() {
+	return Vec2d(width,height);
+}
+	
 } } // namespace

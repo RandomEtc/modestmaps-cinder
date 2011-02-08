@@ -91,7 +91,7 @@ public:
 	void zoomBy(const double &distance);
 
 	void setZoom(const double &zoom);
-	int getZoom(); // TODO: maybe double getZoom, int getZoomLevel?
+	double getZoom(); // TODO: maybe int getZoomLevel as well?
 	Location getCenter();
 	Coordinate getCenterCoordinate();
 	
@@ -104,11 +104,12 @@ public:
 	//	    public function setExtent(extent:MapExtent):void
 	//	    public function getExtent():MapExtent
 	
-	// TODO: make it so you can safely get and set the provider
-	/*AbstractMapProvider getMapProvider() {
+	AbstractMapProvider* getMapProvider() {
 	    return provider;
 	}
 	
+	/*
+	// TODO: make it so you can safely set the provider
 	void setMapProvider(AbstractMapProvider _provider) {
 		provider = _provider;
 		images.clear();
@@ -133,6 +134,8 @@ public:
 	void panAndZoomIn(const Location &location);
 	
 	void setSize(double _width, double _height);
+	void setSize(Vec2d size);
+	Vec2d getSize();
 };
 
 } } // namespace
