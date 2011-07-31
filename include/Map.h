@@ -18,13 +18,6 @@ namespace cinder { namespace modestmaps {
 
 #define TILE_SIZE 256.0
 	
-// TODO: these should be properties of map providers, really
-// ...these values describe tiles that exist,
-// constraining the tiles for your app should be a separate
-// setting, also TODO :)
-#define MIN_ZOOM 0
-#define MAX_ZOOM 18
-
 // limit tiles in memory
 // 256 would be 64 MB, you may want to lower this quite a bit for your app
 // (we'll always keep as many images as needed to fill the screen though)

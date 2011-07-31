@@ -30,6 +30,17 @@ public:
 	virtual int tileHeight() {
 		return 256;
 	}
+    
+    // ...these values describe tiles that exist,
+    // constraining the tiles for your app should be a separate
+    // setting, TODO :)
+	virtual int maxZoom() {
+		return 18;
+	}
+	
+	virtual int minZoom() {
+		return 0;
+	}    
 	
 	Coordinate locationCoordinate(const Location &location) {
 		return projection->locationCoordinate(location);

@@ -21,7 +21,7 @@ void Map::update() {
 void Map::draw() {
 	
 	// if we're in between zoom levels, we need to choose the nearest:
-	int baseZoom = constrain((int)round(centerCoordinate.zoom), MIN_ZOOM, MAX_ZOOM);
+	int baseZoom = constrain((int)round(centerCoordinate.zoom), provider->minZoom(), provider->maxZoom());
 
 	// these are the top left and bottom right tile coordinates
 	// we'll be loading everything in between:
@@ -102,6 +102,9 @@ void Map::draw() {
 	// can this be done with a different comparison function on the visibleKeys set?
 	//Collections.sort(visibleKeys, zoomComparator);
 
+    glPushMatrix();
+    glRotatef(180.0*rotation/M_PI, 0, 0, 1);
+
 	int numDrawnImages = 0;	
 	std::set<Coordinate>::iterator citer;
 	for (citer = visibleKeys.begin(); citer != visibleKeys.end(); citer++) {
@@ -120,14 +123,13 @@ void Map::draw() {
 			gl::Texture tile = images[coord];
 			// we want this image to be at the end of recentImages, if it's already there we'll remove it and then add it again
 			recentImages.erase(remove(recentImages.begin(), recentImages.end(), tile), recentImages.end());
-			glPushMatrix();
-			glRotatef(180.0*rotation/M_PI, 0, 0, 1);
 			gl::draw( tile, Rectf(tx, ty, tx+tileWidth, ty+tileHeight) );
-			glPopMatrix();
 			numDrawnImages++;
 			recentImages.push_back(tile);
 		}
 	}
+
+    glPopMatrix();
 	
 	// stop fetching things we can't see:
 	// (visibleKeys also has the parents and children, if needed, but that shouldn't matter)
@@ -165,7 +167,6 @@ void Map::draw() {
 			std::vector<gl::Texture>::iterator result = find(recentImages.begin(), recentImages.end(), tile);
 			if (result == recentImages.end()) {
 				images.erase(iter++);
-				tile.unbind();
 			}
 			else {
 				++iter;
