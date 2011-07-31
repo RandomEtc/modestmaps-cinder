@@ -54,7 +54,7 @@ public:
 			std::stringstream url;
 			std::string subdomain = subdomains[ci::Rand::randInt(0, subdomains.size())];
 			std::string quadkey = getQuadKey((int)coordinate.column, (int)coordinate.row, (int)coordinate.zoom);
-			url << "http://" << subdomain << ".tiles.virtualearth.net/tiles/h" << quadkey << ".jpeg?g=543"; //&mkt={culture}&token={token}";
+			url << "http://" << subdomain << ".tiles.virtualearth.net/tiles/a" << quadkey << ".jpeg?g=543"; //&mkt={culture}&token={token}";
 			urls.push_back(url.str());
 		}
 		return urls;

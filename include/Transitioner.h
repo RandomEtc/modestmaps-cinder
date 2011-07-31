@@ -58,7 +58,7 @@ public:
 	// t0 = start time, seconds
 	void setTarget(const Location &l1, const double &z1, const double &_t0) {
 		
-		std::cout << "setting target " << l1 << " @ " << z1 << " start time " << _t0 << std::endl;
+		//std::cout << "setting target " << l1 << " @ " << z1 << " start time " << _t0 << std::endl;
 		
 		Coordinate start = map->getMapProvider()->locationCoordinate(map->getCenter());
         Coordinate end   = map->getMapProvider()->locationCoordinate(l1);
@@ -66,14 +66,14 @@ public:
 		start = start.zoomTo(0);
 		end   = end.zoomTo(0);
 
-        std::cout << "start " << start << std::endl;
-        std::cout << "end " << end << std::endl;
+        //std::cout << "start " << start << std::endl;
+        //std::cout << "end " << end << std::endl;
 		
 		c0 = Vec2d(start.column, start.row);
         c1 = Vec2d(end.column, end.row);
 
-		std::cout << "c0 " << c0 << std::endl;
-        std::cout << "c1 " << c1 << std::endl;
+		//std::cout << "c0 " << c0 << std::endl;
+        //std::cout << "c1 " << c1 << std::endl;
 
 		// how much world can we see at zoom 0?
 		w0 = visibleWorld();
@@ -84,8 +84,8 @@ public:
 		// so how much world at zoom z1?
 		w1 = w0 / ds;
 
-		std::cout << "w0 " << w0 << std::endl;
-        std::cout << "w1 " << w1 << std::endl;
+		//std::cout << "w0 " << w0 << std::endl;
+        //std::cout << "w1 " << w1 << std::endl;
 
 		///////////////////////////////////
 				
@@ -93,15 +93,15 @@ public:
 		u0 = 0;
         u1 = c0.distance(c1);
 
-		std::cout << "u0 " << u0 << std::endl;
-        std::cout << "u1 " << u1 << std::endl;
+		//std::cout << "u0 " << u0 << std::endl;
+        //std::cout << "u1 " << u1 << std::endl;
 
 		r0 = r(b(0));
         r1 = r(b(1));
         S = (r1-r0) / rho; // "distance"
 
-		std::cout << "r0 " << r0 << std::endl;
-        std::cout << "r1 " << r1 << std::endl;
+		//std::cout << "r0 " << r0 << std::endl;
+        //std::cout << "r1 " << r1 << std::endl;
 		
 		// special case
 		if (fabs(u0-u1) < 0.000001) {
@@ -116,8 +116,8 @@ public:
 			S = fabs(log(w1/w0)) / rho;
 		}
 
-		std::cout << "S " << S << std::endl;
-        std::cout << "k " << k << std::endl;
+		//std::cout << "S " << S << std::endl;
+        //std::cout << "k " << k << std::endl;
 		
 		active = true;
 		t0 = _t0;
