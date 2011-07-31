@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00CFDF6B1138442D0091E310 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CFDF6A1138442D0091E310 /* CoreGraphics.framework */; };
-		00CFDFE011384CC60091E310 /* cinder_modestmaps_ipad_testApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00CFDFDF11384CC60091E310 /* cinder_modestmaps_ipad_testApp.cpp */; };
+		00CFDFE011384CC60091E310 /* MultiTouchApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00CFDFDF11384CC60091E310 /* MultiTouchApp.cpp */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
@@ -19,41 +19,42 @@
 		C727C02E121B400300192073 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C727C02D121B400300192073 /* CoreVideo.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C7FB19D6124BC0D70045AFD2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7FB19D5124BC0D70045AFD2 /* AudioToolbox.framework */; };
 		C7FB19D6124BC0D70045AFD3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7FB19D5124BC0D70045AFD3 /* CoreText.framework */; };
-		E297DB2712FA4C24008FD780 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E297D96612FA4C24008FD780 /* Map.cpp */; };
-		E297DB2812FA4C24008FD780 /* TileLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E297D96712FA4C24008FD780 /* TileLoader.cpp */; };
+		E2CC9B8013E59A240020D3B7 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2CC9B7E13E59A240020D3B7 /* Map.cpp */; };
+		E2CC9B8113E59A240020D3B7 /* TileLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2CC9B7F13E59A240020D3B7 /* TileLoader.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		00CFDF6A1138442D0091E310 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		00CFDFDF11384CC60091E310 /* cinder_modestmaps_ipad_testApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cinder_modestmaps_ipad_testApp.cpp; path = ../src/cinder_modestmaps_ipad_testApp.cpp; sourceTree = "<group>"; };
+		00CFDFDF11384CC60091E310 /* MultiTouchApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MultiTouchApp.cpp; path = ../src/MultiTouchApp.cpp; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* cinder_modestmaps_ipad_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cinder_modestmaps_ipad_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* MultiTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		28FD14FF0DC6FC520079059D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		32CA4F630368D1EE00C91783 /* cinder_modestmaps_ipad_test_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cinder_modestmaps_ipad_test_Prefix.pch; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* MultiTouch_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiTouch_Prefix.pch; sourceTree = "<group>"; };
 		43CD9798123D6504003B628E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../resources/Icon.png; sourceTree = SOURCE_ROOT; };
-		8D1107310486CEB800E47090 /* cinder_modestmaps_ipad_test-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cinder_modestmaps_ipad_test-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* MultiTouch-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MultiTouch-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		C725E000121DAC8F00FA186B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C727C02B121B400300192073 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		C727C02D121B400300192073 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		C7FB19D5124BC0D70045AFD2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C7FB19D5124BC0D70045AFD3 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		E297D8F112FA4C24008FD780 /* AbstractMapProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractMapProvider.h; sourceTree = "<group>"; };
-		E297D8F212FA4C24008FD780 /* AbstractProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractProjection.h; sourceTree = "<group>"; };
-		E297D8F312FA4C24008FD780 /* BingMapsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BingMapsProvider.h; sourceTree = "<group>"; };
-		E297D8F412FA4C24008FD780 /* Coordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinate.h; sourceTree = "<group>"; };
-		E297D8F512FA4C24008FD780 /* LinearProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearProjection.h; sourceTree = "<group>"; };
-		E297D8F612FA4C24008FD780 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
-		E297D8F712FA4C24008FD780 /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
-		E297D8F812FA4C24008FD780 /* MercatorProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MercatorProjection.h; sourceTree = "<group>"; };
-		E297D8F912FA4C24008FD780 /* OpenStreetMapProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenStreetMapProvider.h; sourceTree = "<group>"; };
-		E297D8FA12FA4C24008FD780 /* QueueSorter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueSorter.h; sourceTree = "<group>"; };
-		E297D8FB12FA4C24008FD780 /* TemplatedMapProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplatedMapProvider.h; sourceTree = "<group>"; };
-		E297D8FC12FA4C24008FD780 /* TileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileLoader.h; sourceTree = "<group>"; };
-		E297D8FD12FA4C24008FD780 /* Transformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transformation.h; sourceTree = "<group>"; };
-		E297D96612FA4C24008FD780 /* Map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
-		E297D96712FA4C24008FD780 /* TileLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileLoader.cpp; sourceTree = "<group>"; };
+		E2CC9B6F13E59A240020D3B7 /* AbstractMapProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractMapProvider.h; sourceTree = "<group>"; };
+		E2CC9B7013E59A240020D3B7 /* AbstractProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractProjection.h; sourceTree = "<group>"; };
+		E2CC9B7113E59A240020D3B7 /* BingMapsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BingMapsProvider.h; sourceTree = "<group>"; };
+		E2CC9B7213E59A240020D3B7 /* Coordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinate.h; sourceTree = "<group>"; };
+		E2CC9B7313E59A240020D3B7 /* LinearProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearProjection.h; sourceTree = "<group>"; };
+		E2CC9B7413E59A240020D3B7 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		E2CC9B7513E59A240020D3B7 /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
+		E2CC9B7613E59A240020D3B7 /* MercatorProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MercatorProjection.h; sourceTree = "<group>"; };
+		E2CC9B7713E59A240020D3B7 /* OpenStreetMapProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenStreetMapProvider.h; sourceTree = "<group>"; };
+		E2CC9B7813E59A240020D3B7 /* QueueSorter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueSorter.h; sourceTree = "<group>"; };
+		E2CC9B7913E59A240020D3B7 /* TemplatedMapProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplatedMapProvider.h; sourceTree = "<group>"; };
+		E2CC9B7A13E59A240020D3B7 /* TileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileLoader.h; sourceTree = "<group>"; };
+		E2CC9B7B13E59A240020D3B7 /* Transformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transformation.h; sourceTree = "<group>"; };
+		E2CC9B7C13E59A240020D3B7 /* Transitioner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transitioner.h; sourceTree = "<group>"; };
+		E2CC9B7E13E59A240020D3B7 /* Map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
+		E2CC9B7F13E59A240020D3B7 /* TileLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileLoader.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +81,7 @@
 		00CFDFA7113848F40091E310 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				00CFDFDF11384CC60091E310 /* cinder_modestmaps_ipad_testApp.cpp */,
+				00CFDFDF11384CC60091E310 /* MultiTouchApp.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -95,7 +96,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* cinder_modestmaps_ipad_test.app */,
+				1D6058910D05DD3D006BFB54 /* MultiTouch.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,7 +104,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				E297D69F12FA4C0B008FD780 /* Blocks */,
+				E2CC9B6B13E59A150020D3B7 /* Blocks */,
 				00CFDFB81138492F0091E310 /* Headers */,
 				00CFDFA7113848F40091E310 /* Source */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -117,7 +118,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32CA4F630368D1EE00C91783 /* cinder_modestmaps_ipad_test_Prefix.pch */,
+				32CA4F630368D1EE00C91783 /* MultiTouch_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -126,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				43CD9798123D6504003B628E /* Icon.png */,
-				8D1107310486CEB800E47090 /* cinder_modestmaps_ipad_test-Info.plist */,
+				8D1107310486CEB800E47090 /* MultiTouch-Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -148,59 +149,61 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E297D69F12FA4C0B008FD780 /* Blocks */ = {
+		E2CC9B6B13E59A150020D3B7 /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
-				E297D6A012FA4C22008FD780 /* modestmaps-ci */,
+				E2CC9B6D13E59A1B0020D3B7 /* ModestMaps */,
 			);
 			name = Blocks;
 			sourceTree = "<group>";
 		};
-		E297D6A012FA4C22008FD780 /* modestmaps-ci */ = {
+		E2CC9B6D13E59A1B0020D3B7 /* ModestMaps */ = {
 			isa = PBXGroup;
 			children = (
-				E297D8F012FA4C24008FD780 /* include */,
-				E297D96512FA4C24008FD780 /* src */,
+				E2CC9B6E13E59A240020D3B7 /* include */,
+				E2CC9B7D13E59A240020D3B7 /* src */,
 			);
-			name = "modestmaps-ci";
-			path = ../../..;
-			sourceTree = SOURCE_ROOT;
-		};
-		E297D8F012FA4C24008FD780 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				E297D8F112FA4C24008FD780 /* AbstractMapProvider.h */,
-				E297D8F212FA4C24008FD780 /* AbstractProjection.h */,
-				E297D8F312FA4C24008FD780 /* BingMapsProvider.h */,
-				E297D8F412FA4C24008FD780 /* Coordinate.h */,
-				E297D8F512FA4C24008FD780 /* LinearProjection.h */,
-				E297D8F612FA4C24008FD780 /* Location.h */,
-				E297D8F712FA4C24008FD780 /* Map.h */,
-				E297D8F812FA4C24008FD780 /* MercatorProjection.h */,
-				E297D8F912FA4C24008FD780 /* OpenStreetMapProvider.h */,
-				E297D8FA12FA4C24008FD780 /* QueueSorter.h */,
-				E297D8FB12FA4C24008FD780 /* TemplatedMapProvider.h */,
-				E297D8FC12FA4C24008FD780 /* TileLoader.h */,
-				E297D8FD12FA4C24008FD780 /* Transformation.h */,
-			);
-			path = include;
+			name = ModestMaps;
 			sourceTree = "<group>";
 		};
-		E297D96512FA4C24008FD780 /* src */ = {
+		E2CC9B6E13E59A240020D3B7 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				E297D96612FA4C24008FD780 /* Map.cpp */,
-				E297D96712FA4C24008FD780 /* TileLoader.cpp */,
+				E2CC9B6F13E59A240020D3B7 /* AbstractMapProvider.h */,
+				E2CC9B7013E59A240020D3B7 /* AbstractProjection.h */,
+				E2CC9B7113E59A240020D3B7 /* BingMapsProvider.h */,
+				E2CC9B7213E59A240020D3B7 /* Coordinate.h */,
+				E2CC9B7313E59A240020D3B7 /* LinearProjection.h */,
+				E2CC9B7413E59A240020D3B7 /* Location.h */,
+				E2CC9B7513E59A240020D3B7 /* Map.h */,
+				E2CC9B7613E59A240020D3B7 /* MercatorProjection.h */,
+				E2CC9B7713E59A240020D3B7 /* OpenStreetMapProvider.h */,
+				E2CC9B7813E59A240020D3B7 /* QueueSorter.h */,
+				E2CC9B7913E59A240020D3B7 /* TemplatedMapProvider.h */,
+				E2CC9B7A13E59A240020D3B7 /* TileLoader.h */,
+				E2CC9B7B13E59A240020D3B7 /* Transformation.h */,
+				E2CC9B7C13E59A240020D3B7 /* Transitioner.h */,
 			);
-			path = src;
+			name = include;
+			path = ../../../include;
+			sourceTree = "<group>";
+		};
+		E2CC9B7D13E59A240020D3B7 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E2CC9B7E13E59A240020D3B7 /* Map.cpp */,
+				E2CC9B7F13E59A240020D3B7 /* TileLoader.cpp */,
+			);
+			name = src;
+			path = ../../../src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* cinder_modestmaps_ipad_test */ = {
+		1D6058900D05DD3D006BFB54 /* MultiTouch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "cinder_modestmaps_ipad_test" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "MultiTouch" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -210,9 +213,9 @@
 			);
 			dependencies = (
 			);
-			name = cinder_modestmaps_ipad_test;
-			productName = cinder_modestmaps_ipad_test;
-			productReference = 1D6058910D05DD3D006BFB54 /* cinder_modestmaps_ipad_test.app */;
+			name = MultiTouch;
+			productName = MultiTouch;
+			productReference = 1D6058910D05DD3D006BFB54 /* MultiTouch.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -220,21 +223,18 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "cinder_modestmaps_ipad_test" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MultiTouch" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
+				en,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* cinder_modestmaps_ipad_test */,
+				1D6058900D05DD3D006BFB54 /* MultiTouch */,
 			);
 		};
 /* End PBXProject section */
@@ -255,9 +255,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00CFDFE011384CC60091E310 /* cinder_modestmaps_ipad_testApp.cpp in Sources */,
-				E297DB2712FA4C24008FD780 /* Map.cpp in Sources */,
-				E297DB2812FA4C24008FD780 /* TileLoader.cpp in Sources */,
+				00CFDFE011384CC60091E310 /* MultiTouchApp.cpp in Sources */,
+				E2CC9B8013E59A240020D3B7 /* Map.cpp in Sources */,
+				E2CC9B8113E59A240020D3B7 /* TileLoader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,15 +268,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = i386;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = cinder_modestmaps_ipad_test_Prefix.pch;
+				GCC_PREFIX_HEADER = MultiTouch_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
-				INFOPLIST_FILE = "cinder_modestmaps_ipad_test-Info.plist";
+				INFOPLIST_FILE = "MultiTouch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				"OTHER_LDFLAGS[sdk=iphoneos*][arch=*]" = (
 					"\"$(CINDER_PATH)/lib/libcinder-iphone_d.a\"",
@@ -286,8 +287,9 @@
 					"\"$(CINDER_PATH)/lib/libcinder-iphone-sim_d.a\"",
 					"-lz",
 				);
-				PRODUCT_NAME = cinder_modestmaps_ipad_test;
+				PRODUCT_NAME = MultiTouch;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = i386;
 			};
 			name = Debug;
 		};
@@ -295,13 +297,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = i386;
 				COPY_PHASE_STRIP = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = cinder_modestmaps_ipad_test_Prefix.pch;
+				GCC_PREFIX_HEADER = MultiTouch_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
-				INFOPLIST_FILE = "cinder_modestmaps_ipad_test-Info.plist";
+				INFOPLIST_FILE = "MultiTouch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				"OTHER_LDFLAGS[sdk=iphoneos*][arch=*]" = (
 					"\"$(CINDER_PATH)/lib/libcinder-iphone.a\"",
@@ -311,8 +314,9 @@
 					"\"$(CINDER_PATH)/lib/libcinder-iphone-sim.a\"",
 					"-lz",
 				);
-				PRODUCT_NAME = cinder_modestmaps_ipad_test;
+				PRODUCT_NAME = MultiTouch;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = i386;
 			};
 			name = Release;
 		};
@@ -331,7 +335,6 @@
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" include";
 			};
 			name = Debug;
@@ -350,7 +353,6 @@
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" include";
 			};
 			name = Release;
@@ -358,7 +360,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "cinder_modestmaps_ipad_test" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "MultiTouch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -367,7 +369,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "cinder_modestmaps_ipad_test" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MultiTouch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

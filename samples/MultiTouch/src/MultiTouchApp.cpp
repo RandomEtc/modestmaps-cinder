@@ -1,0 +1,121 @@
+#include "cinder/app/AppNative.h"
+#include "cinder/gl/TextureFont.h"
+#include "Map.h"
+#include "OpenStreetMapProvider.h"
+
+using namespace ci;
+using namespace ci::gl;
+using namespace ci::app;
+using namespace ci::modestmaps;
+using namespace std;
+
+class MultiTouchApp : public AppNative {
+public:
+	
+    void prepareSettings( Settings *settings );
+    
+	void setup();
+	void touchesBegan( TouchEvent event );
+	void touchesMoved( TouchEvent event );
+	void touchesEnded( TouchEvent event );
+    
+	void draw();
+	void resize( ResizeEvent event);
+	
+	Map mMap;	
+	std::map<uint32_t, Vec2f> mPrevTouches;
+
+    TextureFontRef mTextureFont;
+};
+
+void MultiTouchApp::prepareSettings( Settings *settings )
+{
+    settings->enableMultiTouch( true );
+}
+
+void MultiTouchApp::setup()
+{
+    mTextureFont = TextureFont::create( Font("Helvetica", 12) );
+	mMap.setup(new OpenStreetMapProvider(), getWindowSize());
+}
+
+void MultiTouchApp::draw()
+{
+	gl::clear( Color( 0x50/255.0f, 0x59/255.0f, 0x64/255.0f ) ); 
+    
+    Vec2f windowSize = getWindowSize();
+	gl::setMatricesWindow( windowSize );
+	
+    // draw map
+	mMap.draw();
+
+    gl::enableAlphaBlending();
+	
+    // draw copyright notice
+    gl::color( Color::white() );
+    string notice = "Map data CC-BY-SA OpenStreetMap.org contributors.";
+    Vec2f noticeSize = mTextureFont->measureString(notice);
+    Vec2f noticePadding(10.0f,10.0f - mTextureFont->getFont().getAscent());
+    mTextureFont->drawString(notice, windowSize - noticeSize - noticePadding);
+    
+    // draw touch points:
+    gl::color( ColorA( 1.0f, 1.0f, 1.0f, 0.25f ) );
+    std::vector<TouchEvent::Touch> touches = getActiveTouches();
+    for (int i = 0; i < touches.size(); i++) {
+        gl::drawSolidCircle( touches[i].getPos(), 20 );
+    }	
+    
+    gl::disableAlphaBlending();
+}
+
+void MultiTouchApp::touchesBegan( TouchEvent event )
+{
+	for (int i = 0; i < event.getTouches().size(); i++) {
+		mPrevTouches[event.getTouches()[i].getId()] = event.getTouches()[i].getPos();
+	}
+}
+
+void MultiTouchApp::touchesMoved( TouchEvent event )
+{
+	std::vector<TouchEvent::Touch> touches = getActiveTouches();
+	if (touches.size() == 1) {
+		Vec2f prevTouch = mPrevTouches[touches[0].getId()];
+		mMap.panBy(touches[0].getX() - prevTouch.x, touches[0].getY() - prevTouch.y);
+		mPrevTouches[touches[0].getId()] = touches[0].getPos();
+	}
+	if (touches.size() == 2) {
+		Vec2f p0 = touches[0].getPos();
+		Vec2f p1 = touches[1].getPos();
+		Vec2f p2 = mPrevTouches[touches[0].getId()];
+		Vec2f p3 = mPrevTouches[touches[1].getId()];
+        
+		double sc = p0.distance(p1) / p2.distance(p3);
+		double r = atan2(p1.y-p0.y,p1.x-p0.x) - atan2(p3.y-p2.y,p3.x-p2.x);
+        
+		Vec2f endCenter = p0.lerp(0.5, p1);
+		Vec2f startCenter = p2.lerp(0.5, p3);
+		
+		mMap.panBy(endCenter - startCenter);
+		mMap.scaleBy(sc, endCenter.x, endCenter.y);
+		mMap.rotateBy(r, endCenter.x, endCenter.y); 
+        
+		mPrevTouches[touches[0].getId()] = p0;
+		mPrevTouches[touches[1].getId()] = p1;
+	}
+}
+
+void MultiTouchApp::touchesEnded( TouchEvent event )
+{
+	for (int i = 0; i < event.getTouches().size(); i++) {
+        if (mPrevTouches.find(event.getTouches()[i].getId()) != mPrevTouches.end()) {
+            mPrevTouches.erase(event.getTouches()[i].getId());
+        }
+	}	
+}
+
+void MultiTouchApp::resize( ResizeEvent event )
+{
+	mMap.setSize( getWindowSize() );
+}
+
+CINDER_APP_NATIVE( MultiTouchApp, RendererGl )
