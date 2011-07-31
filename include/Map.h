@@ -3,7 +3,7 @@
 #include <set>
 #include <map>
 
-#include "AbstractMapProvider.h"
+#include "MapProvider.h"
 #include "Location.h"
 #include "Coordinate.h"
 #include "QueueSorter.h"
@@ -39,13 +39,12 @@ private:
 	
 	// angle in radians
 	double rotation;
-	
-	// what kinda maps?
-	// TODO: auto/shared pointer?
-	AbstractMapProvider* provider;
-	
-	// loading tiles
-	TileLoader tileLoader;
+		
+	// about the tiles
+	MapProvider *mapProvider;
+    
+    // loading tiles
+    TileLoader *tileLoader;
 
 	// loaded tiles
 	std::map<Coordinate, gl::Texture> images;
@@ -67,7 +66,8 @@ public:
 	
 	Map() {}
 	
-    void setup(AbstractMapProvider* _provider, Vec2d size);
+    void setup( TileLoader* _loader, Vec2d size);
+    void setup( MapProvider* _provider, Vec2d size );
     
 	void update();
 	void draw();
@@ -95,14 +95,14 @@ public:
 	//	    public function setExtent(extent:MapExtent):void
 	//	    public function getExtent():MapExtent
 	
-	AbstractMapProvider* getMapProvider() {
-	    return provider;
+	MapProvider* getMapProvider() {
+	    return mapProvider;
 	}
 	
 	/*
 	// TODO: make it so you can safely set the provider
-	void setMapProvider(AbstractMapProvider _provider) {
-		provider = _provider;
+	void setMapProvider(MapProvider *provider) {
+		mapProvider = provider;
 		images.clear();
 		queue.clear();
 		pending.clear();

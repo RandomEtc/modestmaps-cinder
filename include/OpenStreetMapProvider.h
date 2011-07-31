@@ -29,15 +29,7 @@ public:
 		subdomains.push_back("b.");
 		subdomains.push_back("c.");
 	}
-	
-	int tileWidth() {
-		return 256;
-	}
-	
-	int tileHeight() {
-		return 256;
-	}
-	
+		
 	std::vector<std::string> getTileUrls(const Coordinate &rawCoordinate) {
 		std::vector<std::string> urls;
 		if (rawCoordinate.row >= 0 && rawCoordinate.row < pow(2, rawCoordinate.zoom)) {

@@ -4,13 +4,19 @@
 #include <vector>
 #include <string>
 
+#include "cinder/Surface.h"
+#include "cinder/ip/Fill.h"
+#include "cinder/ImageIo.h"
+#include "cinder/Url.h"
+
+#include "MapProvider.h"
 #include "AbstractProjection.h"
 #include "Coordinate.h"
 #include "Location.h"
 
 namespace cinder { namespace modestmaps {
 	
-class AbstractMapProvider {
+class AbstractMapProvider : public MapProvider {
 	
 public:
 	
@@ -23,22 +29,18 @@ public:
 	
 	virtual std::vector<std::string> getTileUrls(const Coordinate &coord)=0;
 
-	virtual int tileWidth() {
-		return 256;
+	Vec2i getTileSize() {
+		return Vec2i(256,256);
 	}
 	
-	virtual int tileHeight() {
-		return 256;
-	}
-    
     // ...these values describe tiles that exist,
     // constraining the tiles for your app should be a separate
     // setting, TODO :)
-	virtual int maxZoom() {
+	int getMaxZoom() {
 		return 18;
 	}
 	
-	virtual int minZoom() {
+	int getMinZoom() {
 		return 0;
 	}    
 	
@@ -65,6 +67,28 @@ public:
 		
 		return Coordinate(coordinate.row, wrappedColumn, coordinate.zoom);
 	}
+    
+    Surface createSurface( const Coordinate &coord )
+    {
+        std::vector<std::string> urls = getTileUrls(coord);
+        
+        Surface image;
+        
+        if (urls.size() > 0) {
+            try {
+                image = Surface( loadImage( loadUrl( urls[0] ) ) );
+            }
+            catch( ... ) {
+                //std::cout << "Failed to load: " << url.str() << std::endl;
+                // create a dummy tile
+                image = Surface( 256, 256, true );
+                ip::fill( &image, Color( 1.0f, 0.0f, 0.0f ) );
+            }
+        }
+        
+        return image;
+    }
+    
 	
 };
 	

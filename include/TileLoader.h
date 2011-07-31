@@ -1,12 +1,11 @@
 #pragma once
 
 #include <set>
-#include "cinder/Url.h"
+#include <map>
 #include "cinder/Thread.h"
-#include "Coordinate.h"
-#include "AbstractMapProvider.h"
-#include "cinder/ImageIo.h"
 #include "cinder/gl/Texture.h"
+#include "Coordinate.h"
+#include "MapProvider.h"
 
 namespace cinder { namespace modestmaps {
 
@@ -16,11 +15,10 @@ namespace cinder { namespace modestmaps {
 class TileLoader
 {
 public:
-	void requestTile( const Url &url, const Coordinate &key );
-	
-	void loadSurfaceUrl( const Url &url, const Coordinate &coord );
-	
-	void processQueue( std::vector<Coordinate> &queue, AbstractMapProvider *provider );
+    
+    TileLoader( MapProvider *_provider ): provider(_provider) {}
+    
+	void processQueue( std::vector<Coordinate> &queue );
 	
 	void transferTextures( std::map<Coordinate, gl::Texture> &images);
 
@@ -29,10 +27,14 @@ public:
 	}
 	
 private:
+    
+    void doThreadedPaint( const Coordinate &coord );
+    
 	std::mutex pendingCompleteMutex;	
 	std::set<Coordinate> pending;
 	std::map<Coordinate, Surface> completed;
 		
+    MapProvider *provider;
 };
 
 } } // namespace

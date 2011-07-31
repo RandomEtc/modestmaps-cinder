@@ -8,7 +8,6 @@
  */
 
 #include "TileLoader.h"
-#include "cinder/ip/Fill.h"
 
 #if defined( CINDER_COCOA )
 #include <objc/objc-auto.h>
@@ -16,18 +15,7 @@
 
 namespace cinder { namespace modestmaps {
 
-void TileLoader::requestTile( const Url &url, const Coordinate &key )
-{
-	pendingCompleteMutex.lock();
-	pending.insert(key);
-	pendingCompleteMutex.unlock();	
-	//std::cout << "initing thread for " << url.str() << " and " << key << std::endl;	
-	//loadSurfaceUrl(url, key);
-	std::thread loaderThread( &TileLoader::loadSurfaceUrl, this, url, key );
-}
-
-
-void TileLoader::loadSurfaceUrl(const Url &url, const Coordinate &coord )
+void TileLoader::doThreadedPaint( const Coordinate &coord )
 {
 #if defined( CINDER_COCOA )
 	// borrowed from https://llvm.org/svn/llvm-project/lldb/trunk/source/Host/macosx/Host.mm
@@ -40,38 +28,26 @@ void TileLoader::loadSurfaceUrl(const Url &url, const Coordinate &coord )
 	objc_registerThreadWithCollector();
   #endif	
 #endif	
-	
-	//std::cout << "threaded loading " << url.str() << " for " << coord << std::endl;
-	
-	Surface image;
-	try {
-		image = Surface( loadImage( loadUrl( url ) ) );
-	}
-	catch( ... ) {
-		//std::cout << "Failed to load: " << url.str() << std::endl;
-		// create a dummy tile
-		image = Surface( 256, 256, true );
-		ip::fill( &image, Color( 1.0f, 0.0f, 0.0f ) );
-	}
-	
+
+	Surface image = provider->createSurface( coord );
+    
 	pendingCompleteMutex.lock();
 	completed[coord] = image;
 	pending.erase(coord);  
 	pendingCompleteMutex.unlock();
 }
 
-void TileLoader::processQueue(std::vector<Coordinate> &queue, AbstractMapProvider *provider)
+void TileLoader::processQueue(std::vector<Coordinate> &queue )
 {
 	while (pending.size() < MAX_PENDING && queue.size() > 0) {
-		Coordinate coord = *(queue.begin());
-		Coordinate key = Coordinate(coord);
-		std::vector<std::string> urls = provider->getTileUrls(coord);
-		if (!urls.empty()) {
-			//std::cout << "loading " << urls[0] << " for " << coord << std::endl;
-			// TODO: more than one image
-			Url url( urls[0] );
-			requestTile(url, key);
-		}
+		Coordinate key = *(queue.begin());
+
+        pendingCompleteMutex.lock();
+        pending.insert(key);
+        pendingCompleteMutex.unlock();	
+        
+        std::thread loaderThread( &TileLoader::doThreadedPaint, this, key );
+        
 		queue.erase(queue.begin());
 	}
 }
@@ -81,7 +57,9 @@ void TileLoader::transferTextures(std::map<Coordinate, gl::Texture> &images)
 	pendingCompleteMutex.lock();
 	while (!completed.empty()) {
 		std::map<Coordinate, Surface>::iterator iter = completed.begin();
-		images[iter->first] = gl::Texture(iter->second);		
+        if (iter->second) {
+            images[iter->first] = gl::Texture(iter->second);		
+        }
 		completed.erase(iter);
 	}
 	pendingCompleteMutex.unlock();

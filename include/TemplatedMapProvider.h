@@ -5,6 +5,8 @@
 #include <sstream>
 
 #include "cinder/Rand.h"
+#include "cinder/Utilities.h"
+
 #include "AbstractMapProvider.h"
 #include "MercatorProjection.h"
 
@@ -42,37 +44,23 @@ public:
                                                                                          -M_PI, -M_PI, 0, 1 ) ) )
     { }
 	
-	int tileWidth() {
-		return 256;
-	}
-	
-	int tileHeight() {
-		return 256;
-	}
-	
-	virtual int maxZoom() {
+	int getMaxZoom() {
 		return mMaxZoom;
 	}
 	
-	virtual int minZoom() {
+	int getMinZoom() {
 		return mMinZoom;
 	}    
     
-	std::string format(double n) {
-		std::stringstream s;
-		s << (int)n;
-		return s.str();
-	}
-	
 	std::vector<std::string> getTileUrls(const Coordinate &rawCoordinate) {
 		std::vector<std::string> urls;
 		if (rawCoordinate.zoom >= 0 && rawCoordinate.zoom <= 19 
 			&& rawCoordinate.row >= 0 && rawCoordinate.row < pow(2, rawCoordinate.zoom)) {
 			Coordinate coordinate = sourceCoordinate(rawCoordinate);
 			std::string url(mUrlTemplate);
-			url.replace(url.find("{Z}"), 3, format(coordinate.zoom));
-			url.replace(url.find("{X}"), 3, format(coordinate.column));
-			url.replace(url.find("{Y}"), 3, format(coordinate.row));
+			url.replace(url.find("{Z}"), 3, toString(coordinate.zoom));
+			url.replace(url.find("{X}"), 3, toString(coordinate.column));
+			url.replace(url.find("{Y}"), 3, toString(coordinate.row));
 			urls.push_back(url);
 		}
 		return urls;

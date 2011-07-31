@@ -3,16 +3,18 @@
 
 namespace cinder { namespace modestmaps {
 
-void Map::setup(AbstractMapProvider* _provider, Vec2d _size) {
-	provider = _provider;
+void Map::setup( MapProvider *_mapProvider, Vec2d _size )
+{
+    tileLoader = new TileLoader( _mapProvider );
+    mapProvider = _mapProvider;
     size = _size;
-	centerCoordinate = Coordinate(0.5,0.5,0);  // half the world width,height at zoom 0
-	// fit to screen
-	double z = log(std::min(size.x,size.y) / 256.0) / log(2);
-	centerCoordinate = centerCoordinate.zoomTo(z);
-	// start with north up:
-	rotation = 0.0;
-}
+    centerCoordinate = Coordinate(0.5,0.5,0);  // half the world width,height at zoom 0
+    // fit to screen
+    double z = log(std::min(size.x,size.y) / 256.0) / log(2);
+    centerCoordinate = centerCoordinate.zoomTo(z);
+    // start with north up:
+    rotation = 0.0;
+}     
 	
 void Map::update() {
 	// TODO: Move non-drawing logic here
@@ -21,7 +23,7 @@ void Map::update() {
 void Map::draw() {
 	
 	// if we're in between zoom levels, we need to choose the nearest:
-	int baseZoom = constrain((int)round(centerCoordinate.zoom), provider->minZoom(), provider->maxZoom());
+	int baseZoom = constrain((int)round(centerCoordinate.zoom), mapProvider->getMinZoom(), mapProvider->getMaxZoom());
 
 	// these are the top left and bottom right tile coordinates
 	// we'll be loading everything in between:
@@ -48,9 +50,7 @@ void Map::draw() {
 	for (int col = minCol; col <= maxCol; col++) {
 		for (int row = minRow; row <= maxRow; row++) {
 			
-			// source coordinate wraps around the world:
-			//Coordinate coord = provider->sourceCoordinate(Coordinate(row,col,baseZoom));
-			Coordinate coord = Coordinate(row,col,baseZoom);
+			Coordinate coord(row,col,baseZoom);
 			
 			// keep this for later:
 			visibleKeys.insert(coord);
@@ -111,19 +111,18 @@ void Map::draw() {
 		Coordinate coord = *citer;
 		
 		double scale = pow(2.0, centerCoordinate.zoom - coord.zoom);
-		double tileWidth = provider->tileWidth() * scale;
-		double tileHeight = provider->tileHeight() * scale;
+        Vec2d tileSize = mapProvider->getTileSize() * scale;
 		Vec2d center = size * 0.5;
 		Coordinate theCoord = centerCoordinate.zoomTo(coord.zoom);
 		
-		double tx = center.x + (coord.column - theCoord.column) * tileWidth;
-		double ty = center.y + (coord.row - theCoord.row) * tileHeight;
+		double tx = center.x + (coord.column - theCoord.column) * tileSize.x;
+		double ty = center.y + (coord.row - theCoord.row) * tileSize.y;
 		
 		if (images.count(coord) > 0) {
 			gl::Texture tile = images[coord];
 			// we want this image to be at the end of recentImages, if it's already there we'll remove it and then add it again
 			recentImages.erase(remove(recentImages.begin(), recentImages.end(), tile), recentImages.end());
-			gl::draw( tile, Rectf(tx, ty, tx+tileWidth, ty+tileHeight) );
+			gl::draw( tile, Rectf(tx, ty, tx+tileSize.x, ty+tileSize.y) );
 			numDrawnImages++;
 			recentImages.push_back(tile);
 		}
@@ -179,10 +178,13 @@ void Map::draw() {
 void Map::panBy(const Vec2d &delta) { panBy(delta.x, delta.y); }
 	
 void Map::panBy(const double &dx, const double &dy) {
-	double dxr = dx*cos(rotation) + dy*sin(rotation);
-	double dyr = dy*cos(rotation) - dx*sin(rotation);
-	centerCoordinate.column -= dxr / provider->tileWidth();
-	centerCoordinate.row -= dyr / provider->tileHeight();
+    const double sinr = sin(rotation);
+    const double cosr = cos(rotation);
+	const double dxr = dx*cosr + dy*sinr;
+	const double dyr = dy*cosr - dx*sinr;
+    const Vec2d tileSize = mapProvider->getTileSize();
+	centerCoordinate.column -= dxr / tileSize.x;
+	centerCoordinate.row -= dyr / tileSize.y;
 }
 void Map::scaleBy(const double &s) {
 	scaleBy(s, size * 0.5);
@@ -191,13 +193,13 @@ void Map::scaleBy(const double &s, const Vec2d &c) {
 	scaleBy(s, c.x, c.y);
 }
 void Map::scaleBy(const double &s, const double &cx, const double &cy) {
-	double r = rotation;
-	rotateBy(-r,cx,cy);
+    double prevRotation = rotation;
+	rotateBy(-prevRotation,cx,cy);
     Vec2d center = size * 0.5;
 	panBy(-cx+center.x, -cy+center.y);
 	centerCoordinate = centerCoordinate.zoomBy(log(s) / log(2.0));
 	panBy(cx-center.x, cy-center.y);
-	rotateBy(r,cx,cy);
+	rotateBy(prevRotation,cx,cy);
 }
 void Map::rotateBy(const double &r, const double &cx, const double &cy) {
 	panBy(-cx, -cy);
@@ -212,7 +214,7 @@ double Map::getZoom() {
 }
 
 Location Map::getCenter() {
-	return provider->coordinateLocation(centerCoordinate);
+	return mapProvider->coordinateLocation(centerCoordinate);
 }
 
 Coordinate Map::getCenterCoordinate() {
@@ -224,11 +226,11 @@ void Map::setCenter(const Coordinate &center) {
 }
 
 void Map::setCenter(const Location &location) {
-	setCenter(provider->locationCoordinate(location).zoomTo(getZoom()));
+	setCenter(mapProvider->locationCoordinate(location).zoomTo(getZoom()));
 }
 
 void Map::setCenterZoom(const Location &location, const double &zoom) {
-	setCenter(provider->locationCoordinate(location).zoomTo(zoom));
+	setCenter(mapProvider->locationCoordinate(location).zoomTo(zoom));
 }
 
 void Map::setZoom(const double &zoom) {
@@ -291,11 +293,11 @@ Coordinate Map::pointCoordinate(const Vec2d &point) {
 }
 
 Vec2d Map::locationPoint(const Location &location) {
-	return coordinatePoint(provider->locationCoordinate(location));
+	return coordinatePoint(mapProvider->locationCoordinate(location));
 }
 
 Location Map::pointLocation(const Vec2d &point) {
-	return provider->coordinateLocation(pointCoordinate(point));
+	return mapProvider->coordinateLocation(pointCoordinate(point));
 }
 
 void Map::panUp()    { panBy(0,size.y/8.0);  }
@@ -314,7 +316,7 @@ void Map::panTo(const Location &location) {
 //////////////////////////////////////////////////////////////////////////
 
 void Map::grabTile(const Coordinate &coord) {
-	bool isPending = tileLoader.isPending(coord);
+	bool isPending = tileLoader->isPending(coord);
 	bool isQueued = find(queue.begin(), queue.end(), coord) != queue.end();
 	bool isAlreadyLoaded = images.count(coord) > 0;
 	if (!isPending && !isQueued && !isAlreadyLoaded) {
@@ -324,8 +326,8 @@ void Map::grabTile(const Coordinate &coord) {
 
 void Map::processQueue() {	
 	sort(queue.begin(), queue.end(), QueueSorter(getCenterCoordinate().zoomTo(getZoom())));		
-	tileLoader.processQueue(queue, provider);
-	tileLoader.transferTextures(images);
+	tileLoader->processQueue(queue);
+	tileLoader->transferTextures(images);
 }
 
 void Map::setSize(Vec2d _size) {
