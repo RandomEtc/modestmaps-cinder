@@ -42,6 +42,8 @@
 		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* MultiTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2C433BD13E5D85D00070C58 /* MapProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapProvider.h; sourceTree = "<group>"; };
+		E2C433C013E5F03300070C58 /* MapExtent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapExtent.h; sourceTree = "<group>"; };
 		E2CC9B5013E596F80020D3B7 /* AbstractMapProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractMapProvider.h; sourceTree = "<group>"; };
 		E2CC9B5113E596F80020D3B7 /* AbstractProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractProjection.h; sourceTree = "<group>"; };
 		E2CC9B5213E596F80020D3B7 /* BingMapsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BingMapsProvider.h; sourceTree = "<group>"; };
@@ -190,6 +192,8 @@
 				E2CC9B5413E596F80020D3B7 /* LinearProjection.h */,
 				E2CC9B5513E596F80020D3B7 /* Location.h */,
 				E2CC9B5613E596F80020D3B7 /* Map.h */,
+				E2C433C013E5F03300070C58 /* MapExtent.h */,
+				E2C433BD13E5D85D00070C58 /* MapProvider.h */,
 				E2CC9B5713E596F80020D3B7 /* MercatorProjection.h */,
 				E2CC9B5813E596F80020D3B7 /* OpenStreetMapProvider.h */,
 				E2CC9B5913E596F80020D3B7 /* QueueSorter.h */,

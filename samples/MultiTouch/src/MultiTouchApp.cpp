@@ -2,6 +2,7 @@
 #include "cinder/gl/TextureFont.h"
 #include "Map.h"
 #include "OpenStreetMapProvider.h"
+//#include "TemplatedMapProvider.h"
 
 using namespace ci;
 using namespace ci::gl;
@@ -15,13 +16,15 @@ public:
     void prepareSettings( Settings *settings );
     
 	void setup();
+	void update();
+	void draw();
+    
+	void resize( ResizeEvent event);
+
 	void touchesBegan( TouchEvent event );
 	void touchesMoved( TouchEvent event );
 	void touchesEnded( TouchEvent event );
-    
-	void draw();
-	void resize( ResizeEvent event);
-	
+    	
 	Map mMap;	
 	std::map<uint32_t, Vec2f> mPrevTouches;
 
@@ -36,12 +39,20 @@ void MultiTouchApp::prepareSettings( Settings *settings )
 void MultiTouchApp::setup()
 {
     mTextureFont = TextureFont::create( Font("Helvetica", 12) );
-	mMap.setup(new OpenStreetMapProvider(), getWindowSize());
+	mMap.setup( OpenStreetMapProvider::create(), getWindowSize());
+//	mMap.setup( TemplatedMapProvider::create("http://localhost:8000/{Z}/{Y}-{X}.png", 0, 5), getWindowSize());
+    mMap.setExtent( MapExtent(61.087969, 49.250497, 3.686775, -12.353263) );
+//    setFullScreen( true );
+}
+
+void MultiTouchApp::update()
+{
+    mMap.update();
 }
 
 void MultiTouchApp::draw()
 {
-	gl::clear( Color( 0x50/255.0f, 0x59/255.0f, 0x64/255.0f ) ); 
+	gl::clear( Color::white() );
     
     Vec2f windowSize = getWindowSize();
 	gl::setMatricesWindow( windowSize );
