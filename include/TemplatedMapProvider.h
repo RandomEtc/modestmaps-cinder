@@ -19,31 +19,35 @@ protected:
     std::string mUrlTemplate;
     int mMinZoom;
     int mMaxZoom;
-    
-public:
-	
-	TemplatedMapProvider(std::string urlTemplate): 
+
+	TemplatedMapProvider( const std::string &urlTemplate ): 
         mUrlTemplate(urlTemplate),
         mMinZoom(0),
         mMaxZoom(18),
         // this is the projection and transform you'll want for any Google-style map tile source:
-        AbstractMapProvider(new MercatorProjection( 0, 
-                                                   Transformation::deriveTransformation( -M_PI,  M_PI, 0, 0, 
-                                                                                          M_PI,  M_PI, 1, 0, 
-                                                                                         -M_PI, -M_PI, 0, 1 ) ) )
+        AbstractMapProvider( MercatorProjection::createWebMercator() )
     { }
-
-	TemplatedMapProvider(std::string urlTemplate, int minZoom, int maxZoom): 
+    
+	TemplatedMapProvider( const std::string &urlTemplate, const int &minZoom, const int &maxZoom ): 
         mUrlTemplate(urlTemplate),
         mMinZoom(minZoom),
         mMaxZoom(maxZoom),
         // this is the projection and transform you'll want for any Google-style map tile source:
-        AbstractMapProvider(new MercatorProjection( 0, 
-                                                   Transformation::deriveTransformation( -M_PI,  M_PI, 0, 0, 
-                                                                                          M_PI,  M_PI, 1, 0, 
-                                                                                         -M_PI, -M_PI, 0, 1 ) ) )
+        AbstractMapProvider( MercatorProjection::createWebMercator() )
     { }
+    
+public:
 	
+    static MapProviderRef create( const std::string &urlTemplate )
+    {
+        return MapProviderRef( new TemplatedMapProvider( urlTemplate ) );
+    }
+
+    static MapProviderRef create( const std::string &urlTemplate, const int &minZoom, const int &maxZoom )
+    {
+        return MapProviderRef( new TemplatedMapProvider( urlTemplate, minZoom, maxZoom ) );
+    }
+    
 	int getMaxZoom() {
 		return mMaxZoom;
 	}

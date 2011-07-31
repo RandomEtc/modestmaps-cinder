@@ -12,23 +12,27 @@ namespace cinder { namespace modestmaps {
 	
 class OpenStreetMapProvider : public AbstractMapProvider {
 	
-public:
-	
+private:
+
 	std::vector<std::string> subdomains;
-	
+	    
 	OpenStreetMapProvider(): 
         // this is the projection and transform you'll want for any Google-style map tile source:
-        AbstractMapProvider(new MercatorProjection( 0, 
-                                                   Transformation::deriveTransformation( -M_PI,  M_PI, 0, 0, 
-                                                                                          M_PI,  M_PI, 1, 0, 
-                                                                                         -M_PI, -M_PI, 0, 1 ) ) )
-	{
+        AbstractMapProvider( MercatorProjection::createWebMercator() )
+    {
 		// TODO: is there a better way to initialize a constant size vector or array of strings?
 		subdomains.push_back("");
 		subdomains.push_back("a.");
 		subdomains.push_back("b.");
 		subdomains.push_back("c.");
 	}
+    
+public:
+	
+    static MapProviderRef create()
+    {
+        return MapProviderRef( new OpenStreetMapProvider() );
+    }
 		
 	std::vector<std::string> getTileUrls(const Coordinate &rawCoordinate) {
 		std::vector<std::string> urls;

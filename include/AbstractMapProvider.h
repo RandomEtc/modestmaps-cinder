@@ -20,10 +20,9 @@ class AbstractMapProvider : public MapProvider {
 	
 public:
 	
-	// TODO: auto/shared pointer?
-	AbstractProjection *projection;
+	ProjectionRef projection;
 	
-	AbstractMapProvider(AbstractProjection *_projection): projection(_projection) {}
+	AbstractMapProvider(ProjectionRef _projection): projection(_projection) {}
 	
 	virtual ~AbstractMapProvider() {}
 	

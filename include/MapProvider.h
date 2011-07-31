@@ -8,13 +8,15 @@
 
 #pragma once
 
+#include "cinder/Cinder.h"
 #include "cinder/Vector.h"
 #include "cinder/Surface.h"
+
 #include "Location.h"
 #include "Coordinate.h"
 
 namespace cinder { namespace modestmaps {
-
+    
 class MapProvider {
 public:
     
@@ -32,5 +34,7 @@ public:
     // called from a background thread:
     virtual Surface createSurface( const Coordinate &coord ) = 0;
 };
+    
+typedef std::shared_ptr<MapProvider> MapProviderRef;
 
 } }

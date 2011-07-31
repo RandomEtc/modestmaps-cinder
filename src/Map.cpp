@@ -3,9 +3,9 @@
 
 namespace cinder { namespace modestmaps {         
     
-void Map::setup( MapProvider *_mapProvider, Vec2d _size )
+void Map::setup( MapProviderRef _mapProvider, Vec2d _size )
 {
-    tileLoader = new TileLoader( _mapProvider );
+    tileLoader = TileLoader::create( _mapProvider );
     mapProvider = _mapProvider;
     size = _size;
     centerCoordinate = Coordinate(0.5,0.5,0);  // half the world width,height at zoom 0

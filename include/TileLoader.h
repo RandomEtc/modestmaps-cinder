@@ -2,6 +2,7 @@
 
 #include <set>
 #include <map>
+#include "cinder/Cinder.h"
 #include "cinder/Thread.h"
 #include "cinder/gl/Texture.h"
 #include "Coordinate.h"
@@ -12,11 +13,30 @@ namespace cinder { namespace modestmaps {
 // limit simultaneous calls to loadImage
 #define MAX_PENDING 8
 
+class TileLoader;
+typedef std::shared_ptr<TileLoader> TileLoaderRef;
+
 class TileLoader
 {
+	
+private:
+    
+    TileLoader( MapProviderRef _provider ): provider(_provider) {}
+    
+    void doThreadedPaint( const Coordinate &coord );
+    
+	std::mutex pendingCompleteMutex;	
+	std::set<Coordinate> pending;
+	std::map<Coordinate, Surface> completed;
+    
+    MapProviderRef provider;
+    
 public:
     
-    TileLoader( MapProvider *_provider ): provider(_provider) {}
+    static TileLoaderRef create( MapProviderRef provider )
+    {
+        return TileLoaderRef( new TileLoader( provider ) );
+    }
     
 	void processQueue( std::vector<Coordinate> &queue );
 	
@@ -25,16 +45,7 @@ public:
 	bool isPending(const Coordinate &coord) {
 		return pending.count(coord) > 0;
 	}
-	
-private:
     
-    void doThreadedPaint( const Coordinate &coord );
-    
-	std::mutex pendingCompleteMutex;	
-	std::set<Coordinate> pending;
-	std::map<Coordinate, Surface> completed;
-		
-    MapProvider *provider;
 };
-
+    
 } } // namespace

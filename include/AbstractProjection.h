@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cmath>
+#include "cinder/Cinder.h"
 #include "cinder/Vector.h"
 
 #include "Transformation.h"
@@ -8,7 +9,7 @@
 #include "Location.h"
 
 namespace cinder { namespace modestmaps {
-
+    
 class AbstractProjection {
 
 public:
@@ -47,4 +48,6 @@ public:
 
 };
 
+typedef std::shared_ptr<AbstractProjection> ProjectionRef;
+    
 } } // namespace

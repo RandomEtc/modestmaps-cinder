@@ -40,10 +40,10 @@ private:
 	double rotation;
 		
 	// about the tiles
-	MapProvider *mapProvider;
+	MapProviderRef mapProvider;
     
     // loading tiles
-    TileLoader *tileLoader;
+    TileLoaderRef tileLoader;
 
 	// loaded tiles
 	std::map<Coordinate, gl::Texture> images;
@@ -65,7 +65,7 @@ public:
 	
 	Map() {}
 	
-    void setup( MapProvider* _provider, Vec2d size );
+    void setup( MapProviderRef _provider, Vec2d size );
     
 	void update();
 	void draw();
@@ -92,7 +92,7 @@ public:
     void setExtent(const MapExtent &extent);
     MapExtent getExtent() const;
 	
-	MapProvider* getMapProvider() const {
+	MapProviderRef getMapProvider() const {
 	    return mapProvider;
 	}
 	
