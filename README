@@ -14,6 +14,10 @@ Now supports multitouch, rotations and works on ipad (not battle tested yet).
 Next task: clarify the use of 'new' for providers and projections - perhaps 
 std::auto_ptr is the clarification needed?
 
+I'd also like to be able to create textures in the background thread, the
+creation of another OpenGL context for this seems promising:
+http://forum.libcinder.org/#Topic/23286000000650007
+
 See also http://github.com/randometc/modestmaps-of for OpenFrameworks for a 
 comparison. It's quite a bit less complete than this version, however.
 
