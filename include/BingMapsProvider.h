@@ -20,7 +20,10 @@ public:
 	
 	BingMapsProvider(): 
 		// this is the projection and transform you'll want for any Google-style map tile source:
-		AbstractMapProvider(new MercatorProjection(26, Transformation(1.068070779e7, 0.0, 3.355443185e7, 0.0, -1.068070890e7, 3.355443057e7)))
+        AbstractMapProvider(new MercatorProjection( 0, 
+                                    Transformation::deriveTransformation( -M_PI,  M_PI, 0, 0, 
+                                                                           M_PI,  M_PI, 1, 0, 
+                                                                          -M_PI, -M_PI, 0, 1 ) ) )
 	{
 		// TODO: a better way to init a constant length vector or array of strings?
 		subdomains.push_back("t0");
