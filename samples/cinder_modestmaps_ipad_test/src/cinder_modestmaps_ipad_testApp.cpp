@@ -95,7 +95,11 @@ void cinder_modestmaps_ipad_testApp::touchesMoved( TouchEvent event )
 }
 void cinder_modestmaps_ipad_testApp::touchesEnded( TouchEvent event )
 {
-	
+	for (int i = 0; i < event.getTouches().size(); i++) {
+        if (prevTouches.find(event.getTouches()[i].getId()) != prevTouches.end()) {
+            prevTouches.erase(event.getTouches()[i].getId());
+        }
+	}	
 }
 
 void cinder_modestmaps_ipad_testApp::resize( ResizeEvent event )

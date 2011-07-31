@@ -42,6 +42,7 @@
 		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* cinder_modestmaps_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cinder_modestmaps_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E27D4AB11301276200E6B4EA /* Transitioner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transitioner.h; sourceTree = "<group>"; };
 		E297D4AE12FA307F008FD780 /* AbstractMapProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractMapProvider.h; sourceTree = "<group>"; };
 		E297D4AF12FA307F008FD780 /* AbstractProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractProjection.h; sourceTree = "<group>"; };
 		E297D4B012FA307F008FD780 /* BingMapsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BingMapsProvider.h; sourceTree = "<group>"; };
@@ -196,6 +197,7 @@
 				E297D4B812FA307F008FD780 /* TemplatedMapProvider.h */,
 				E297D4B912FA307F008FD780 /* TileLoader.h */,
 				E297D4BA12FA307F008FD780 /* Transformation.h */,
+				E27D4AB11301276200E6B4EA /* Transitioner.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
