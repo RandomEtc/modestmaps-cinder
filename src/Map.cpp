@@ -3,13 +3,12 @@
 
 namespace cinder { namespace modestmaps {
 
-void Map::setup(AbstractMapProvider* _provider, double _width, double _height) {
+void Map::setup(AbstractMapProvider* _provider, Vec2d _size) {
 	provider = _provider;
-	width = _width;
-	height = _height;
+    size = _size;
 	centerCoordinate = Coordinate(0.5,0.5,0);  // half the world width,height at zoom 0
 	// fit to screen
-	double z = log(std::min(width,height) / 256.0) / log(2);
+	double z = log(std::min(size.x,size.y) / 256.0) / log(2);
 	centerCoordinate = centerCoordinate.zoomTo(z);
 	// start with north up:
 	rotation = 0.0;
@@ -27,9 +26,9 @@ void Map::draw() {
 	// these are the top left and bottom right tile coordinates
 	// we'll be loading everything in between:
 	Coordinate tl = pointCoordinate(Vec2d::zero()).zoomTo(baseZoom);
-	Coordinate tr = pointCoordinate(Vec2d(width,0)).zoomTo(baseZoom);
-	Coordinate bl = pointCoordinate(Vec2d(0,height)).zoomTo(baseZoom);
-	Coordinate br = pointCoordinate(Vec2d(width,height)).zoomTo(baseZoom);
+	Coordinate tr = pointCoordinate(Vec2d(size.x,0)).zoomTo(baseZoom);
+	Coordinate bl = pointCoordinate(Vec2d(0,size.y)).zoomTo(baseZoom);
+	Coordinate br = pointCoordinate(size).zoomTo(baseZoom);
 	
 	// find start and end columns
 	int minCol = floor(std::min(std::min(tl.column,tr.column),std::min(bl.column,br.column)));
@@ -111,7 +110,7 @@ void Map::draw() {
 		double scale = pow(2.0, centerCoordinate.zoom - coord.zoom);
 		double tileWidth = provider->tileWidth() * scale;
 		double tileHeight = provider->tileHeight() * scale;
-		Vec2d center(width/2.0, height/2.0);
+		Vec2d center = size * 0.5;
 		Coordinate theCoord = centerCoordinate.zoomTo(coord.zoom);
 		
 		double tx = center.x + (coord.column - theCoord.column) * tileWidth;
@@ -176,7 +175,6 @@ void Map::draw() {
 	
 }
 
-void Map::panBy(const Vec2f &delta) { panBy(delta.x, delta.y); }
 void Map::panBy(const Vec2d &delta) { panBy(delta.x, delta.y); }
 	
 void Map::panBy(const double &dx, const double &dy) {
@@ -186,20 +184,18 @@ void Map::panBy(const double &dx, const double &dy) {
 	centerCoordinate.row -= dyr / provider->tileHeight();
 }
 void Map::scaleBy(const double &s) {
-	scaleBy(s, width/2.0, height/2.0);
+	scaleBy(s, size * 0.5);
 }
 void Map::scaleBy(const double &s, const Vec2d &c) {
-	scaleBy(s, c.x, c.y);
-}
-void Map::scaleBy(const double &s, const Vec2f &c) {
 	scaleBy(s, c.x, c.y);
 }
 void Map::scaleBy(const double &s, const double &cx, const double &cy) {
 	double r = rotation;
 	rotateBy(-r,cx,cy);
-	panBy(-cx+width/2.0, -cy+height/2.0);
+    Vec2d center = size * 0.5;
+	panBy(-cx+center.x, -cy+center.y);
 	centerCoordinate = centerCoordinate.zoomBy(log(s) / log(2.0));
-	panBy(cx-width/2.0, cy-height/2.0);
+	panBy(cx-center.x, cy-center.y);
 	rotateBy(r,cx,cy);
 }
 void Map::rotateBy(const double &r, const double &cx, const double &cy) {
@@ -272,7 +268,7 @@ Vec2d Map::coordinatePoint(const Coordinate &target)
 	}
 	
 	// distance from the center of the map
-	Vec2d point(width/2.0, height/2.0);
+	Vec2d point = size * 0.5;
 	point.x += TILE_SIZE * (coord.column - centerCoordinate.column);
 	point.y += TILE_SIZE * (coord.row - centerCoordinate.row);
 
@@ -288,8 +284,8 @@ Coordinate Map::pointCoordinate(const Vec2d &point) {
 	Vec2d rotated(point);
 	rotated.rotate(-rotation);
 	Coordinate coord(centerCoordinate);
-	coord.column += (rotated.x - width/2) / TILE_SIZE;
-	coord.row += (rotated.y - height/2) / TILE_SIZE;
+	coord.column += (rotated.x - size.x * 0.5) / TILE_SIZE;
+	coord.row += (rotated.y - size.y * 0.5) / TILE_SIZE;
 	return coord;
 }
 
@@ -301,10 +297,10 @@ Location Map::pointLocation(const Vec2d &point) {
 	return provider->coordinateLocation(pointCoordinate(point));
 }
 
-void Map::panUp()    { panBy(0,height/8.0);  }
-void Map::panDown()  { panBy(0,-height/8.0); }
-void Map::panLeft()  { panBy(width/8.0,0);   }
-void Map::panRight() { panBy(-width/8.0,0);  }
+void Map::panUp()    { panBy(0,size.y/8.0);  }
+void Map::panDown()  { panBy(0,-size.y/8.0); }
+void Map::panLeft()  { panBy(size.x/8.0,0);   }
+void Map::panRight() { panBy(-size.x/8.0,0);  }
 
 void Map::panAndZoomIn(const Location &location) {
 	setCenterZoom(location, getZoom() + 1);
@@ -331,18 +327,12 @@ void Map::processQueue() {
 	tileLoader.transferTextures(images);
 }
 
-void Map::setSize(double _width, double _height) {
-	width = _width;
-	height = _height;
-}
-
-void Map::setSize(Vec2d size) {
-	width = size.x;
-	height = size.y;
+void Map::setSize(Vec2d _size) {
+    size = _size;
 }
 	
 Vec2d Map::getSize() {
-	return Vec2d(width,height);
+	return size;
 }
 	
 } } // namespace

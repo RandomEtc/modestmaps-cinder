@@ -39,7 +39,7 @@ class Map {
 private:
 
 	// how big?
-	double width, height;
+	Vec2d size;
 		
 	// pan and zoom
 	Coordinate centerCoordinate;
@@ -74,20 +74,18 @@ public:
 	
 	Map() {}
 	
-	void setup(AbstractMapProvider* _provider, double _width, double _height);	
+    void setup(AbstractMapProvider* _provider, Vec2d size);
+    
 	void update();
 	void draw();
 		
 	void panBy(const double &x, const double &y);
 	void panBy(const Vec2d &d);
-	void panBy(const Vec2f &d);
 	void scaleBy(const double &s);
 	void scaleBy(const double &s, const double &x, const double &y);
 	void scaleBy(const double &s, const Vec2d &c);
-	void scaleBy(const double &s, const Vec2f &c);
 	void rotateBy(const double &r, const double &x, const double &y);
 	void rotateBy(const double &r, const Vec2d &c);
-	void rotateBy(const double &r, const Vec2f &c);
 	void zoomBy(const double &distance);
 
 	void setZoom(const double &zoom);
