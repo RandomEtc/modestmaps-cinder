@@ -5,6 +5,7 @@
 
 #include "MapProvider.h"
 #include "Location.h"
+#include "MapExtent.h"
 #include "Coordinate.h"
 #include "QueueSorter.h"
 #include "TileLoader.h"
@@ -15,8 +16,6 @@
 #include "cinder/Vector.h"
 
 namespace cinder { namespace modestmaps {
-
-#define TILE_SIZE 256.0
 	
 // limit tiles in memory
 // 256 would be 64 MB, you may want to lower this quite a bit for your app
@@ -66,7 +65,6 @@ public:
 	
 	Map() {}
 	
-    void setup( TileLoader* _loader, Vec2d size);
     void setup( MapProvider* _provider, Vec2d size );
     
 	void update();
@@ -82,20 +80,19 @@ public:
 	void zoomBy(const double &distance);
 
 	void setZoom(const double &zoom);
-	double getZoom(); // TODO: maybe int getZoomLevel as well?
-	Location getCenter();
-	Coordinate getCenterCoordinate();
+	double getZoom() const; // TODO: maybe int getZoomLevel as well?
+	Location getCenter() const;
+	Coordinate getCenterCoordinate() const;
 	
 	void setCenter(const Coordinate &center);
 	void setCenter(const Location &location);
 	void panTo(const Location &location); // same as setCenter	
 	void setCenterZoom(const Location &location, const double &zoom);
 	
-	// TODO: extent functions
-	//	    public function setExtent(extent:MapExtent):void
-	//	    public function getExtent():MapExtent
+    void setExtent(const MapExtent &extent);
+    MapExtent getExtent() const;
 	
-	MapProvider* getMapProvider() {
+	MapProvider* getMapProvider() const {
 	    return mapProvider;
 	}
 	
@@ -108,11 +105,11 @@ public:
 		pending.clear();
 	}*/
 	
-	Vec2d coordinatePoint(const Coordinate &coord);
-	Coordinate pointCoordinate(const Vec2d &point);
+	Vec2d coordinatePoint(const Coordinate &coord) const;
+	Coordinate pointCoordinate(const Vec2d &point) const;
 
-	Vec2d locationPoint(const Location &location);
-	Location pointLocation(const Vec2d &point);
+	Vec2d locationPoint(const Location &location) const;
+	Location pointLocation(const Vec2d &point) const;
 
 	void zoomIn();	
 	void zoomOut();
@@ -126,7 +123,7 @@ public:
 	
 	void setSize(double _width, double _height);
 	void setSize(Vec2d size);
-	Vec2d getSize();
+	Vec2d getSize() const;
 };
 
 } } // namespace

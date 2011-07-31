@@ -1,8 +1,8 @@
 
 #include "Map.h"
 
-namespace cinder { namespace modestmaps {
-
+namespace cinder { namespace modestmaps {         
+    
 void Map::setup( MapProvider *_mapProvider, Vec2d _size )
 {
     tileLoader = new TileLoader( _mapProvider );
@@ -209,16 +209,16 @@ void Map::rotateBy(const double &r, const double &cx, const double &cy) {
 
 //////////////////
 
-double Map::getZoom() {
+double Map::getZoom() const {
 	return centerCoordinate.zoom;
 }
 
-Location Map::getCenter() {
+Location Map::getCenter() const {
 	return mapProvider->coordinateLocation(centerCoordinate);
 }
 
-Coordinate Map::getCenterCoordinate() {
-	return Coordinate(centerCoordinate); // TODO: return const? 
+Coordinate Map::getCenterCoordinate() const {
+	return centerCoordinate;
 }
 
 void Map::setCenter(const Coordinate &center) {
@@ -244,15 +244,52 @@ void Map::zoomBy(const double &dir) {
 void Map::zoomIn()  { zoomBy(1);  }
 void Map::zoomOut() { zoomBy(-1); }
 
-// TODO: extent functions
-//	    public function setExtent(extent:MapExtent):void
-//	    public function getExtent():MapExtent
+void Map::setExtent( const MapExtent &extent )
+{
+    Coordinate TL = mapProvider->locationCoordinate( extent.getNorthWest() );
+    Coordinate BR = mapProvider->locationCoordinate( extent.getSouthEast() );
+    
+    Vec2d tileSize = mapProvider->getTileSize();
+    
+    // multiplication factor between horizontal span and map width
+    const double hFactor = (BR.column - TL.column) / (size.x / tileSize.x);
+    
+    // multiplication factor expressed as base-2 logarithm, for zoom difference
+    const double hZoomDiff = log(hFactor) / log(2);
+    
+    // possible horizontal zoom to fit geographical extent in map width
+    const double hPossibleZoom = TL.zoom - ceil(hZoomDiff);
+    
+    // multiplication factor between vertical span and map height
+    const double vFactor = (BR.row - TL.row) / (size.y / tileSize.y);
+    
+    // multiplication factor expressed as base-2 logarithm, for zoom difference
+    const double vZoomDiff = log(vFactor) / log(2);
+    
+    // possible vertical zoom to fit geographical extent in map height
+    const double vPossibleZoom = TL.zoom - ceil(vZoomDiff);
+    
+    // initial zoom to fit extent vertically and horizontally
+    double initZoom = std::min(hPossibleZoom, vPossibleZoom);
+    
+    // additionally, make sure it's not outside the boundaries set by provider limits
+    initZoom = std::min(initZoom, (double)mapProvider->getMaxZoom());
+    initZoom = std::max(initZoom, (double)mapProvider->getMinZoom());
+    
+    // coordinate of extent center
+    const double centerRow = (TL.row + BR.row) / 2.0;
+    const double centerColumn = (TL.column + BR.column) / 2.0;
+    const double centerZoom = (TL.zoom + BR.zoom) / 2.0;
+    setCenter( Coordinate(centerRow, centerColumn, centerZoom).zoomTo(initZoom) );    
+}
+    
+MapExtent Map::getExtent() const
+{
+    return MapExtent( pointLocation( Vec2d::zero() ), pointLocation( size ) );
+}
 
-// TODO: make it so you can safely get and set the provider
-/*AbstractMapProvider getMapProvider() {
- return provider;
- }
- 
+// TODO: make it so you can safely set the provider
+/* 
  void setMapProvider(AbstractMapProvider _provider) {
  provider = _provider;
  images.clear();
@@ -260,7 +297,7 @@ void Map::zoomOut() { zoomBy(-1); }
  pending.clear();
  }*/
 
-Vec2d Map::coordinatePoint(const Coordinate &target)
+Vec2d Map::coordinatePoint(const Coordinate &target) const
 {
 	/* Return an x, y point on the map image for a given coordinate. */
 	
@@ -269,11 +306,12 @@ Vec2d Map::coordinatePoint(const Coordinate &target)
 	if(coord.zoom != centerCoordinate.zoom) {
 		coord = coord.zoomTo(centerCoordinate.zoom);
 	}
-	
+
 	// distance from the center of the map
 	Vec2d point = size * 0.5;
-	point.x += TILE_SIZE * (coord.column - centerCoordinate.column);
-	point.y += TILE_SIZE * (coord.row - centerCoordinate.row);
+    Vec2d tileSize = mapProvider->getTileSize();
+	point.x += tileSize.x * (coord.column - centerCoordinate.column);
+	point.y += tileSize.y * (coord.row - centerCoordinate.row);
 
 	Vec2d rotated(point);
 	rotated.rotate(rotation);
@@ -281,22 +319,23 @@ Vec2d Map::coordinatePoint(const Coordinate &target)
 	return rotated;
 }
 
-Coordinate Map::pointCoordinate(const Vec2d &point) {
+Coordinate Map::pointCoordinate(const Vec2d &point) const {
 	/* Return a coordinate on the map image for a given x, y point. */		
 	// new point coordinate reflecting distance from map center, in tile widths
 	Vec2d rotated(point);
+    Vec2d tileSize = mapProvider->getTileSize();    
 	rotated.rotate(-rotation);
 	Coordinate coord(centerCoordinate);
-	coord.column += (rotated.x - size.x * 0.5) / TILE_SIZE;
-	coord.row += (rotated.y - size.y * 0.5) / TILE_SIZE;
+	coord.column += (rotated.x - size.x * 0.5) / tileSize.x;
+	coord.row += (rotated.y - size.y * 0.5) / tileSize.y;
 	return coord;
 }
 
-Vec2d Map::locationPoint(const Location &location) {
+Vec2d Map::locationPoint(const Location &location) const {
 	return coordinatePoint(mapProvider->locationCoordinate(location));
 }
 
-Location Map::pointLocation(const Vec2d &point) {
+Location Map::pointLocation(const Vec2d &point) const {
 	return mapProvider->coordinateLocation(pointCoordinate(point));
 }
 
@@ -320,7 +359,7 @@ void Map::grabTile(const Coordinate &coord) {
 	bool isQueued = find(queue.begin(), queue.end(), coord) != queue.end();
 	bool isAlreadyLoaded = images.count(coord) > 0;
 	if (!isPending && !isQueued && !isAlreadyLoaded) {
-		queue.push_back(Coordinate(coord));
+		queue.push_back(coord);
 	}
 }
 
@@ -334,7 +373,7 @@ void Map::setSize(Vec2d _size) {
     size = _size;
 }
 	
-Vec2d Map::getSize() {
+Vec2d Map::getSize() const {
 	return size;
 }
 	
