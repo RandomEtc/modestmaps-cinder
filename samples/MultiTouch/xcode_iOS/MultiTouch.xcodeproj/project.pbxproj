@@ -55,6 +55,8 @@
 		E2CC9B7C13E59A240020D3B7 /* Transitioner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transitioner.h; sourceTree = "<group>"; };
 		E2CC9B7E13E59A240020D3B7 /* Map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
 		E2CC9B7F13E59A240020D3B7 /* TileLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileLoader.cpp; sourceTree = "<group>"; };
+		E2D3D5C913E612880017189F /* MapExtent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapExtent.h; sourceTree = "<group>"; };
+		E2D3D5CA13E612880017189F /* MapProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapProvider.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,8 @@
 		E2CC9B6E13E59A240020D3B7 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				E2D3D5C913E612880017189F /* MapExtent.h */,
+				E2D3D5CA13E612880017189F /* MapProvider.h */,
 				E2CC9B6F13E59A240020D3B7 /* AbstractMapProvider.h */,
 				E2CC9B7013E59A240020D3B7 /* AbstractProjection.h */,
 				E2CC9B7113E59A240020D3B7 /* BingMapsProvider.h */,

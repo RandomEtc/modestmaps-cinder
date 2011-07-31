@@ -42,7 +42,7 @@ void MultiTouchApp::setup()
 	mMap.setup( OpenStreetMapProvider::create(), getWindowSize());
 //	mMap.setup( TemplatedMapProvider::create("http://localhost:8000/{Z}/{Y}-{X}.png", 0, 5), getWindowSize());
     mMap.setExtent( MapExtent(61.087969, 49.250497, 3.686775, -12.353263) );
-//    setFullScreen( true );
+    setFullScreen( true );
 }
 
 void MultiTouchApp::update()
@@ -126,7 +126,9 @@ void MultiTouchApp::touchesEnded( TouchEvent event )
 
 void MultiTouchApp::resize( ResizeEvent event )
 {
+    MapExtent extent = mMap.getExtent();    
 	mMap.setSize( getWindowSize() );
+    mMap.setExtent( extent ); // TODO: optionally, don't snap to integer zoom
 }
 
 CINDER_APP_NATIVE( MultiTouchApp, RendererGl )
