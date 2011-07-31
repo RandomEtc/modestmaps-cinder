@@ -41,14 +41,14 @@ void TileLoader::loadSurfaceUrl(const Url &url, const Coordinate &coord )
   #endif	
 #endif	
 	
-	std::cout << "threaded loading " << url.str() << " for " << coord << std::endl;
+	//std::cout << "threaded loading " << url.str() << " for " << coord << std::endl;
 	
 	Surface image;
 	try {
 		image = Surface( loadImage( loadUrl( url ) ) );
 	}
 	catch( ... ) {
-		std::cout << "Failed to load: " << url.str() << std::endl;
+		//std::cout << "Failed to load: " << url.str() << std::endl;
 		// create a dummy tile
 		image = Surface( 256, 256, true );
 		ip::fill( &image, Color( 1.0f, 0.0f, 0.0f ) );

@@ -103,13 +103,10 @@ void Map::draw() {
 	// can this be done with a different comparison function on the visibleKeys set?
 	//Collections.sort(visibleKeys, zoomComparator);
 
-	std::cout << "Looping and drawing..." << std::endl;
-
 	int numDrawnImages = 0;	
 	std::set<Coordinate>::iterator citer;
 	for (citer = visibleKeys.begin(); citer != visibleKeys.end(); citer++) {
 		Coordinate coord = *citer;
-		std::cout << coord << std::endl;
 		
 		double scale = pow(2.0, centerCoordinate.zoom - coord.zoom);
 		double tileWidth = provider->tileWidth() * scale;
@@ -132,7 +129,6 @@ void Map::draw() {
 			recentImages.push_back(tile);
 		}
 	}
-	std::cout << std::endl;
 	
 	// stop fetching things we can't see:
 	// (visibleKeys also has the parents and children, if needed, but that shouldn't matter)
