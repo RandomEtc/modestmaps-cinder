@@ -24,7 +24,7 @@ public:
 	
 	AbstractMapProvider(ProjectionRef _projection): projection(_projection) {}
 	
-	virtual ~AbstractMapProvider() {}
+	virtual ~AbstractMapProvider() { std::cout << "Abstract Map Provider destroyed" << std::endl; }
 	
 	virtual std::vector<std::string> getTileUrls(const Coordinate &coord)=0;
 

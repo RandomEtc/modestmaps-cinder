@@ -20,7 +20,7 @@ namespace cinder { namespace modestmaps {
 class MapProvider {
 public:
     
-    virtual ~MapProvider() {}
+    virtual ~MapProvider() { std::cout << "Map Provider destroyed" << std::endl; }
     
     // facts about the tiles that exist:
 	virtual Vec2i getTileSize() = 0;

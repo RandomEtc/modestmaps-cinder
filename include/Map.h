@@ -51,7 +51,7 @@ private:
 	// coords waiting to load
 	std::vector<Coordinate> queue;
 	
-	// a list of the most recent MAX_IMAGES_TO_KEEP ofImages we've seen
+	// a list of the most recent MAX_IMAGES_TO_KEEP images we've seen
 	std::vector<gl::Texture> recentImages;
 	
 	// keep track of what we can see already:
@@ -89,21 +89,14 @@ public:
 	void panTo(const Location &location); // same as setCenter	
 	void setCenterZoom(const Location &location, const double &zoom);
 	
-    void setExtent(const MapExtent &extent);
+    void setExtent(const MapExtent &extent, bool forceIntZoom = true);
     MapExtent getExtent() const;
 	
 	MapProviderRef getMapProvider() const {
 	    return mapProvider;
 	}
 	
-	/*
-	// TODO: make it so you can safely set the provider
-	void setMapProvider(MapProvider *provider) {
-		mapProvider = provider;
-		images.clear();
-		queue.clear();
-		pending.clear();
-	}*/
+    void setMapProvider( MapProviderRef _provider);
 	
 	Vec2d coordinatePoint(const Coordinate &coord) const;
 	Coordinate pointCoordinate(const Vec2d &point) const;

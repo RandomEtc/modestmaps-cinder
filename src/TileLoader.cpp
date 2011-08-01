@@ -29,11 +29,19 @@ void TileLoader::doThreadedPaint( const Coordinate &coord )
   #endif	
 #endif	
 
-	Surface image = provider->createSurface( coord );
+	Surface image;
+    
+    if (provider) {
+        image = provider->createSurface( coord );
+    }
     
 	pendingCompleteMutex.lock();
-	completed[coord] = image;
-	pending.erase(coord);  
+    if (pending.count(coord) > 0) {
+        if (image) {
+            completed[coord] = image;
+        }
+        pending.erase(coord);  
+    } // otherwise clear was called so we should abandon this image to the ether
 	pendingCompleteMutex.unlock();
 }
 
@@ -41,19 +49,20 @@ void TileLoader::processQueue(std::vector<Coordinate> &queue )
 {
 	while (pending.size() < MAX_PENDING && queue.size() > 0) {
 		Coordinate key = *(queue.begin());
+		queue.erase(queue.begin());
 
         pendingCompleteMutex.lock();
         pending.insert(key);
         pendingCompleteMutex.unlock();	
         
-        std::thread loaderThread( &TileLoader::doThreadedPaint, this, key );
-        
-		queue.erase(queue.begin());
+        // TODO: consider using a single thread and a queue, rather than a thread per load?
+        std::thread loaderThread( &TileLoader::doThreadedPaint, this, key );        
 	}
 }
 
 void TileLoader::transferTextures(std::map<Coordinate, gl::Texture> &images)
 {
+    // TODO: consider using try_lock here because we can just wait til next frame if it fails
 	pendingCompleteMutex.lock();
 	while (!completed.empty()) {
 		std::map<Coordinate, Surface>::iterator iter = completed.begin();
@@ -63,6 +72,24 @@ void TileLoader::transferTextures(std::map<Coordinate, gl::Texture> &images)
 		completed.erase(iter);
 	}
 	pendingCompleteMutex.unlock();
+}
+    
+bool TileLoader::isPending(const Coordinate &coord)
+{
+    bool coordIsPending = false;
+    pendingCompleteMutex.lock();
+    coordIsPending = (pending.count(coord) > 0);
+    pendingCompleteMutex.unlock();
+    return coordIsPending;
+}
+    
+void TileLoader::setMapProvider( MapProviderRef _provider )
+{
+	pendingCompleteMutex.lock();
+    completed.clear();
+    pending.clear();
+	pendingCompleteMutex.unlock();
+    provider = _provider;
 }
 
 } } // namespace

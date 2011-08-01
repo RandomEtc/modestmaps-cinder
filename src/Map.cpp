@@ -10,7 +10,7 @@ void Map::setup( MapProviderRef _mapProvider, Vec2d _size )
     size = _size;
     centerCoordinate = Coordinate(0.5,0.5,0);  // half the world width,height at zoom 0
     // fit to screen
-    double z = log(std::min(size.x,size.y) / 256.0) / log(2);
+    double z = log(std::min(size.x,size.y) / 256.0) / log(2); // FIXME: use provider's getTileSize
     centerCoordinate = centerCoordinate.zoomTo(z);
     // start with north up:
     rotation = 0.0;
@@ -193,7 +193,7 @@ void Map::scaleBy(const double &s, const Vec2d &c) {
 	scaleBy(s, c.x, c.y);
 }
 void Map::scaleBy(const double &s, const double &cx, const double &cy) {
-    double prevRotation = rotation;
+    const double prevRotation = rotation;
 	rotateBy(-prevRotation,cx,cy);
     Vec2d center = size * 0.5;
 	panBy(-cx+center.x, -cy+center.y);
@@ -244,12 +244,12 @@ void Map::zoomBy(const double &dir) {
 void Map::zoomIn()  { zoomBy(1);  }
 void Map::zoomOut() { zoomBy(-1); }
 
-void Map::setExtent( const MapExtent &extent )
+void Map::setExtent( const MapExtent &extent, bool forceIntZoom )
 {
-    Coordinate TL = mapProvider->locationCoordinate( extent.getNorthWest() );
-    Coordinate BR = mapProvider->locationCoordinate( extent.getSouthEast() );
+    Coordinate TL = mapProvider->locationCoordinate( extent.getNorthWest() ).zoomTo( getZoom() );
+    Coordinate BR = mapProvider->locationCoordinate( extent.getSouthEast() ).zoomTo( getZoom() );
     
-    Vec2d tileSize = mapProvider->getTileSize();
+    const Vec2d tileSize = mapProvider->getTileSize();
     
     // multiplication factor between horizontal span and map width
     const double hFactor = (BR.column - TL.column) / (size.x / tileSize.x);
@@ -258,7 +258,7 @@ void Map::setExtent( const MapExtent &extent )
     const double hZoomDiff = log(hFactor) / log(2);
     
     // possible horizontal zoom to fit geographical extent in map width
-    const double hPossibleZoom = TL.zoom - ceil(hZoomDiff);
+    const double hPossibleZoom = TL.zoom - (forceIntZoom ? ceil(hZoomDiff) : hZoomDiff);
     
     // multiplication factor between vertical span and map height
     const double vFactor = (BR.row - TL.row) / (size.y / tileSize.y);
@@ -267,7 +267,7 @@ void Map::setExtent( const MapExtent &extent )
     const double vZoomDiff = log(vFactor) / log(2);
     
     // possible vertical zoom to fit geographical extent in map height
-    const double vPossibleZoom = TL.zoom - ceil(vZoomDiff);
+    const double vPossibleZoom = TL.zoom - (forceIntZoom ? ceil(vZoomDiff) : vZoomDiff);
     
     // initial zoom to fit extent vertically and horizontally
     double initZoom = std::min(hPossibleZoom, vPossibleZoom);
@@ -288,14 +288,15 @@ MapExtent Map::getExtent() const
     return MapExtent( pointLocation( Vec2d::zero() ), pointLocation( size ) );
 }
 
-// TODO: make it so you can safely set the provider
-/* 
- void setMapProvider(AbstractMapProvider _provider) {
- provider = _provider;
- images.clear();
- queue.clear();
- pending.clear();
- }*/
+void Map::setMapProvider( MapProviderRef _mapProvider )
+{
+    tileLoader->setMapProvider( _mapProvider );
+    images.clear();	
+    queue.clear();
+    recentImages.clear();
+    visibleKeys.clear();
+    mapProvider = _mapProvider;
+}
 
 Vec2d Map::coordinatePoint(const Coordinate &target) const
 {
@@ -308,8 +309,8 @@ Vec2d Map::coordinatePoint(const Coordinate &target) const
 	}
 
 	// distance from the center of the map
+    const Vec2d tileSize = mapProvider->getTileSize();
 	Vec2d point = size * 0.5;
-    Vec2d tileSize = mapProvider->getTileSize();
 	point.x += tileSize.x * (coord.column - centerCoordinate.column);
 	point.y += tileSize.y * (coord.row - centerCoordinate.row);
 
@@ -323,7 +324,7 @@ Coordinate Map::pointCoordinate(const Vec2d &point) const {
 	/* Return a coordinate on the map image for a given x, y point. */		
 	// new point coordinate reflecting distance from map center, in tile widths
 	Vec2d rotated(point);
-    Vec2d tileSize = mapProvider->getTileSize();    
+    const Vec2d tileSize = mapProvider->getTileSize();    
 	rotated.rotate(-rotation);
 	Coordinate coord(centerCoordinate);
 	coord.column += (rotated.x - size.x * 0.5) / tileSize.x;

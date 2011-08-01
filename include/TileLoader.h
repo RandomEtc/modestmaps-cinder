@@ -42,9 +42,9 @@ public:
 	
 	void transferTextures( std::map<Coordinate, gl::Texture> &images);
 
-	bool isPending(const Coordinate &coord) {
-		return pending.count(coord) > 0;
-	}
+	bool isPending(const Coordinate &coord);
+    
+    void setMapProvider( MapProviderRef _provider );
     
 };
     
