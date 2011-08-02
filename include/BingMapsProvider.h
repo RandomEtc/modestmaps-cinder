@@ -12,7 +12,7 @@ namespace cinder { namespace modestmaps {
 	
 class BingMapsProvider : public AbstractMapProvider {
 	
-public:
+private:
 	
 	// TODO: we need to get these from the Bing API
 	// ...so don't bother marking them const because they aren't :)
@@ -29,14 +29,6 @@ public:
 		subdomains.push_back("t3");
 	}
 	
-	int tileWidth() {
-		return 256;
-	}
-	
-	int tileHeight() {
-		return 256;
-	}
-	
 	std::string getQuadKey(const int column, const int row, const int zoom) {
 		std::stringstream key;
 		for (int i = 1; i <= zoom; i++) {
@@ -46,6 +38,12 @@ public:
 		return key.str();
 	}
 	
+public: 
+    
+    static MapProviderRef create() {
+        return MapProviderRef(new BingMapsProvider());
+    }
+    
 	std::vector<std::string> getTileUrls(const Coordinate &rawCoordinate) {
 		std::vector<std::string> urls;
 		if (rawCoordinate.zoom >= 1 && rawCoordinate.zoom <= 19 
