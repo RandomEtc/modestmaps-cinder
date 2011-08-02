@@ -18,11 +18,11 @@ void Map::setup( MapProviderRef _mapProvider, Vec2d _size )
 	
 void Map::update() {
 	// TODO: Move non-drawing logic here
-    std::cout << "images:       " << images.size() << std::endl;
-    std::cout << "queue:        " << queue.size() << std::endl;
-    std::cout << "recentImages: " << recentImages.size() << std::endl;
-    std::cout << "visibleKeys:  " << visibleKeys.size() << std::endl;
-    std::cout << "-------------------" << std::endl << std::endl;
+//    std::cout << "images:       " << images.size() << std::endl;
+//    std::cout << "queue:        " << queue.size() << std::endl;
+//    std::cout << "recentImages: " << recentImages.size() << std::endl;
+//    std::cout << "visibleKeys:  " << visibleKeys.size() << std::endl;
+//    std::cout << "-------------------" << std::endl << std::endl;
 }
 
 void Map::draw() {
