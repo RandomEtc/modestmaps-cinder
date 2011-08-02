@@ -10,7 +10,7 @@ void Map::setup( MapProviderRef _mapProvider, Vec2d _size )
     size = _size;
     centerCoordinate = Coordinate(0.5,0.5,0);  // half the world width,height at zoom 0
     // fit to screen
-    double z = log(std::min(size.x,size.y) / 256.0) / log(2); // FIXME: use provider's getTileSize
+    double z = log2(std::min(size.x,size.y) / 256.0); // FIXME: use provider's getTileSize
     centerCoordinate = centerCoordinate.zoomTo(z);
     // start with north up:
     rotation = 0.0;
@@ -207,7 +207,7 @@ void Map::scaleBy(const double &s, const double &cx, const double &cy) {
 	rotateBy(-prevRotation,cx,cy);
     Vec2d center = size * 0.5;
 	panBy(-cx+center.x, -cy+center.y);
-	centerCoordinate = centerCoordinate.zoomBy(log(s) / log(2.0));
+	centerCoordinate = centerCoordinate.zoomBy(log2(s));
 	panBy(cx-center.x, cy-center.y);
 	rotateBy(prevRotation,cx,cy);
 }
@@ -265,7 +265,7 @@ void Map::setExtent( const MapExtent &extent, bool forceIntZoom )
     const double hFactor = (BR.column - TL.column) / (size.x / tileSize.x);
     
     // multiplication factor expressed as base-2 logarithm, for zoom difference
-    const double hZoomDiff = log(hFactor) / log(2);
+    const double hZoomDiff = log2(hFactor);
     
     // possible horizontal zoom to fit geographical extent in map width
     const double hPossibleZoom = TL.zoom - (forceIntZoom ? ceil(hZoomDiff) : hZoomDiff);
@@ -274,7 +274,7 @@ void Map::setExtent( const MapExtent &extent, bool forceIntZoom )
     const double vFactor = (BR.row - TL.row) / (size.y / tileSize.y);
     
     // multiplication factor expressed as base-2 logarithm, for zoom difference
-    const double vZoomDiff = log(vFactor) / log(2);
+    const double vZoomDiff = log2(vFactor);
     
     // possible vertical zoom to fit geographical extent in map height
     const double vPossibleZoom = TL.zoom - (forceIntZoom ? ceil(vZoomDiff) : vZoomDiff);
@@ -366,12 +366,17 @@ void Map::panTo(const Location &location) {
 //////////////////////////////////////////////////////////////////////////
 
 void Map::grabTile(const Coordinate &coord) {
-	bool isPending = tileLoader->isPending(coord);
-	bool isQueued = find(queue.begin(), queue.end(), coord) != queue.end();
 	bool isAlreadyLoaded = images.count(coord) > 0;
-	if (!isPending && !isQueued && !isAlreadyLoaded) {
-		queue.push_back(coord);
-	}
+    if (!isAlreadyLoaded) {
+        bool isQueued = find(queue.begin(), queue.end(), coord) != queue.end();
+        if (!isQueued) {
+            // do this one last because it blocks TileLoader
+            bool isPending = tileLoader->isPending(coord);
+            if (!isPending) {
+                queue.push_back(coord);
+            }
+        }
+    }
 }
 
 void Map::processQueue() {	

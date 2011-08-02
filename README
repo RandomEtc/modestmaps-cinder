@@ -11,9 +11,6 @@ http://forum.libcinder.org/#topic/23286000000108063
 
 Now supports multitouch, rotations and works on ipad (not battle tested yet).
 
-Next task: clarify the use of 'new' for providers and projections - perhaps 
-std::auto_ptr is the clarification needed?
-
 I'd also like to be able to create textures in the background thread, the
 creation of another OpenGL context for this seems promising:
 http://forum.libcinder.org/#Topic/23286000000650007

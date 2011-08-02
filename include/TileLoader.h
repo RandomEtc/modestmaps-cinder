@@ -11,7 +11,7 @@
 namespace cinder { namespace modestmaps {
 
 // limit simultaneous calls to loadImage
-#define MAX_PENDING 8
+#define MAX_PENDING 2
 
 class TileLoader;
 typedef std::shared_ptr<TileLoader> TileLoaderRef;

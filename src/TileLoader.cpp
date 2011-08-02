@@ -62,16 +62,17 @@ void TileLoader::processQueue(std::vector<Coordinate> &queue )
 
 void TileLoader::transferTextures(std::map<Coordinate, gl::Texture> &images)
 {
-    // TODO: consider using try_lock here because we can just wait til next frame if it fails
-	pendingCompleteMutex.lock();
-	while (!completed.empty()) {
-		std::map<Coordinate, Surface>::iterator iter = completed.begin();
-        if (iter->second) {
-            images[iter->first] = gl::Texture(iter->second);		
+    // use try_lock because we can just wait until next frame if needed
+    if (pendingCompleteMutex.try_lock()) {
+        if (!completed.empty()) {
+            std::map<Coordinate, Surface>::iterator iter = completed.begin();
+            if (iter->second) {
+                images[iter->first] = gl::Texture(iter->second);		
+            }
+            completed.erase(iter);
         }
-		completed.erase(iter);
-	}
-	pendingCompleteMutex.unlock();
+        pendingCompleteMutex.unlock();
+    }
 }
     
 bool TileLoader::isPending(const Coordinate &coord)
