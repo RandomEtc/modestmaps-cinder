@@ -272,7 +272,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = i386;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -293,7 +293,7 @@
 				);
 				PRODUCT_NAME = MultiTouch;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = i386;
+				VALID_ARCHS = "armv7 armv6 i386";
 			};
 			name = Debug;
 		};
@@ -301,7 +301,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = i386;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				COPY_PHASE_STRIP = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -320,7 +320,7 @@
 				);
 				PRODUCT_NAME = MultiTouch;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = i386;
+				VALID_ARCHS = "armv7 armv6 i386";
 			};
 			name = Release;
 		};

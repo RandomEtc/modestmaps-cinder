@@ -2,7 +2,7 @@
 #include "cinder/gl/TextureFont.h"
 #include "Map.h"
 #include "OpenStreetMapProvider.h"
-//#include "TemplatedMapProvider.h"
+#include "TemplatedMapProvider.h"
 
 using namespace ci;
 using namespace ci::gl;
@@ -21,6 +21,8 @@ public:
     
 	void resize( ResizeEvent event);
 
+	void keyUp( KeyEvent event );
+    
 	void touchesBegan( TouchEvent event );
 	void touchesMoved( TouchEvent event );
 	void touchesEnded( TouchEvent event );
@@ -42,12 +44,27 @@ void MultiTouchApp::setup()
 	mMap.setup( OpenStreetMapProvider::create(), getWindowSize());
 //	mMap.setup( TemplatedMapProvider::create("http://localhost:8000/{Z}/{Y}-{X}.png", 0, 5), getWindowSize());
     mMap.setExtent( MapExtent(61.087969, 49.250497, 3.686775, -12.353263) );
-    setFullScreen( true );
+//    setFullScreen( true );
 }
 
 void MultiTouchApp::update()
 {
     mMap.update();
+}
+
+void MultiTouchApp::keyUp( KeyEvent event ) 
+{
+//    mMap = Map();
+//	mMap.setup( OpenStreetMapProvider::create(), getWindowSize());
+    if (event.getChar() == 'o') {
+        mMap.setMapProvider( OpenStreetMapProvider::create() );
+    }
+    else if (event.getChar() == 'l') {
+        mMap.setMapProvider( TemplatedMapProvider::create("http://localhost:8000/{Z}/{Y}-{X}.png", 0, 5) );
+    }
+//    else if (event.getKey() == 'b') {
+    // TODO: Bing
+//    }    
 }
 
 void MultiTouchApp::draw()
@@ -63,10 +80,12 @@ void MultiTouchApp::draw()
     gl::enableAlphaBlending();
 	
     // draw copyright notice
-    gl::color( Color::white() );
     string notice = "Map data CC-BY-SA OpenStreetMap.org contributors.";
     Vec2f noticeSize = mTextureFont->measureString(notice);
     Vec2f noticePadding(10.0f,10.0f - mTextureFont->getFont().getAscent());
+    gl::color( Color::black() );
+    mTextureFont->drawString(notice, windowSize - noticeSize - noticePadding + Vec2f(1,1));
+    gl::color( Color::white() );
     mTextureFont->drawString(notice, windowSize - noticeSize - noticePadding);
     
     // draw touch points:
@@ -126,9 +145,9 @@ void MultiTouchApp::touchesEnded( TouchEvent event )
 
 void MultiTouchApp::resize( ResizeEvent event )
 {
-    MapExtent extent = mMap.getExtent();    
+//    MapExtent extent = mMap.getExtent();    
 	mMap.setSize( getWindowSize() );
-    mMap.setExtent( extent ); // TODO: optionally, don't snap to integer zoom
+//    mMap.setExtent( extent, false ); // TODO: optionally, don't fit biggest dimension but preserve smallest instead?
 }
 
 CINDER_APP_NATIVE( MultiTouchApp, RendererGl )
