@@ -18,6 +18,11 @@ void Map::setup( MapProviderRef _mapProvider, Vec2d _size )
 	
 void Map::update() {
 	// TODO: Move non-drawing logic here
+    std::cout << "images:       " << images.size() << std::endl;
+    std::cout << "queue:        " << queue.size() << std::endl;
+    std::cout << "recentImages: " << recentImages.size() << std::endl;
+    std::cout << "visibleKeys:  " << visibleKeys.size() << std::endl;
+    std::cout << "-------------------" << std::endl << std::endl;
 }
 
 void Map::draw() {
@@ -121,13 +126,17 @@ void Map::draw() {
 		if (images.count(coord) > 0) {
 			gl::Texture tile = images[coord];
 			// we want this image to be at the end of recentImages, if it's already there we'll remove it and then add it again
-			recentImages.erase(remove(recentImages.begin(), recentImages.end(), tile), recentImages.end());
+//			recentImages.erase(remove(recentImages.begin(), recentImages.end(), tile), recentImages.end());
+            std::vector<Coordinate>::iterator result = find(recentImages.begin(), recentImages.end(), coord);
+            if (result != recentImages.end()) {
+                recentImages.erase(result);
+            }
 			gl::draw( tile, Rectf(tx, ty, tx+tileSize.x, ty+tileSize.y) );
 			numDrawnImages++;
-			recentImages.push_back(tile);
+			recentImages.push_back(coord);
 		}
 	}
-
+    
     glPopMatrix();
 	
 	// stop fetching things we can't see:
@@ -162,8 +171,9 @@ void Map::draw() {
 		std::map<Coordinate,gl::Texture>::iterator iter = images.begin();
 		std::map<Coordinate,gl::Texture>::iterator endIter = images.end();
 		for (; iter != endIter;) {
-			gl::Texture tile = iter->second;
-			std::vector<gl::Texture>::iterator result = find(recentImages.begin(), recentImages.end(), tile);
+            Coordinate coord = iter->first;
+//			gl::Texture tile = iter->second;
+			std::vector<Coordinate>::iterator result = find(recentImages.begin(), recentImages.end(), coord);
 			if (result == recentImages.end()) {
 				images.erase(iter++);
 			}

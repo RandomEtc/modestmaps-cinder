@@ -17,6 +17,8 @@
 
 namespace cinder { namespace modestmaps {
 	
+// TODO: public getter/setting, and/or Settings object for these values?
+    
 // limit tiles in memory
 // 256 would be 64 MB, you may want to lower this quite a bit for your app
 // (we'll always keep as many images as needed to fill the screen though)
@@ -52,7 +54,7 @@ private:
 	std::vector<Coordinate> queue;
 	
 	// a list of the most recent MAX_IMAGES_TO_KEEP images we've seen
-	std::vector<gl::Texture> recentImages;
+	std::vector<Coordinate> recentImages;
 	
 	// keep track of what we can see already:
 	std::set<Coordinate> visibleKeys;
@@ -69,7 +71,7 @@ public:
     
 	void update();
 	void draw();
-		
+    
 	void panBy(const double &x, const double &y);
 	void panBy(const Vec2d &d);
 	void scaleBy(const double &s);
